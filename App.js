@@ -1,23 +1,40 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { createBottomTabNavigator } from 'react-navigation';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!!!!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-      </View>
-    );
-  }
-}
+import EventoStack from './telas/eventos';
+import ConvitesStack from './telas/convites';
+import ContatosStack from './telas/contatos';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+const MainTabBar = createBottomTabNavigator({
+  Eventos: EventoStack,
+  Convites: ConvitesStack,
+  ContatosStack: ContatosStack,
+}, {
+  initialRouteName: 'Eventos',
+  navigationOptions: {
+    headerTitleStyle: {
+      fontWeight: 'bold',
+    },
+    tabBarOptions: {
+      activeTintColor: 'blue',
+      inactiveTintColor: 'gray',
+    },
   },
 });
+
+export default class App extends React.Component {
+
+  state = {
+    userId: 0,
+  };
+
+  render() {
+    return (
+      <MainTabBar
+      screenProps={{
+        state: this.state
+      }}
+    />
+    );
+  }
+};
