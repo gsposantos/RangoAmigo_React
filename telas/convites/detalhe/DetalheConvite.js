@@ -9,22 +9,12 @@ import {
 
 const buscaDetalheConvite = async eventoId => {
 //   const res = await fetch(`https://food2fork.com/api/get?key=${food2ForkKey}&rId=${recipeId}`);
-
 //   const {recipe} = await res.json();
-
 //   return recipe;
 };
 
-// const getIngredients = fullRecipe => fullRecipe.ingredients.map((ingredient, index) => ({
-//   key: String(index + 1),
-//   description: ingredient,
-// }));
 
 export default class DetalheConvite extends React.Component {
-//   static navigationOptions = ({navigation}) => {
-//     const {title} = navigation.state.params;
-//     return {title};
-//   };
 
     static navigationOptions = {
         title: 'Detalhe do Convite',
@@ -41,12 +31,6 @@ export default class DetalheConvite extends React.Component {
 
 //     this.setState({fullRecipe});
 //   }
-
-//   handleSeeInstructions = async () => {
-//     const {source_url} = this.props.navigation.state.params;
-
-//     await Linking.openURL(safeUrl(source_url));
-//   };
 
 //   renderItem = ({item}) => <RecipeIngredient ingredient={item}/>;
 
