@@ -30,39 +30,40 @@ const buscarContatos = () => {
 export default class ContatosStack extends React.Component {
 
   state={
-    retornoContatos: null,
+    retornoContatos: [],
   }
 
-  async componentDidMount() {
-
-    //const {recipe_id} = this.props.navigation.state.params;
-
-    const retornoContatos = this.carregarContatosDipositivo();
-    this.setState({retornoContatos});
+  //async componentDidMount() {
+  async componentWillMount() {    
+    //carregar contatos antes do primeiro rander
+    //this.setState({retornoContatos: this.carregarContatosDipositivo()});
+    this.carregarContatosDipositivo();
   }
 
   carregarContatosDipositivo = () => {
 
     var Contacts = require('react-native-contacts');
 
-    return Contacts.getAll((err, contacts) => {
+    Contacts.getAll((err, contacts) => {
       if (err){ throw err; }
     
       console.log(contacts);
       alert('achou contatos');
-      //this.setState({contacts});
-  
+      this.setState({retornoContatos: contacts});
+
     });
   }
 
-  selecionaContato = item => {
-    //this.props.navigation.navigate('Recipe', item);
+  selecionaContato = item => {    
     alert('Contato selecionado!');
   };
 
   renderListaContatos = () => {
-    //const { contatos } = this.state;
-    return <ListaContatos contatos={this.state.contatos} onSelectContato={this.selecionaContato} />;
+    
+    if ( this.state.retornoContatos !== undefined)
+      return <ListaContatos contatos={this.state.retornoContatos} onSelectContato={this.selecionaContato} />;
+    else
+      return <Text>Carregando ... </Text>
   };
 
   render(){

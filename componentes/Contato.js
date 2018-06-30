@@ -23,7 +23,7 @@ export default function Contato({contato, onSelect}) {
             <Text>
               Fone:
               <Text style={{fontWeight: 'bold'}}>
-                {' '}{item.phoneNumbers[0].number}%
+                {' '}{contato.phoneNumbers[0].number}%
               </Text>
             </Text>
           </View>
