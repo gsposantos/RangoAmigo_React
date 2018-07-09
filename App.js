@@ -5,6 +5,9 @@ import EventoStack from './telas/eventos';
 import ConvitesStack from './telas/convites';
 import ContatosStack from './telas/contatos';
 
+import { YellowBox } from 'react-native';
+YellowBox.ignoreWarnings(['Warning: isMounted(...) is deprecated', 'Module RCTImageLoader']);
+
 const MainTabBar = createBottomTabNavigator({
   Eventos: EventoStack,
   Convites: ConvitesStack,

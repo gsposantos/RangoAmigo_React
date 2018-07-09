@@ -1,13 +1,13 @@
 import React from 'react';
 import {
   View,
-  Text,
-  TextInput,
   ActivityIndicator,  
   StyleSheet,
 } from 'react-native';
 
-//import RecipeList from '../../../components/RecipeList';
+import axios from 'axios';
+
+import ListaEventos from '../../../componentes/ListaEventos';
 
 const buscaConvites = async q => {
 //   const res = await fetch(`https://food2fork.com/api/search?key=${food2ForkKey}&q=${q}`);
@@ -23,51 +23,51 @@ export default class MeusConvites extends React.Component {
     title: 'Meus Convites',
   };
 
-  state = {
-    query: '',
-    recipes: [],
-    loading: false,
+  async componentWillMount() {    
+
+    //carregar Convites antes do primeiro render
+    this.caregaConvitesApi();
+    
+  }
+
+  state = {   
+    convites: [],
+    carregando: true,
   };
 
-//   handleSearchChange = query => {
-//     this.setState({query});
-//   };
+  caregaConvitesApi = () => {
+    axios({
+      method: 'post',        
+      url: 'http://www.anjodaguardaeventos.com.br/rangoamigo/api/eventos/ListarConvites',    
+      headers: { 'content-type': 'application/json;charset=utf-8' },                       
+      data: { "CelNumero": 51999999093 } //perfil da sessao??
+    }).then(response => {  
 
-//   handleSearchSubmit = async () => {
-//     this.setState({loading: true});
+      console.log(response);
 
-//     const recipes = await fetchRecipes(this.state.query);
+    })
+    .catch((err) => {console.log(err);
+    });          
+  }
 
-//     this.setState({loading: false, recipes});
-//   };
+  selecionaConvite = evento => {
+    this.props.navigation.navigate('Evento', evento);
+  };
 
-//   handleSelect = item => {
-//     this.props.navigation.navigate('Recipe', item);
-//   };
-
-//   renderResults = () => {
-//     const { recipes } = this.state;
-
-//     return <RecipeList recipes={this.state.recipes} onSelectRecipe={this.handleSelect} />;
-//   };
+  mostraResultados = () => {
+    //const { eventos } = this.state;
+    return <ListaEventos recipes={this.state.convites} onSelectRecipe={this.selecionaConvite} />;
+  };
 
   render() {
     return (
-      <View style={styles.container}>
-        <View style={styles.header}>
-          <Text style={styles.headerTitle}>Search recipes:</Text>
-          <TextInput
-            style={styles.searchInput}           
-            returnKeyType="search"
-          />
-        </View>
-        <View style={styles.resultsContainer}>
-            <ActivityIndicator size="large" color="#000"/>
-          {/* {
-            this.state.loading
+      <View style={styles.container}>        
+        <View style={styles.resultsContainer}>          
+          {
+            this.state.carregando
               ? <ActivityIndicator size="large" color="#000"/>
-              : this.renderResults()
-          } */}
+              : this.mostraResultados()          
+          }
         </View>
       </View>
     );
@@ -78,17 +78,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-  },
-  header: {
-    paddingTop: 20,
-    paddingBottom: 20,
-    paddingStart: 10,
-    paddingEnd: 10,
-    borderBottomWidth: 1,
-    borderBottomColor: '#000'
-  },
-  headerTitle: {
-    fontWeight: 'bold'
   },
   searchInput: {
     marginTop: 10,
