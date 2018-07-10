@@ -7,7 +7,7 @@ import {
 
 import axios from 'axios';
 
-import ListaEventos from '../../../componentes/ListaEventos';                    
+import ListaEventos from '../../../../componentes/ListaEventos';                    
 
 export default class MeusEventos extends React.Component {
   static navigationOptions = {
@@ -20,6 +20,8 @@ export default class MeusEventos extends React.Component {
   };
 
   async componentWillMount() {    
+
+    this.props.navigation.openDrawer();
 
     //carregar Eventos antes do primeiro render
     this.caregaEventosApi();

@@ -7,7 +7,7 @@ import {
 
 import axios from 'axios';
 
-import ListaEventos from '../../../componentes/ListaEventos';
+import ListaEventos from '../../../../componentes/ListaEventos';
 
 const buscaConvites = async q => {
 //   const res = await fetch(`https://food2fork.com/api/search?key=${food2ForkKey}&q=${q}`);
