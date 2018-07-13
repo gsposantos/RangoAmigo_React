@@ -10,7 +10,27 @@ import {
 export default function Contato({contato, onSelect}) {
   return (
     <TouchableOpacity onPress={() => onSelect(contato)}>
-      <View style={styles.container}>
+
+      <View style={styles.itemContato}> 
+        <View style={styles.imagemContato}>             
+          <Text>IMG</Text>
+        </View>
+        <View style={styles.dadosContato}>  
+          <View style={styles.nomeContato}> 
+            <Text>Nome do juca</Text>               
+          </View>
+          <View style={styles.infoContato}>                 
+            <View style={styles.emailContato}>      
+              <Text>email@juca.com</Text>                                       
+            </View>
+            <View style={styles.foneContato}>                               
+              <Text>9999999898</Text>               
+            </View>
+          </View>
+        </View>
+      </View>  
+      
+      {/* <View style={styles.container}>
         <Image
           style={styles.image}
           //source={getImageSrc(recipe)}
@@ -28,12 +48,54 @@ export default function Contato({contato, onSelect}) {
             </Text>
           </View>
         </View>
-      </View>
+      </View> */}
     </TouchableOpacity>
   );
 };
 
 const styles = StyleSheet.create({
+
+  itemContato: {
+    //marginTop: 50,
+    flexDirection: 'row',
+    backgroundColor: 'red',
+    height: 65,
+  },
+  imagemContato: {
+    flex: 2,
+    //backgroundColor: 'blue',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  dadosContato: {
+    flex: 8,
+    backgroundColor: 'green',
+    flexDirection: 'column',
+  },
+  infoContato:{
+    flex: 1,
+    flexDirection: 'row',
+    backgroundColor: 'yellow',
+    //justifyContent: 'space-between',
+  },
+  nomeContato: {
+    flex: 1,
+    justifyContent: 'flex-start',
+    //backgroundColor: 'orange',
+  },
+  emailContato: {
+    flex:1,
+    alignItems: 'flex-start',
+    justifyContent: 'flex-end',
+    backgroundColor: 'orange',
+  },
+  foneContato: {
+    flex:1,
+    alignItems: 'flex-end',
+    justifyContent: 'flex-end',
+    backgroundColor: 'red',
+  },
+/*
   container: {
     padding: 10,
     flexDirection: 'row',
@@ -55,4 +117,5 @@ const styles = StyleSheet.create({
   contentScore: {
     marginTop: 5,
   }
+*/
 });

@@ -10,14 +10,20 @@ const ConviteStack = createStackNavigator({
 }, {
   initialRouteName: 'MeusConvites',
   navigationOptions: {
+    headerStyle: {
+      backgroundColor: '#607d8b',
+    },
+    headerTintColor: '#ff950e',
     headerTitleStyle: {
       fontWeight: 'bold',
+      fontSize: 20,
     },
   },
 });
 
+//caracteristica da TabBar ...aqui deve mostar os icones
 ConviteStack.navigationOptions = {
-  title: 'Meus Convites',
+  title: 'Convites',
 //   tabBarIcon({ tintColor }) {
 //     return <MaterialCommunityIcons name="food-fork-drink" size={25} />;
 //   }

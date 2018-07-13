@@ -1,5 +1,5 @@
 import Principal from './telas/principal';
-import Login from './telas/login';
+import LoginStack from './telas/login';
 import MenuLateral from './componentes/MenuLateral'
 import {DrawerNavigator} from 'react-navigation';
 
@@ -8,7 +8,7 @@ export default DrawerNavigator({
     screen: Principal
   },
   Login: {
-    screen: Login
+    screen: LoginStack
   },  
 }, {
   contentComponent: MenuLateral,

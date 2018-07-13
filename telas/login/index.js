@@ -1,19 +1,27 @@
-import React, {Component} from 'react';
-import {
-  Text,
-  View
-} from 'react-native';
+import React from 'react';
+import { createStackNavigator } from 'react-navigation';
 
-class Login extends Component {
-  render () {
-    return (
-      <View style={{padding: 50}}>
-        <Text>
-          Page1
-        </Text>
-      </View>
-    );
-  }
-}
+import AcessoPin from './AcessoPin/pin';
+import AcessoFone from './AcessoFone/fone';
 
-export default Login;
+
+const LoginStack = createStackNavigator({
+  AcessoFone,
+  AcessoPin
+}, {
+  initialRouteName: 'AcessoFone',
+  navigationOptions: {
+    headerStyle: {
+      backgroundColor: '#607d8b',
+    },
+    headerTintColor: '#ff950e',
+    headerTitleStyle: {
+      fontWeight: 'bold',
+      fontSize: 20,
+    },
+  },
+});
+
+
+export default LoginStack;
+

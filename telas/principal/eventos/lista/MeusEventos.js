@@ -1,18 +1,69 @@
 import React from 'react';
 import {
-  View,
+  View, Button,
   ActivityIndicator,  
   StyleSheet,
 } from 'react-native';
 
 import axios from 'axios';
 
-import ListaEventos from '../../../../componentes/ListaEventos';                    
+import ListaEventos from '../../../../componentes/ListaEventos';   
+import BotaoMenu from '../../../../componentes/BotaoMenu';                    
 
 export default class MeusEventos extends React.Component {
-  static navigationOptions = {
-    title: 'Meus Eventos',
+  
+  //caracteristicas da barra superior (toolbar) ... aqui deveria aparecer os botoes, por ex
+  static navigationOptions = ({ navigation }) => {
+
+    //console.log(navigation);
+
+    return {
+      title:'Meus Eventos',
+
+    headerLeft: (
+      <Button
+         onPress={() => alert('DrawerOpen') }
+         title=" = "
+         color="#000"
+       />
+    ),
+  
+    // headerStyle: {
+    //   backgroundColor: '#607d8b',
+    // },
+    // headerTintColor: '#ff950e',
+    // headerTitleStyle: {
+    //   fontWeight: 'bold',
+    // },
+    
+    // headerLeft: (
+    //   <Button
+    //      onPress={() => navigation.navigate('DrawerOpen') }
+    // //     //executa metodo da componente recebido por parametro
+    // //     //onPress={navigation.getParam('increaseCount')}
+    // //     //abre ModalScreen
+    // //     //onPress={() => navigation.navigate('MyModal')}
+    //      title=" = "
+    //      color="#000"
+    //    />
+    // ),      
+    // headerRight: (
+    //   <Button
+    //     onPress={() => alert('This is a button!')}
+    //     //executa metodo da componente recebido por parametro
+    //     //onPress={navigation.getParam('increaseCount')}
+    //     //abre ModalScreen
+    //     //onPress={() => navigation.navigate('MyModal')}
+    //     title=" = "
+    //     color="#000"
+    //   />
+    // ),
+    };
   };
+  
+  // static navigationOptions = {
+  //   title: 'Meus Eventos',
+  // };
 
   state = {   
     eventos: [],
@@ -21,7 +72,7 @@ export default class MeusEventos extends React.Component {
 
   async componentWillMount() {    
 
-    this.props.navigation.openDrawer();
+    //this.props.navigation.openDrawer();
 
     //carregar Eventos antes do primeiro render
     this.caregaEventosApi();
