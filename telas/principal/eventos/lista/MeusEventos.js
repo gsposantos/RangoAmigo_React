@@ -19,14 +19,9 @@ export default class MeusEventos extends React.Component {
 
     return {
       title:'Meus Eventos',
-
-    headerLeft: (
-      <Button
-         onPress={() => alert('DrawerOpen') }
-         title=" = "
-         color="#000"
-       />
-    ),
+      headerLeft: (
+        <BotaoMenu acaoMenu={navigation} />      
+      ),
   
     // headerStyle: {
     //   backgroundColor: '#607d8b',

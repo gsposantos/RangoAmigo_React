@@ -5,6 +5,8 @@ import {
   StyleSheet,
 } from 'react-native';
 
+import BotaoMenu from '../../../../componentes/BotaoMenu';
+
 import axios from 'axios';
 
 import ListaEventos from '../../../../componentes/ListaEventos';
@@ -23,6 +25,9 @@ export default class MeusConvites extends React.Component {
   //caracteristicas da barra superior (toolbar) ... aqui deveria aparecer os botoes, por ex
   static navigationOptions = {
     title: 'Meus Convites',
+    headerLeft: (
+      <BotaoMenu acaoMenu={navigation} />      
+    ),
   };
 
   async componentWillMount() {    

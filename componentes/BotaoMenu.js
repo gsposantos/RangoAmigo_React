@@ -7,14 +7,13 @@ import {
   StyleSheet,
 } from 'react-native';
 
-export class BotaoMenu extends React.Component  {
-    
-    render() {
-        console.log(this.props);
-        return (
-            <TouchableOpacity onPress={() => { this.props.navegacao('DrawerOpen'); } }>
-                <Text> Menu </Text>
-            </TouchableOpacity>
-          );
-    }
+export default function BotaoMenu({acaoMenu}) {
+//export class BotaoMenu extends React.Component  {
+    return (
+        // <TouchableOpacity onPress={() => { this.props.navegacao('DrawerOpen'); } }>
+        
+        <TouchableOpacity onPress={() => acaoMenu.openDrawer()}>  
+            <Text> Menu </Text>
+        </TouchableOpacity>
+        );    
 };

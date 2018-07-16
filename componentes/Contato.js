@@ -8,94 +8,73 @@ import {
 } from 'react-native';
 
 export default function Contato({contato, onSelect}) {
-  return (
-    <TouchableOpacity onPress={() => onSelect(contato)}>
-
-      <View style={styles.itemContato}> 
-        <View style={styles.imagemContato}>             
+  return (    
+    <TouchableOpacity onPress={() => onSelect(contato)}>    
+      <View style={styles.itemContato}>
+        <View style={styles.imagemContato}>             
           <Text>IMG</Text>
         </View>
-        <View style={styles.dadosContato}>  
-          <View style={styles.nomeContato}> 
-            <Text>Nome do juca</Text>               
+        <View style={styles.dadosContato}>  
+          <View style={styles.nomeContato}> 
+            <Text>Nome do juca</Text>       
           </View>
-          <View style={styles.infoContato}>                 
-            <View style={styles.emailContato}>      
-              <Text>email@juca.com</Text>                                       
+          <View style={styles.infoContato}>                 
+            <View style={styles.emailContato}>      
+              <Text>email@juca.com</Text>          
             </View>
-            <View style={styles.foneContato}>                               
-              <Text>9999999898</Text>               
+            <View style={styles.foneContato}>
+              <Text>9999999898</Text>    
             </View>
           </View>
         </View>
-      </View>  
-      
-      {/* <View style={styles.container}>
-        <Image
-          style={styles.image}
-          //source={getImageSrc(recipe)}
-        />
-        <View style={styles.content}>
-          <Text style={styles.contentTitle} numberOfLines={1}>
-            {contato.givenName}
-          </Text>
-          <View style={styles.contentScore}>
-            <Text>
-              Fone:
-              <Text style={{fontWeight: 'bold'}}>
-                {' '}{contato.phoneNumbers[0].number}%
-              </Text>
-            </Text>
-          </View>
-        </View>
-      </View> */}
+      </View> 
     </TouchableOpacity>
   );
 };
 
 const styles = StyleSheet.create({
 
-  itemContato: {
-    //marginTop: 50,
+  itemContato: {   
+    
     flexDirection: 'row',
-    backgroundColor: 'red',
-    height: 65,
+    borderBottomWidth: 1,
+    padding: 5,
+    //backgroundColor: 'red',   
+    //marginTop: 50,
+    height: 60, /*ou define altura aqui, ou devine na imagem*/
   },
   imagemContato: {
-    flex: 2,
-    //backgroundColor: 'blue',
+    flex: 3,    
     alignItems: 'center',
     justifyContent: 'center',
+    //backgroundColor: 'blue',
   },
   dadosContato: {
-    flex: 8,
-    backgroundColor: 'green',
-    flexDirection: 'column',
+    flex: 7,
+    //backgroundColor: 'green',
+    flexDirection: 'column',   
   },
-  infoContato:{
-    flex: 1,
-    flexDirection: 'row',
-    backgroundColor: 'yellow',
-    //justifyContent: 'space-between',
+  infoContato:{ 
+    flex: 1,         
+    flexDirection: 'row',   
+    //backgroundColor: 'yellow',    
+    justifyContent: 'space-between',
   },
   nomeContato: {
     flex: 1,
-    justifyContent: 'flex-start',
+    justifyContent: 'flex-start',   
     //backgroundColor: 'orange',
   },
   emailContato: {
-    flex:1,
-    alignItems: 'flex-start',
-    justifyContent: 'flex-end',
-    backgroundColor: 'orange',
+    justifyContent: 'flex-end',   
+    //backgroundColor: 'white',
   },
   foneContato: {
-    flex:1,
-    alignItems: 'flex-end',
     justifyContent: 'flex-end',
-    backgroundColor: 'red',
-  },
-/*
+    //backgroundColor: 'red',  
+  }, 
+
+  /*
   container: {
     padding: 10,
     flexDirection: 'row',
@@ -117,5 +96,5 @@ const styles = StyleSheet.create({
   contentScore: {
     marginTop: 5,
   }
-*/
+  */
 });
