@@ -1,9 +1,12 @@
 import React from 'react';
 import {
+  AsyncStorage,
   View, Button,
   ActivityIndicator,  
   StyleSheet,
 } from 'react-native';
+
+import {NavigationActions} from 'react-navigation';
 
 import axios from 'axios';
 
@@ -14,45 +17,11 @@ export default class MeusEventos extends React.Component {
   
   //caracteristicas da barra superior (toolbar) ... aqui deveria aparecer os botoes, por ex
   static navigationOptions = ({ navigation }) => {
-
-    //console.log(navigation);
-
     return {
       title:'Meus Eventos',
       headerLeft: (
         <BotaoMenu acaoMenu={navigation} />      
       ),
-  
-    // headerStyle: {
-    //   backgroundColor: '#607d8b',
-    // },
-    // headerTintColor: '#ff950e',
-    // headerTitleStyle: {
-    //   fontWeight: 'bold',
-    // },
-    
-    // headerLeft: (
-    //   <Button
-    //      onPress={() => navigation.navigate('DrawerOpen') }
-    // //     //executa metodo da componente recebido por parametro
-    // //     //onPress={navigation.getParam('increaseCount')}
-    // //     //abre ModalScreen
-    // //     //onPress={() => navigation.navigate('MyModal')}
-    //      title=" = "
-    //      color="#000"
-    //    />
-    // ),      
-    // headerRight: (
-    //   <Button
-    //     onPress={() => alert('This is a button!')}
-    //     //executa metodo da componente recebido por parametro
-    //     //onPress={navigation.getParam('increaseCount')}
-    //     //abre ModalScreen
-    //     //onPress={() => navigation.navigate('MyModal')}
-    //     title=" = "
-    //     color="#000"
-    //   />
-    // ),
     };
   };
   
@@ -65,12 +34,26 @@ export default class MeusEventos extends React.Component {
     carregando: true,
   };
 
-  async componentWillMount() {    
+  async componentDidMount() {    
 
-    //this.props.navigation.openDrawer();
+    //Verifica perfil logado
 
-    //carregar Eventos antes do primeiro render
-    this.caregaEventosApi();
+    var oPerfil = await AsyncStorage.getItem("Perfil");
+    console.log(oPerfil);
+    
+    if(oPerfil === null || oPerfil === 'undefined'){
+      
+      const navigateAction = NavigationActions.navigate({
+        routeName: 'Login'
+      });
+
+      this.props.navigation.dispatch(navigateAction);
+    }    
+    else{
+      
+      //carregar Eventos antes do primeiro render
+      this.caregaEventosApi();
+    }
     
   }
 

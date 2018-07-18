@@ -5,30 +5,109 @@ import {
   StyleSheet, Button  
 } from 'react-native';
 
-class AcessoPin extends React.Component {
+import { 
+  Container,
+  Item, 
+  Input,
+  Label, 
+  Button 
+} from 'native-base';
+
+import axios from 'axios';
+
+export default class AcessoPin extends React.Component {
+
+  static navigationOptions = {
+    title: 'Confirmação de Acesso',
+  };
+
+  state = {
+    oPerfil: null,
+    pin: '',
+  };
+
+  async componentDidMount() {
+    //carrega dados para depois salvar em sessao
+    this.setState({oPerfil: this.props.navigation.state.params});
+  }
+
+  configuraParamPin = pin => {
+    this.setState({pin});
+  }
+
+  confirmaAcessoEventos = (pin, oPerfil) => {
+    
+    //enquanto nao for implementado o envio de sms
+    var backDoor = 1234;    
+    
+    //verifica pin para então gravar na sessao
+    if(pin === backDoor || pin === oPerfil.PIN) {
+
+      try { 
+        AsyncStorage.setItem("oPerfil", oPerfil).then(() => {
+          console.log('Dados carregados');
+        })
+      }
+      catch (err) {
+        console.error(err);
+        Alert.alert("Inesperado", "Não foi possivel carregar os dados.");
+      }   
+
+    }    
+  };
+
   render() {
+
+    //console.log(this.props.navigation.state.params);
+
     return (
-      <View style={styles.container}>
-       <View style={styles.topo}>
-          <Text style={styles.paragraph}>
-          Para acessar, por favor, informe seu número de telefone com código de área.
+
+      <Container>        
+        <View style={styles.topo}>
+          <Text style={styles.textoTopo}>
+            Para acessar, por favor, informe seu número de telefone com código de área.
           </Text>
-       </View>
-       <View style={styles.formulario}>
-          <View style={styles.campos}>
-            <View style={styles.campoArea}>
-              <Text >Texto aqui</Text>
+        </View>
+        <View style={styles.formulario}>
+          <View  style={styles.campos}>
+            <View style={styles.campoArea}> 
+              <Item floatingLabel style={{ borderColor: '#34515e' }}>
+                <Label style={{ color: "#ff950e" }} >DDD</Label>
+                <Input style={{ color: "#ff950e" }} maxLength={2} keyboardType='numeric' onChangeText={this.configuraParamArea} />
+              </Item>
             </View>
-            <View style={styles.campoFone}>
-              <Text >Texto aqui</Text>
+            <View  style={styles.campoFone}>
+              <Item floatingLabel last style={{ borderColor: '#34515e' }}>
+                <Label style={{ color: "#ff950e" }} >Telefone</Label>
+                <Input style={{ color: "#ff950e" }} maxLength={9} keyboardType='numeric' onChangeText={this.configuraParamFone} />
+              </Item>
             </View>
           </View>
-           <View style={styles.botoes}>
-              <Button title='Acessar' />
-              <Button title='Novo Acesso' />
+          <View>
+            <Button block style={styles.btn} onPress={_ => this.confirmaAcessoEventos(this.state.pin. this.state.oPerfil) } >
+               <Text style={styles.btnTxt}> Acessar </Text>
+            </Button>                            
           </View>
-       </View>
-      </View>
+        </View>
+      </Container> 
+
+      // <View style={styles.container}>
+      //  <View style={styles.topo}>
+      //     <Text style={styles.paragraph}>
+      //     Para acessar, por favor, informe seu número de telefone com código de área.
+      //     </Text>
+      //  </View>
+      //  <View style={styles.formulario}>
+      //     <View style={styles.campos}>
+      //       <View style={styles.campoArea}>
+      //         <Text >Texto aqui</Text>
+      //       </View>            
+      //     </View>
+      //      <View style={styles.botoes}>
+      //         <Button title='Acessar' onPress={_ => this.confirmaAcessoEventos(this.state.pin. this.state.oPerfil) }/>              
+      //     </View>
+      //  </View>
+      // </View>
     );
   }
 }
@@ -45,7 +124,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#cccc',
+    //backgroundColor: '#cccc',
   },
   formulario: {
     flex: 3,
@@ -90,5 +169,3 @@ const styles = StyleSheet.create({
     color: '#34495e',
   },
 });
-
-export default AcessoPin;

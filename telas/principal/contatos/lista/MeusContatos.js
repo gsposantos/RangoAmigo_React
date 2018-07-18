@@ -13,11 +13,13 @@ import axios from 'axios';
 export default class MeusContatos extends React.Component {
 
     //aqui vai o botao?? EX: https://github.com/react-navigation/react-navigation/issues/1122
-    static navigationOptions = {
-      title: 'Meus Contatos',
-      headerLeft: (
+   static navigationOptions = ({ navigation }) => {
+      return {
+        title: 'Meus Contatos',
+        headerLeft: (
         <BotaoMenu acaoMenu={navigation} />      
-      ),
+        ),
+      };    
     };
 
     state={

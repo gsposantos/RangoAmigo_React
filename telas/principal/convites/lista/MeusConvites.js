@@ -23,11 +23,13 @@ const buscaConvites = async q => {
 export default class MeusConvites extends React.Component {
   
   //caracteristicas da barra superior (toolbar) ... aqui deveria aparecer os botoes, por ex
-  static navigationOptions = {
-    title: 'Meus Convites',
-    headerLeft: (
+  static navigationOptions = ({ navigation }) => {
+    return {
+      title: 'Meus Convites',
+      headerLeft: (
       <BotaoMenu acaoMenu={navigation} />      
-    ),
+      ),
+    };    
   };
 
   async componentWillMount() {    

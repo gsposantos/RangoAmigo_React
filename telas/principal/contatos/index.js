@@ -1,5 +1,7 @@
 import React from 'react';
-import { View, Text, Button } from 'react-native';
+import { 
+  Icon 
+} from 'native-base';
 import { createStackNavigator } from 'react-navigation';
 
 import MeusContatos from './lista/MeusContatos';
@@ -24,9 +26,9 @@ const ContatosStack = createStackNavigator({
 //caracteristica da TabBar ...aqui deve mostar os icones
 ContatosStack.navigationOptions = {
   title: 'Contatos',
-//   tabBarIcon({ tintColor }) {
-//     return <MaterialCommunityIcons name="food-fork-drink" size={25} />;
-//   }
+  tabBarIcon({ tintColor }) {    
+    return <Icon type="FontAwesome" ios='address-book' android="address-book" style={{fontSize: 20, color: tintColor}}/>;
+  }
 };
 
 export default ContatosStack;

@@ -1,6 +1,10 @@
 import React from 'react';
 import { createStackNavigator } from 'react-navigation';
 
+import { 
+  Icon 
+} from 'native-base';
+
 import MeusConvites from './lista/MeusConvites';
 import DetalheConvite from './detalhe/DetalheConvite';
 
@@ -24,9 +28,9 @@ const ConviteStack = createStackNavigator({
 //caracteristica da TabBar ...aqui deve mostar os icones
 ConviteStack.navigationOptions = {
   title: 'Convites',
-//   tabBarIcon({ tintColor }) {
-//     return <MaterialCommunityIcons name="food-fork-drink" size={25} />;
-//   }
+  tabBarIcon({ tintColor }) {    
+    return <Icon type="FontAwesome" ios='calendar' android="calendar" style={{fontSize: 20, color: tintColor}}/>;
+  }
 };
 
 export default ConviteStack;

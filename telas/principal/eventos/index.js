@@ -1,5 +1,9 @@
 import React from 'react';
-import { View, Text, Button } from 'react-native';
+
+import { 
+  Icon 
+} from 'native-base';
+
 import { createStackNavigator } from 'react-navigation';
 
 import MeusEventos from './lista/MeusEventos';
@@ -25,9 +29,9 @@ const EventoStack = createStackNavigator({
 //caracteristica da TabBar ...aqui deve mostar os icones
 EventoStack.navigationOptions = {
  title: 'Eventos',
-  // tabBarIcon({ tintColor }) {
-  //   return <MaterialCommunityIcons name="food-fork-drink" size={25} />;
-  // }
+  tabBarIcon({ tintColor }) {    
+    return <Icon type="FontAwesome" ios='home' android="home" style={{fontSize: 25, color: tintColor}}/>;
+  }
 };
 
 export default EventoStack;

@@ -1,19 +1,29 @@
 import React from 'react';
 import {
-  View,
-  Text,
-  TouchableOpacity,
-  Image,
+  TouchableOpacity,  
   StyleSheet,
 } from 'react-native';
 
+import { 
+    Icon 
+ } from 'native-base';
+
 export default function BotaoMenu({acaoMenu}) {
-//export class BotaoMenu extends React.Component  {
     return (
         // <TouchableOpacity onPress={() => { this.props.navegacao('DrawerOpen'); } }>
         
         <TouchableOpacity onPress={() => acaoMenu.openDrawer()}>  
-            <Text> Menu </Text>
+            {/* <Text> Menu </Text> */}
+            <Icon ios='ios-menu' android="md-menu" style={styles.btn}/>
         </TouchableOpacity>
         );    
 };
+
+const styles = StyleSheet.create({
+
+    btn: {
+        paddingStart: 15, 
+        fontSize: 30, 
+        color: '#ff950e'
+    }   
+});
