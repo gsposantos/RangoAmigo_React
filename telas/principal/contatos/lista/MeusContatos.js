@@ -203,7 +203,7 @@ export default class MeusContatos extends React.Component {
      //this.carregarContatosDipositivo();
   
       return (
-        <View style={{ flex: 1, backgroundColor: '#fff', justifyContent: 'center', alignItems: 'center' }}>
+        <View style={{ flex: 1, backgroundColor: '#ebeeef', justifyContent: 'center', alignItems: 'center' }}>
           {this.renderListaContatos()}
         </View>
       )

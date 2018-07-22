@@ -3,12 +3,21 @@ import {
   Platform,
   Text,
   View,
-  StyleSheet, 
-  AsyncStorage,
+  StyleSheet,   
   Alert
 } from 'react-native';
 
+import { 
+  Container,
+  Item, 
+  Input,
+  Label, 
+  Button 
+} from 'native-base';
 
+import {NavigationActions} from 'react-navigation';
+
+import axios from 'axios';
 
 export default class AcessoFone extends React.Component {
 
@@ -16,14 +25,21 @@ export default class AcessoFone extends React.Component {
     title: 'Dados de Acesso',
   };
 
-  async componentWillMount() {    
-    //console.log('Acesso!!');
-  }
-
   state = {
     area: '',
     fone: '',    
   };
+
+  desviaCadastro = () =>{
+
+    //desvia para cadastro passando area e fone (opcional) se preenchidos
+
+    const navigateAction = NavigationActions.navigate({
+      routeName: 'Cadastro'
+    });    
+    this.props.navigation.dispatch(navigateAction);
+
+  }
 
   configuraParamFone = fone => {
     this.setState({fone});
@@ -38,7 +54,7 @@ export default class AcessoFone extends React.Component {
     //verifica campos preenchidos.
     var isNumeric = /^[-+]?(\d+|\d+\.\d*|\d*\.\d+)$/;
     if(!isNumeric.test(area) || !isNumeric.test(fone)){
-      Alert.alert('Campos iválidos!', 'Informe valores numéricos para os campos DDD e Telefone');
+      Alert.alert('Campos Inválidos!', 'Informe valores numéricos para os campos DDD e Telefone');
       return;
     }
     if(area.length === 0 || fone.length === 0){
@@ -59,9 +75,7 @@ export default class AcessoFone extends React.Component {
       if(response.data.Ok){
         if(response.data.Dados !== null){
 
-          
-
-          //desvia proxima                   
+          //desvia proxima etapa passando os dados               
           this.props.navigation.navigate('AcessoPin', response.data.Dados);
 
         }
@@ -95,13 +109,13 @@ export default class AcessoFone extends React.Component {
           <View  style={styles.campos}>
             <View style={styles.campoArea}> 
               <Item floatingLabel style={{ borderColor: '#34515e' }}>
-                <Label style={{ color: "#ff950e" }} >DDD</Label>
+                <Label style={{ color: "#ff950e", }} >DDD</Label>
                 <Input style={{ color: "#ff950e" }} maxLength={2} keyboardType='numeric' onChangeText={this.configuraParamArea} />
               </Item>
             </View>
             <View  style={styles.campoFone}>
-              <Item floatingLabel last style={{ borderColor: '#34515e' }}>
-                <Label style={{ color: "#ff950e" }} >Telefone</Label>
+              <Item floatingLabel style={{ borderColor: '#34515e' }}>
+                <Label style={{ color: "#ff950e", }} >Telefone</Label>
                 <Input style={{ color: "#ff950e" }} maxLength={9} keyboardType='numeric' onChangeText={this.configuraParamFone} />
               </Item>
             </View>
@@ -110,7 +124,7 @@ export default class AcessoFone extends React.Component {
             <Button block style={styles.btn} onPress={_ => this.verificaPerfilApi(this.state.area, this.state.fone)} >
                <Text style={styles.btnTxt}> Avançar </Text>
             </Button>             
-            <Button block style={styles.btn}  >
+            <Button block style={styles.btn} onPress={this.desviaCadastro} >
                <Text style={styles.btnTxt}> Novo Acesso </Text>
              </Button>    
           </View>
@@ -158,8 +172,6 @@ export default class AcessoFone extends React.Component {
 
 const styles = StyleSheet.create({
 
-  
-
   container: {
     flex: 1,
     alignItems: 'center',
@@ -176,13 +188,14 @@ const styles = StyleSheet.create({
   },
   campos: {   
     flexDirection: 'row',   
+    //alignItems: 'flex-start',    
   },
 
   campoArea: {
 
     flex: 3, 
-    padding: 10,
-
+    paddingStart: 30,
+    paddingEnd: 5,
     // flex: 2,
     // paddingStart: 50,
     // paddingEnd: 5,    
@@ -191,9 +204,10 @@ const styles = StyleSheet.create({
   },
 
   campoFone: {
-    
+    //backgroundColor: '#95ff0e',
     flex: 7, 
-    padding: 10,
+    paddingStart: 5,
+    paddingEnd: 30,
 
     // flex: 6,
     // paddingStart: 5,
@@ -210,13 +224,15 @@ const styles = StyleSheet.create({
   },
  
   btn:{
-    margin: 15,
+    marginStart: 80,
+    marginEnd: 80,
+    marginTop: 30,
     backgroundColor: '#607d8b',
     //headerTintColor: '#ff950e',
   },
 
   btnTxt : {
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: 'bold',     
     color: '#FFF'
   },

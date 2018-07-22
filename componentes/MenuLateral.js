@@ -15,23 +15,25 @@ export default class MenuLateral extends React.Component {
   render () {
     return (
       <View style={styles.container}>
-        <View>
-            <Text style={styles.sectionHeadingStyle}>
-              CABECALHO AQUI
+        <View style={styles.estiloCabecalho}>
+            <Text style={styles.textoCabecalho}>
+              Rango Amigo
             </Text>            
         </View>
-        <ScrollView>
-          
-          <View>
-            <Text style={styles.sectionHeadingStyle}>
-              Section 2
+        <ScrollView>          
+          <View style={styles.estiloMenuTitulo}>
+            <Text style={styles.textoMenuTitulo}>
+              Opções
             </Text>
-            <View style={styles.navSectionStyle}>
-              <Text style={styles.navItemStyle} onPress={this.navigateToScreen('Login')}>
-                Page2
+            <View style={styles.estiloMenu}>
+              <Text style={styles.textoMenu} onPress={this.navigateToScreen('Login')}>
+                Login
               </Text>
-              <Text style={styles.navItemStyle} onPress={this.navigateToScreen('Principal')}>
-                Page3
+              <Text style={styles.textoMenu} onPress={this.navigateToScreen('Principal')}>
+                Eventos
+              </Text>
+              <Text style={styles.textoMenu} onPress={this.navigateToScreen('Cadastro')}>
+                Cadastro
               </Text>
             </View>
           </View>
@@ -49,22 +51,54 @@ MenuLateral.propTypes = {
 };
 
 const styles = StyleSheet.create({
-container: {
-    paddingTop: 20,
-    flex: 1
+
+  container: {
+    //paddingTop: 20,
+    flex: 1,
+    backgroundColor: '#ebeeef'
   },
-  navItemStyle: {
-    padding: 10
+
+  textoMenu: {
+    padding: 15,
+    fontSize: 18,
+    color: '#c66600'
   },
-  navSectionStyle: {
-    backgroundColor: 'lightgrey'
+
+  estiloMenu: {
+    flex: 1,
+    backgroundColor: '#dfe8ec'
   },
-  sectionHeadingStyle: {
+
+  estiloMenuTitulo: {
+    backgroundColor: '#34515e',
+  },
+
+  textoMenuTitulo: {
+    paddingHorizontal: 15,
     paddingVertical: 10,
-    paddingHorizontal: 5
+    fontSize: 20,
+    fontWeight: 'bold',    
+    color: '#fff', //ffc64b    
   },
+
+  estiloCabecalho: {
+    height: 140,
+    paddingVertical: 20,   
+    backgroundColor: '#607d8b',
+    //alignItems: 'flex-start'
+    justifyContent: 'flex-end',
+  },
+
+  textoCabecalho: {
+    paddingHorizontal: 15,
+    fontSize: 26,
+    fontWeight: 'bold',    
+    color: '#ff950e', //ffc64b    
+  },
+
   footerContainer: {
     padding: 20,
     backgroundColor: 'lightgrey'
   }
+
 });

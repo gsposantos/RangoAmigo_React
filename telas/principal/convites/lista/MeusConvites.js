@@ -3,22 +3,19 @@ import {
   View,
   ActivityIndicator,  
   StyleSheet,
+  Alert,
+  AsyncStorage,
 } from 'react-native';
 
-import BotaoMenu from '../../../../componentes/BotaoMenu';
+import { 
+  Fab, Icon, Button
+} from 'native-base';
 
 import axios from 'axios';
 
 import ListaEventos from '../../../../componentes/ListaEventos';
+import BotaoMenu from '../../../../componentes/BotaoMenu';
 
-const buscaConvites = async q => {
-//   const res = await fetch(`https://food2fork.com/api/search?key=${food2ForkKey}&q=${q}`);
-
-//   console.log('https://food2fork.com/api/search?key=${food2ForkKey}&q=${q}');
-//   const {recipes} = await res.json();
-
-//   return recipes;
-};
 
 export default class MeusConvites extends React.Component {
   
@@ -32,19 +29,37 @@ export default class MeusConvites extends React.Component {
     };    
   };
 
-  async componentWillMount() {    
+  async componentDidMount() {    
 
-    //carregar Convites antes do primeiro render
-    this.caregaConvitesApi();
+    //Verifica perfil logado
+    var perfil = await AsyncStorage.getItem("Perfil");
+    
+    if(perfil === null || perfil === 'undefined'){
+      
+      const navigateAction = NavigationActions.navigate({
+        routeName: 'Login'
+      });
+      
+      this.props.navigation.dispatch(navigateAction);
+    }    
+    else{
+      this.setState({perfil})
+      //carregar Convites antes do primeiro render    
+      this.carregaConvitesApi();
+    }
     
   }
 
   state = {   
     convites: [],
     carregando: true,
+    perfil:null,
   };
 
-  caregaConvitesApi = () => {
+  carregaConvitesApi = () => {
+
+    this.setState({carregando: true});
+
     axios({
       method: 'post',        
       url: 'http://www.anjodaguardaeventos.com.br/rangoamigo/api/eventos/ListarConvites',    
@@ -53,6 +68,9 @@ export default class MeusConvites extends React.Component {
     }).then(response => {  
 
       console.log(response);
+      // validar resposta 
+
+      this.setState({convites: response.data.Dados, carregando: false});
 
     })
     .catch((err) => {console.log(err);
@@ -60,12 +78,13 @@ export default class MeusConvites extends React.Component {
   }
 
   selecionaConvite = evento => {
-    this.props.navigation.navigate('Evento', evento);
+    //this.props.navigation.navigate('Evento', evento);
+    Alert.alert('Evento', evento.NomeEvento);
   };
 
   mostraResultados = () => {
     //const { eventos } = this.state;
-    return <ListaEventos recipes={this.state.convites} onSelectRecipe={this.selecionaConvite} />;
+    return <ListaEventos eventos={this.state.convites} onSelect={this.selecionaConvite} />;
   };
 
   render() {
@@ -77,6 +96,15 @@ export default class MeusConvites extends React.Component {
               ? <ActivityIndicator size="large" color="#000"/>
               : this.mostraResultados()          
           }
+          <Fab
+            active={false}
+            direction="up"
+            containerStyle={{ }}
+            style={{ backgroundColor: '#34515e' }}
+            position="bottomRight"
+            onPress={this.carregaConvitesApi}>
+            <Icon type='FontAwesome' ios='refresh' android='refresh' />                       
+          </Fab> 
         </View>
       </View>
     );
@@ -86,7 +114,7 @@ export default class MeusConvites extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#ebeeef',
   },
   searchInput: {
     marginTop: 10,

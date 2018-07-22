@@ -19,10 +19,10 @@ const Principal = createBottomTabNavigator({
         fontWeight: 'bold',
         fontSize: 12,
       },
-      activeBackgroundColor: '#607d8b',
+      activeBackgroundColor: '#34515e',
       inactiveBackgroundColor : '#607d8b',
       //activeTintColor: '#ebeeef', //bgcolor
-      activeTintColor: '#ff950e', //
+      activeTintColor: '#ebeeef', //
       inactiveTintColor: '#ebeeef', //
     },
   },

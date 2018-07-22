@@ -24,6 +24,6 @@ const styles = StyleSheet.create({
     btn: {
         paddingStart: 15, 
         fontSize: 30, 
-        color: '#ff950e'
+        color: '#ebeeef'
     }   
 });

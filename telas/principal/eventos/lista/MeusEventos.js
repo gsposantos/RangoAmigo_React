@@ -1,10 +1,15 @@
 import React from 'react';
 import {
   AsyncStorage,
-  View, Button,
+  View,
   ActivityIndicator,  
   StyleSheet,
+  Alert,
 } from 'react-native';
+
+import { 
+  Fab, Icon, Button
+} from 'native-base';
 
 import {NavigationActions} from 'react-navigation';
 
@@ -30,42 +35,51 @@ export default class MeusEventos extends React.Component {
   // };
 
   state = {   
-    eventos: [],
+    fabAtivo: false,    
     carregando: true,
+    eventos: [],
+    perfil:null,
   };
 
   async componentDidMount() {    
 
     //Verifica perfil logado
-
-    var oPerfil = await AsyncStorage.getItem("Perfil");
-    console.log(oPerfil);
+    var perfil = await AsyncStorage.getItem("Perfil");
     
-    if(oPerfil === null || oPerfil === 'undefined'){
+    if(perfil === null || perfil === 'undefined'){
       
       const navigateAction = NavigationActions.navigate({
         routeName: 'Login'
       });
-
+      
       this.props.navigation.dispatch(navigateAction);
     }    
     else{
-      
+      this.setState({perfil})
       //carregar Eventos antes do primeiro render
-      this.caregaEventosApi();
+      this.carregaEventosApi();
     }
     
   }
 
-  caregaEventosApi = () => {
+  carregaEventosApi = () => {
+
+    
+    //console.log(this.state.perfil);
+
+    this.setState({carregando: true});
+
     axios({
       method: 'post',        
       url: 'http://www.anjodaguardaeventos.com.br/rangoamigo/api/eventos/ListarEventos',    
       headers: { 'content-type': 'application/json;charset=utf-8' },                       
-      data: { "CelNumero": 51999999093 } //perfil da sessao??
+      data: { "CelNumero": 51999999093 } //perfil da sessao que ja ta no state?
     }).then(response => {  
 
-      console.log(response);
+      console.log(response);      
+      // validar resposta      
+
+      this.setState({eventos: response.data.Dados, carregando: false});
 
     })
     .catch((err) => {console.log(err);
@@ -73,12 +87,13 @@ export default class MeusEventos extends React.Component {
   }
 
   selecionaEvento = evento => {
-    this.props.navigation.navigate('Evento', evento);
+    //this.props.navigation.navigate('Evento', evento);
+    Alert.alert('Evento', evento.NomeEvento);
   };
 
   mostraResultados = () => {
     //const { eventos } = this.state;
-    return <ListaEventos recipes={this.state.eventos} onSelectRecipe={this.selecionaEvento} />;
+    return <ListaEventos eventos={this.state.eventos} onSelect={this.selecionaEvento} />;
   };
 
   render() {
@@ -86,10 +101,29 @@ export default class MeusEventos extends React.Component {
       <View style={styles.container}>        
         <View style={styles.resultsContainer}>
           {
-            this.state.loading
+            this.state.carregando
               ? <ActivityIndicator size="large" color="#000"/>
-              : this.mostraResultados()
+              : this.mostraResultados()          
           }
+        <Fab
+            active={this.state.fabAtivo}
+            direction="up"
+            containerStyle={{ }}
+            style={{ backgroundColor: '#34515e' }}
+            position="bottomRight"
+            onPress={() => this.setState({ fabAtivo: !this.state.fabAtivo })}>
+            <Icon type='FontAwesome' ios='ellipsis-v' android='ellipsis-v' />           
+            <Button 
+              style={{ backgroundColor: '#34515e' }}
+              onPress={this.direcionaNovoEvento}>
+              <Icon type='FontAwesome' ios='plus' android='plus' />
+            </Button>
+            <Button 
+              style={{ backgroundColor: '#34515e' }}
+              onPress={this.carregaEventosApi}>
+              <Icon type='FontAwesome' ios='refresh' android='refresh' />
+            </Button>          
+          </Fab>  
         </View>
       </View>
     );
@@ -99,7 +133,7 @@ export default class MeusEventos extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#ebeeef',
   },  
   resultsContainer: {
     flex: 1,
