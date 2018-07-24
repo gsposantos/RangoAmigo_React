@@ -1,16 +1,53 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import {NavigationActions} from 'react-navigation';
-import {ScrollView, Text, View, StyleSheet} from 'react-native';
+import {ScrollView, Text, View, StyleSheet, Alert, AsyncStorage, BackHandler} from 'react-native';
 
 export default class MenuLateral extends React.Component {
   
-    navigateToScreen = (route) => () => {
+    navegarTela = (route) => () => {
+
     const navigateAction = NavigationActions.navigate({
       routeName: route
     });
     this.props.navigation.dispatch(navigateAction);
+
   }
+
+  executarFechar = () => {
+
+    // BackHandler funciona apenas no android... :-( 
+    // Pesquisar alternativa para o iOS 
+    // react-native-exit-app parece que fundiona para ambos
+    Alert.alert(
+      'Fechar do Aplicativo',
+      'Você deseja encerrar o applicativo?',
+      [
+        {text: 'Não', onPress: () => console.log('Escolheu não'), style: 'cancel'},
+        {text: 'Sim', onPress: () => BackHandler.exitApp()},
+      ],
+      { cancelable: false })
+  }
+
+  confirmaSair = () => {
+    Alert.alert(
+      'Sair do Aplicativo',
+      'Você deseja efetuar novo acesso?',
+      [
+        {text: 'Não', onPress: () => console.log('Escolheu não'), style: 'cancel'},
+        {text: 'Sim', onPress: this.navegarTela('Login')},
+      ],
+      { cancelable: false })
+  }
+
+  /*
+  executarSair = async () => {
+
+    // executarSair    
+    await AsyncStorage.removeItem("Perfil");
+    this.navegarTela('Login');
+  }
+  */
 
   render () {
     return (
@@ -26,19 +63,27 @@ export default class MenuLateral extends React.Component {
               Opções
             </Text>
             <View style={styles.estiloMenu}>
-              <Text style={styles.textoMenu} onPress={this.navigateToScreen('Login')}>
+
+              {/* <Text style={styles.textoMenu} onPress={this.navegarTela('Login')}>
                 Login
-              </Text>
-              <Text style={styles.textoMenu} onPress={this.navigateToScreen('Principal')}>
+              </Text> */}
+
+              <Text style={styles.textoMenu} onPress={this.navegarTela('Principal')}>
                 Eventos
               </Text>
-              <Text style={styles.textoMenu} onPress={this.navigateToScreen('Cadastro')}>
-                Cadastro
+              <Text style={styles.textoMenu} onPress={this.navegarTela('Cadastro')}>
+                Perfil
+              </Text>              
+              <Text style={styles.textoMenu} onPress={this.confirmaSair}>
+                Sair
+              </Text>
+              <Text style={styles.textoMenu} onPress={this.executarFechar}>
+                Fechar
               </Text>
             </View>
           </View>
         </ScrollView>
-        <View style={styles.footerContainer}>
+        <View style={styles.estiloRodape}>
           <Text>RODAPE AQUI</Text>
         </View>
       </View>
@@ -96,9 +141,9 @@ const styles = StyleSheet.create({
     color: '#ff950e', //ffc64b    
   },
 
-  footerContainer: {
+  estiloRodape: {
     padding: 20,
-    backgroundColor: 'lightgrey'
+    backgroundColor: '#34515e'
   }
 
 });

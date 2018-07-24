@@ -5,9 +5,11 @@ import {
 import { createStackNavigator } from 'react-navigation';
 
 import MeusContatos from './lista/MeusContatos';
+import CadastroPerfil from '../../perfil/Cadastro/CadastroPerfil';
 
 const ContatosStack = createStackNavigator({
-  MeusContatos
+  MeusContatos,
+  CadastroPerfil
 }, 
 {
   initialRouteName: 'MeusContatos',

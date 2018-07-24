@@ -9,10 +9,9 @@ import {
  } from 'native-base';
 
 export default function BotaoMenu({acaoMenu}) {
-    return (
-        // <TouchableOpacity onPress={() => { this.props.navegacao('DrawerOpen'); } }>
-        
-        <TouchableOpacity onPress={() => acaoMenu.openDrawer()}>  
+
+    return (                                
+        <TouchableOpacity onPress={() => acaoMenu.openDrawer()}>          
             {/* <Text> Menu </Text> */}
             <Icon ios='ios-menu' android="md-menu" style={styles.btn}/>
         </TouchableOpacity>

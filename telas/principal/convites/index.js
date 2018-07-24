@@ -7,10 +7,12 @@ import {
 
 import MeusConvites from './lista/MeusConvites';
 import DetalheConvite from './detalhe/DetalheConvite';
+import CadastroPerfil from '../../perfil/Cadastro/CadastroPerfil';
 
 const ConviteStack = createStackNavigator({
     MeusConvites,
-    DetalheConvite
+    DetalheConvite,
+    CadastroPerfil
 }, {
   initialRouteName: 'MeusConvites',
   navigationOptions: {

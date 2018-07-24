@@ -8,10 +8,12 @@ import { createStackNavigator } from 'react-navigation';
 
 import MeusEventos from './lista/MeusEventos';
 import DetalheEvento from './detalhe/DetalheEvento';
+import CadastroPerfil from '../../perfil/Cadastro/CadastroPerfil';
 
 const EventoStack = createStackNavigator({
     MeusEventos,
-    DetalheEvento
+    DetalheEvento,
+    CadastroPerfil,
 }, {
   initialRouteName: 'MeusEventos',
   navigationOptions: {

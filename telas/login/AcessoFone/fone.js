@@ -4,18 +4,20 @@ import {
   Text,
   View,
   StyleSheet,   
-  Alert
+  Alert,
+  AsyncStorage,
+  KeyboardAvoidingView,
 } from 'react-native';
 
 import { 
-  Container,
+  //Container,
   Item, 
   Input,
   Label, 
   Button 
 } from 'native-base';
 
-import {NavigationActions} from 'react-navigation';
+//import {NavigationActions} from 'react-navigation';
 
 import axios from 'axios';
 
@@ -30,14 +32,18 @@ export default class AcessoFone extends React.Component {
     fone: '',    
   };
 
+  async componentDidMount() {
+    
+    //limpa dados para fazer novo acesso sempre que essa tela aparecer
+    await AsyncStorage.removeItem("Perfil");
+    console.log('limpou sessao;');
+
+  }
+
   desviaCadastro = () =>{
 
-    //desvia para cadastro passando area e fone (opcional) se preenchidos
-
-    const navigateAction = NavigationActions.navigate({
-      routeName: 'Cadastro'
-    });    
-    this.props.navigation.dispatch(navigateAction);
+    //desvia para cadastro passando area e fone (opcional) se preenchidos    
+    this.props.navigation.navigate('CadastroPerfil');
 
   }
 
@@ -99,37 +105,40 @@ export default class AcessoFone extends React.Component {
 
   render() {
     return (
-      <Container>        
-        <View style={styles.topo}>
-          <Text style={styles.textoTopo}>
-            Para acessar, por favor, informe seu número de telefone com código de área.
-          </Text>
-        </View>
-        <View style={styles.formulario}>
-          <View  style={styles.campos}>
-            <View style={styles.campoArea}> 
-              <Item floatingLabel style={{ borderColor: '#34515e' }}>
-                <Label style={{ color: "#ff950e", }} >DDD</Label>
-                <Input style={{ color: "#ff950e" }} maxLength={2} keyboardType='numeric' onChangeText={this.configuraParamArea} />
-              </Item>
+      // <KeyboardAvoidingView keyboardVerticalOffset={-200}>  
+      // </KeyboardAvoidingView>       
+        <View style={styles.container}>
+          <View style={styles.topo}>
+            <Text style={styles.textoTopo}>
+              Para acessar, por favor, informe seu número de telefone com código de área.
+            </Text>
+          </View>
+          <View style={styles.formulario}>
+            <View  style={styles.campos}>
+              <View style={styles.campoArea}> 
+                <Item floatingLabel style={{ borderColor: '#34515e' }}>
+                  <Label style={{ color: "#ff950e", }} >DDD</Label>
+                  <Input style={{ color: "#ff950e" }} maxLength={2} keyboardType='numeric' onChangeText={this.configuraParamArea} />
+                </Item>
+              </View>
+              <View  style={styles.campoFone}>
+                <Item floatingLabel style={{ borderColor: '#34515e' }}>
+                  <Label style={{ color: "#ff950e", }} >Telefone</Label>
+                  <Input style={{ color: "#ff950e" }} maxLength={9} keyboardType='numeric' onChangeText={this.configuraParamFone} />
+                </Item>
+              </View>
             </View>
-            <View  style={styles.campoFone}>
-              <Item floatingLabel style={{ borderColor: '#34515e' }}>
-                <Label style={{ color: "#ff950e", }} >Telefone</Label>
-                <Input style={{ color: "#ff950e" }} maxLength={9} keyboardType='numeric' onChangeText={this.configuraParamFone} />
-              </Item>
+            <View>
+              <Button block style={styles.btn} onPress={_ => this.verificaPerfilApi(this.state.area, this.state.fone)} >
+                <Text style={styles.btnTxt}> Avançar </Text>
+              </Button>             
+              <Button block style={styles.btn} onPress={this.desviaCadastro} >
+                <Text style={styles.btnTxt}> Novo Acesso </Text>
+              </Button>    
             </View>
           </View>
-          <View>
-            <Button block style={styles.btn} onPress={_ => this.verificaPerfilApi(this.state.area, this.state.fone)} >
-               <Text style={styles.btnTxt}> Avançar </Text>
-            </Button>             
-            <Button block style={styles.btn} onPress={this.desviaCadastro} >
-               <Text style={styles.btnTxt}> Novo Acesso </Text>
-             </Button>    
-          </View>
         </View>
-      </Container> 
+      
 
       // <View style={styles.container}>
       //  <View style={styles.topo}>
@@ -176,12 +185,13 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    paddingTop: 25,   
-    backgroundColor: '#ffffff',//'#ebeeef',
+    //paddingTop: 25,   
+    backgroundColor: '#ebeeef',
   },
   topo: {
     flex:2,
-    justifyContent:'center'       
+    justifyContent:'center',    
+    //backgroundColor: 'red',   
   },
   formulario: {
     flex: 8,   
@@ -196,10 +206,12 @@ const styles = StyleSheet.create({
     flex: 3, 
     paddingStart: 30,
     paddingEnd: 5,
+    //backgroundColor: 'yellow',   
+
     // flex: 2,
     // paddingStart: 50,
     // paddingEnd: 5,    
-    // alignItems: 'flex-start',
+    alignItems: 'flex-start',
     // justifyContent: 'center',
   },
 

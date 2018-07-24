@@ -3,11 +3,13 @@ import { createStackNavigator } from 'react-navigation';
 
 import AcessoPin from './AcessoPin/pin';
 import AcessoFone from './AcessoFone/fone';
+import CadastroPerfil from '../perfil/Cadastro/CadastroPerfil';
 
 
 const LoginStack = createStackNavigator({
   AcessoFone,
-  AcessoPin
+  AcessoPin, 
+  CadastroPerfil,
 }, {
   initialRouteName: 'AcessoFone',
   navigationOptions: {
