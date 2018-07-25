@@ -26,7 +26,7 @@ export default function Evento({evento, onSelect}) {
           </View>
           <View style={styles.infoInferior}>                             
               <Text style={styles.textoEvento}>{evento.NomeLocal}</Text>          
-              <Text style={styles.textoEventoMenor}>{evento.Endereco}</Text>    
+              <Text numberOfLines={1} style={styles.textoEventoMenor}>{evento.Endereco}</Text>    
           </View>
         </View>
       </View> 
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     height: 95, /*ou define altura aqui, ou devine na imagem*/
   },
   imagemEvento: {
-    flex: 4,    
+    flex: 3,    
     alignItems: 'center',
     justifyContent: 'center',
 //    backgroundColor: 'blue',
@@ -52,8 +52,8 @@ const styles = StyleSheet.create({
   
   logo: {
     backgroundColor: "#056ecf",
-    height: 90,
-    width: 130,
+    height: 80,
+    width: 110,
   },
 
   dadosEvento: {

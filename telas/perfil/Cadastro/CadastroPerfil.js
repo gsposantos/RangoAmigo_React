@@ -88,7 +88,7 @@ export default class CadastroPerfil extends React.Component {
 
     apresentaImagem(carregaDados){      
       if(carregaDados){
-        return <Image style={styles.foto} source={{uri: 'data:image/png;base64,' + this.state.perfil.Foto.toString()}} />
+        return <Image  resizeMode="contain" style={styles.foto} source={{uri: 'data:image/png;base64,' + this.state.perfil.Foto.toString()}} />
       }
       else {
          return <Icon type='FontAwesome' ios='user' android='user' style={{fontSize: 80, color: '#8eacbb'}} />          
@@ -124,19 +124,20 @@ export default class CadastroPerfil extends React.Component {
   
       return (
         <ScrollView style={{ backgroundColor: '#fff',  }}>
-          <Container style={{ flex: 1, marginTop: 20, marginStart: 20, marginEnd: 20, }}>
-            <View style={{flexDirection:'row', flex:2}}>              
-              
-              <View style={{flex:4, justifyContent: 'center', alignItems: 'center', borderWidth:1, }}>   
-                <TouchableOpacity onPress={() => alert('procurar a foto...')}>   
-                  {
-                    this.apresentaImagem(carregaDados)                  
-                  }                
-                </TouchableOpacity>  
-              </View>      
+          <Container style={{ flex: 1, marginTop: 20, marginStart: 10, marginEnd: 10, }}>
+            <View style={{flexDirection:'row', flex:2}}>             
+
+                <View style={{flex:4, position: 'relative', justifyContent: 'center', alignItems: 'center', borderWidth:1, }}>   
+                  <TouchableOpacity onPress={() => alert('procurar a foto...')}>     
+                    {
+                      this.apresentaImagem(carregaDados)                  
+                    }                
+                  </TouchableOpacity>
+                </View>      
+                
 
               <View style={{flex:6, marginStart: 20, }}>
-                <View style={{ marginEnd: 150, marginTop: 10,}}>
+                <View style={{ marginEnd: 130, marginTop: 10,}}>
 
                   <Item floatingLabel style={{ borderColor: '#34515e' }}>
                     <Label style={{ color: "#ff950e" }} >DDD</Label>
@@ -222,8 +223,10 @@ export default class CadastroPerfil extends React.Component {
 
     foto: {
       backgroundColor: "#056ecf",
-      height: 150,
-      width: 150,
+      //flex: 1,
+      height: 130, width: 130,
+      //width: undefined, height: undefined
+
     },
 
   });
