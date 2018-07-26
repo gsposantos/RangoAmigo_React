@@ -1,80 +1,73 @@
 import React from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, StyleSheet, ActivityIndicator, AsyncStorage} from 'react-native';
+import { 
+  Fab, Icon, Button
+} from 'native-base';
+
 import ListaContatos from '../../../../componentes/ListaContatos';
 
 import BotaoMenu from '../../../../componentes/BotaoMenu';
-
-import Contato from '../../../../modelos/contato';
-import ContatoEmail from '../../../../modelos/contatoemail';
-import ContatoFone from '../../../../modelos/contatofone';
 
 import axios from 'axios';
 
 export default class MeusContatos extends React.Component {
 
-    //aqui vai o botao?? EX: https://github.com/react-navigation/react-navigation/issues/1122
    static navigationOptions = ({ navigation }) => {
       return {
         title: 'Meus Contatos',
         headerLeft: (
-        <BotaoMenu acaoMenu={navigation} />      
+          <BotaoMenu acaoMenu={navigation} />      
         ),
       };    
     };
 
     state={
+      //fabAtivo: false,   
       carregando: true,
-      contatosDispositivo: [],
-      contatosAtualizados: []
+      contatos: [],
     }
     
-    async componentWillMount() {    
-      //carregar contatos antes do primeiro render
-      this.carregarContatosDipositivo();               
-
-      //const retornoContatosApi = await sincronizaContatosApi();
-      //this.setState({contatosAtualizados: retornoContatosApi});
-    }
-  
-    /*
-    Contato={
-      id, //contacts[0].recordID
-      nome, // contacts[0].givenName + ' ' + contacts[0].middleName + ' ' + contacts[0].familyName
-      foto64, // retornado da api
-      fotoUri, //contacts[0].thumbnailPath
-      //emails: [], // if contacts[0].emailAddresses.length > 0
-      //numeros: [], // if contacts[0].phoneNumbers.length > 0  ... for each ..if(contacts[0].phoneNumbers[0].label === 'mobile') contacts[0].phoneNumbers[0].number
-    }
-    */
-  
-    sincronizaContatosApi() {
+    async componentDidMount() {    
       
-        let lstPerfis = [];
+      //Verifica contatos em sessao
+      var contatosCache = await AsyncStorage.getItem("Contatos");
+      
+      if(contatosCache === null || contatosCache === 'undefined'){
+        
+        //sincronizaaaa
+        this.sincronizaContatos();
+
+      }    
+      else{
+        this.setState({carregando: false, contatos: contatosCache});
+      }
+    }
   
-        lstPerfis.push({ "CelArea": 51, "CelNumero": 99999091 });
-        lstPerfis.push({ "CelArea": 51, "CelNumero": 99999098 });
-        lstPerfis.push({ "CelArea": 51, "CelNumero": 99999891 });
-        lstPerfis.push({ "CelArea": 0, "CelNumero": 51999999099 });
+    sincronizaContatosApi(contatos) {
+      
+        var lstPerfis = [];
   
-        // fetch('http://www.anjodaguardaeventos.com.br/rangoamigo/api/perfis/SincronizarContatos', {
-        //   method: 'POST',
-        //   headers: {
-        //       Accept: 'application/json',
-        //       'Content-Type': 'application/json',
-        //   },
-        //   body: JSON.stringify(lstPerfis),
-        // }).then(response => { 
-        //     console.log(response); 
-        //   })
-        //   .catch(() => {console.log('Erro datalhar');
-        //   }); 
-  
-        // axios.get('http://www.anjodaguardaeventos.com.br/rangoamigo/api/eventos/DetalharEvento?codEvento=30')      
-        // .then(response => { 
-        //   console.log(response); 
-        // })
-        // .catch(() => {console.log('Erro datalhar');
-        // });         
+        contatos.forEach(function(contato){
+
+          contato.phoneNumbers.forEach(function(phone){
+            
+            // parse para pegar apenas números
+            let foneAux = phone.number.replace(new RegExp('[^\\d]', 'g'), '');
+
+            //armazena fone limpo para bater com retorno da API
+            phone.celNumero = foneAux; //cria o atributo na hora ... e funciona :/
+
+            //considera que numero de celular deve ter 11 digitos
+            if (foneAux.length > 11){
+              foneAux = foneAux.substring(foneAux.length() - 11);
+            }
+
+            lstPerfis.push({ "CelArea": 0, "CelNumero": foneAux });
+
+          });
+
+        });
+        
         
         axios({
           method: 'post',        
@@ -84,118 +77,79 @@ export default class MeusContatos extends React.Component {
         }).then(response => {    
   
           console.log(response);
+
+          // aqui a magia acontece...
+
+          contatos.forEach(function(contato){
+            contato.phoneNumbers.forEach(function(phone){
+              response.data.Dados.forEach(function(perfil){
+                    if(phone.celNumero === perfil.CelNumero){                      
+                     
+                      // - limpa os telefones (dispositivo) e adiciona o telefone encontrado (API).
+                      contato.phoneNumbers = [{
+                                                label:phone.label, 
+                                                number:phone.number, 
+                                                celNumero: phone.celNumero
+                                              }];
+
+                      // - pega o email cadastrado na API se nao tiver email no contato do dispositivo.
+                      if(contato.emailAddresses.length === 0){
+                        contato.emailAddresses = [{
+                                                    label: '',
+                                                    email: perfil.Email,
+                                                  }]
+                      }
+
+                      // - pega o foto cadastrada na API  se nao tiver imagem no contato do dispositivo.
+                      if(!contato.hasThumbnail){
+                        contato.foto64 = perfil.Foto;
+                      }
+
+                      // - marca contato (dispositivo) como cadastrado.
+                      contato.cadastrado = true;
+                      return;
+
+                    }
+              });
+            });
+          });
+
+          console.log(contatos);
+          this.setState({carregando: false, contatos: contatos});
   
         })
         .catch((err) => {console.log(err);
         });          
-    }
+    };
   
     carregarContatosDipositivo = () => {
   
-      var Contacts = require('react-native-contacts');
-      Contacts.getAll((err, contacts) => {
+      var reactContacts = require('react-native-contacts');
+      reactContacts.getAll((err, contatosDisp) => {
         if (err){
            throw err; 
         }
-        
-        //this.setState({contatosDispositivo: contacts});
-
-        //Filtrar contatos para ter apenas os com telefone celalar cadastrados
-        //carrega no estado uma estrutura simplificada que será renderizada
-        this.filtrarContatos(contacts);
 
         //chamar api para sincronizar somente depois q tiver os contatos do dispositivo
-        this.sincronizaContatosApi();
+        this.sincronizaContatosApi(contatosDisp);
   
       });
-    }
-
-    filtrarContatos  = (contatos) => {
-
-      var contatosConsulta = Array();      
-      var fonesContato = Array();    
-      var emailsContatos = Array();
-      
-      contatos.forEach(function(contato){
-
-        //mapear o objeto e suas listas de emails e numeros
-
-        //contacts[0].recordID
-        //contacts[0].givenName + ' ' + contacts[0].middleName + ' ' + contacts[0].familyName
-        
-        //contacts[0].thumbnailPath
-        //if contacts[0].emailAddresses.length > 0
-        //if contacts[0].phoneNumbers.length > 0  ... for each ..if(contacts[0].phoneNumbers[0].label === 'mobile') contacts[0].phoneNumbers[0].number  
-
-        var nomeContato = contato.givenName !== null ? contato.givenName : '';
-        nomeContato =+ ' ' + contato.middleName !== null ? contato.middleName : '';
-        nomeContato =+ ' ' + contato.familyName !== null ? contato.familyName : '';
-
-        var auxContato = new Contato(contato.recordID, nomeContato, contato.thumbnailPath);
-        var emailContato;
-        var foneContato;
+    };
 
 
-        emailsContatos = Array();
-
-        contato.emailAddresses.forEach(function(email){        
-          //emailsContatos.push(new ContatoEmail(email.email, email.label));
-        });
-
-        contato.phoneNumbers.forEach(function(fone){
-          //fonesContato.push(new ContatoFone(email.email, email.label));
-          //fone.label;
-          //fone.number;
-        });
-
-        //contatosConsulta.push(auxContato);
-
-      }
-
-    );
-  }
-/*
-
-      Contato={
-        id, //contacts[0].recordID
-        nome, // contacts[0].givenName + ' ' + contacts[0].middleName + ' ' + contacts[0].familyName
-        foto64, // retornado da api
-        fotoUri, //contacts[0].thumbnailPath
-        emails: [], // if contacts[0].emailAddresses.length > 0
-        numeros: [], // if contacts[0].phoneNumbers.length > 0  ... for each ..if(contacts[0].phoneNumbers[0].label === 'mobile') contacts[0].phoneNumbers[0].number
-      }
-
-
-      this.state.contatosDispositivo.forEach((contatoDisp) => {
-
-          alert(contatoDisp.recordID);
-
-      }); 
-      
-*/
-  
     sincronizaContatos = () => {
 
       this.setState({carregando: true});
+      this.carregarContatosDipositivo();
       
-    }
+    };
   
     selecionaContato = item => {    
       alert('Contato selecionado!');
     };
   
     renderListaContatos = () => {
-      
-      console.log('render atualizados ->');
-      console.log(this.state.contatosAtualizados);
-  
-      console.log('render dispositivo ->');
-      console.log(this.state.contatosDispositivo);
-  
-      if ( this.state.contatosDispositivo !== undefined)
-        return <ListaContatos contatos={this.state.contatosDispositivo} onSelectContato={this.selecionaContato} />;
-      else
-        return <Text>Carregando ... </Text>
+      return <ListaContatos contatos={this.state.contatos} onSelectContato={this.selecionaContato} />;  
     };
   
     render(){
@@ -203,26 +157,41 @@ export default class MeusContatos extends React.Component {
      //this.carregarContatosDipositivo();
   
       return (
-        <View style={{ flex: 1, backgroundColor: '#ebeeef', justifyContent: 'center', alignItems: 'center' }}>
-          {this.renderListaContatos()}
+
+        <View style={styles.container}>        
+          <View style={styles.resultsContainer}>
+          {
+            this.state.carregando
+              ? <ActivityIndicator size="large" color="#000"/>
+              : this.renderListaContatos()          
+          }
+            <Fab
+            active={this.state.fabAtivo}
+            direction="up"
+            containerStyle={{ }}
+            style={{ backgroundColor: '#34515e' }}
+            position="bottomRight"
+            onPress={this.sincronizaContatos}>
+              <Icon type='FontAwesome' ios='refresh' android='refresh' />  
+            </Fab>  
+          </View>
         </View>
+
+        // <View style={{ flex: 1, backgroundColor: '#ebeeef', justifyContent: 'center', alignItems: 'center' }}>
+        //   {this.renderListaContatos()}
+        // </View>
       )
-    }
+    };
   }
-/*
-  class Contato {
 
-    constructor(id, nome, foto) {
-
-        this.id = id;
-        this.nome = nome;
-        this.fotoUri = foto;
-        
-        this.foto64 = '';
-        this.cadastrado = false;
-
-        this.emails = Array();
-        this.numeros = Array();
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: '#ebeeef',
+    },  
+    resultsContainer: {
+      flex: 1,
+      alignItems: 'center',
+      justifyContent: 'center'
     }
-}
-*/
+  });

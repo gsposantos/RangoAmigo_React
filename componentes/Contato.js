@@ -7,27 +7,54 @@ import {
   StyleSheet,
 } from 'react-native';
 
+function apresentaImagem(contato){     
+
+  if(!contato.hasThumbnail){
+    return <Image  resizeMode="contain" style={styles.foto} source={{uri: 'data:image/png;base64,' + contato.foto()}} />
+  }
+  else{
+    //return <Image  resizeMode="contain" style={styles.foto} source={{uri: contato.thumbnailPath}} />
+    return <Image 
+      resizeMode="contain"
+      style={styles.foto}
+      source={{uri: 'https://facebook.github.io/react-native/docs/assets/favicon.png'}}
+    />        
+  }
+
+  //return <Text>sem img</Text>
+}    
+
 export default function Contato({contato, onSelect}) {
+
+  let nomeContato = (contato.givenName.length>0) ? contato.givenName : '' + ' ';
+    nomeContato += (contato.middleName.length) ? contato.middleName :'' + ' ';
+    nomeContato += (contato.familyName.length) ? contato.familyName : '' + ' ';
+
   return (    
     <TouchableOpacity onPress={() => onSelect(contato)}>    
       <View style={styles.itemContato}>
-        <View style={styles.imagemContato}>             
-          <Text>IMG</Text>
-        </View>
-        <View style={styles.dadosContato}>  
-          <View style={styles.nomeContato}> 
-            <Text>Nome do juca</Text>       
+          <View style={styles.imagemContato}>  
+            {
+              apresentaImagem(contato)
+            }                     
           </View>
-          <View style={styles.infoContato}>                 
-            <View style={styles.emailContato}>      
-              <Text>email@juca.com</Text>          
+          <View style={styles.dadosContato}>  
+
+            <View style={styles.infoContato}>                 
+              <View style={styles.nomeContato }>      
+                <Text style={styles.txtNome} >{ nomeContato }</Text>   
+              </View>
+              <View style={styles.foneContato}>
+                <Text style={styles.txtFone} >{ contato.phoneNumbers[0].number }</Text>    
+              </View>
             </View>
-            <View style={styles.foneContato}>
-              <Text>9999999898</Text>    
+
+            <View style={styles.emailContato}> 
+                <Text style={styles.txtEmail}>{ contato.emailAddresses[0].email }</Text>          
             </View>
+            
           </View>
-        </View>
-      </View> 
+        </View> 
     </TouchableOpacity>
   );
 };
@@ -37,64 +64,64 @@ const styles = StyleSheet.create({
   itemContato: {   
     
     flexDirection: 'row',
-    borderBottomWidth: 1,
-    padding: 5,
+    borderBottomWidth: 1,    
     //backgroundColor: 'red',   
     //marginTop: 50,
     height: 60, /*ou define altura aqui, ou devine na imagem*/
   },
   imagemContato: {
-    flex: 3,    
+    flex: 2,  
     alignItems: 'center',
     justifyContent: 'center',
     //backgroundColor: 'blue',
   },
   dadosContato: {
-    flex: 7,
+    flex: 8,
     //backgroundColor: 'green',
     flexDirection: 'column',   
+    margin:3,
   },
   infoContato:{ 
     flex: 1,         
     flexDirection: 'row',   
-    //backgroundColor: 'yellow',    
+    //backgroundColor: 'yellow',
     justifyContent: 'space-between',
   },
-  nomeContato: {
+  emailContato: {
     flex: 1,
-    justifyContent: 'flex-start',   
+    justifyContent: 'flex-end',   
     //backgroundColor: 'orange',
   },
-  emailContato: {
-    justifyContent: 'flex-end',   
+  nomeContato: {
+    justifyContent: 'flex-start',   
     //backgroundColor: 'white',
   },
   foneContato: {
-    justifyContent: 'flex-end',
+    justifyContent: 'flex-start',
     //backgroundColor: 'red',  
   }, 
 
-  /*
-  container: {
-    padding: 10,
-    flexDirection: 'row',
-    alignItems: 'center',
-    borderBottomWidth: 1,
+  txtNome: {    
+    fontSize: 18,
+    fontWeight: 'bold',    
+    color: 'blue',
   },
-  image: {
-    width: 60,
-    height: 60,
+
+  txtFone: {   
+    fontSize: 18,
+    fontWeight: 'bold',    
+    color: 'blue',
   },
-  content: {
-    flex: 1,
-    marginLeft: 10,
+
+  txtEmail: {   
+    fontSize: 14,
+    color: 'blue',
   },
-  contentTitle: {
-    fontWeight: 'bold',
-    fontSize: 15,
-  },
-  contentScore: {
-    marginTop: 5,
-  }
-  */
+
+   foto: {     
+      backgroundColor: 'red',
+      height: 55, 
+      width: 55,
+    },
+
 });

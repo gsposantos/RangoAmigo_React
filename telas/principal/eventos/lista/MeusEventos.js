@@ -87,8 +87,8 @@ export default class MeusEventos extends React.Component {
   }
 
   selecionaEvento = evento => {
-    //this.props.navigation.navigate('Evento', evento);
-    Alert.alert('Evento', evento.NomeEvento);
+    this.props.navigation.navigate('DetalheEvento', evento);
+    //Alert.alert('Evento', evento.NomeEvento);
   };
 
   mostraResultados = () => {

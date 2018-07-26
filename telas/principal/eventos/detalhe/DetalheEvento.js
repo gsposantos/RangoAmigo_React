@@ -12,127 +12,61 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-const buscaDetalheEvento = async eventoId => {
-//   const res = await fetch(`https://food2fork.com/api/get?key=${food2ForkKey}&rId=${recipeId}`);
+import { Container, Fab } from 'native-base';
 
-//   const {recipe} = await res.json();
-
-//   return recipe;
-};
-
-// const getIngredients = fullRecipe => fullRecipe.ingredients.map((ingredient, index) => ({
-//   key: String(index + 1),
-//   description: ingredient,
-// }));
 
 export default class DetalheEvento extends React.Component {
-//   static navigationOptions = ({navigation}) => {
-//     const {title} = navigation.state.params;
-//     return {title};
-//   };
 
-    static navigationOptions = {
-        title: 'Detalhe do Evento',
-    };
 
-  state = {
-    fullRecipe: null,
+  static navigationOptions = {
+      title: 'Detalhe do Evento',
   };
 
-//   async componentDidMount() {
-//     const {recipe_id} = this.props.navigation.state.params;
+  state = {
+    fabAtivo: false, 
+    evento: null,
+  };
 
-//     const fullRecipe = await fetchFullRecipe(recipe_id);
+  async componentDidMount() {
 
-//     this.setState({fullRecipe});
-//   }
+    console.log(this.props.navigation.state.params);
+    
+    // const {recipe_id} = this.props.navigation.state.params;
+    // const fullRecipe = await fetchFullRecipe(recipe_id);
+    // this.setState({fullRecipe});
 
-//   handleSeeInstructions = async () => {
-//     const {source_url} = this.props.navigation.state.params;
-
-//     await Linking.openURL(safeUrl(source_url));
-//   };
+  }
 
 //   renderItem = ({item}) => <RecipeIngredient ingredient={item}/>;
 
 render() {
     return(
-      <ScrollView style={styles.container}>
-      <Image
-        style={styles.headerImage}
-        source={'https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg'}
-      />
-      <View style={styles.content}>
-        
-      </View>
-      </ScrollView>
+      <Container style={styles.container}>
+        <View style={styles.content}>
+            <Text> Evento aqui... </Text>
+        </View>
+        <Fab
+            active={this.state.fabAtivo}
+            direction="up"
+            containerStyle={{ }}
+            style={{ backgroundColor: '#3B5998' }}
+            position="bottomRight"
+            onPress={() => this.setState({ active: !this.state.fabAtivo })}>
+            
+            <Icon type="FontAwesome" name="ellipsis-v" />
+            
+            <Button style={{ backgroundColor: '#3B5998' }}>
+              <Icon type="FontAwesome" name="users" />
+            </Button>
+
+            <Button style={{ backgroundColor: '#3B5998' }}>
+              <Icon type="FontAwesome" name="edit" />
+            </Button>            
+      
+          </Fab>
+      </Container>
     );
   }
-
-//   render() {
-//     const {params: recipe} = this.props.navigation.state;
-//     const {fullRecipe} = this.state;
-//     const { state: { favorites }, toggleFavorite } = this.props.screenProps;
-
-//     return (
-//       <ScrollView style={styles.container}>
-//         <Image
-//           style={styles.headerImage}
-//           source={getImageSrc(recipe)}
-//         />
-//         <View style={styles.content}>
-//           <View style={styles.contentHeader}>
-//             <View>
-//               <Text>
-//                 Score:
-//                 <Text style={styles.strongText}>
-//                   {' '}{Math.round(recipe.social_rank)}%
-//                 </Text>
-//               </Text>
-//               <Text style={{ marginTop: 5 }}>
-//                 Publisher:
-//                 <Text style={styles.strongText}>
-//                   {' '}{recipe.publisher}
-//                 </Text>
-//               </Text>
-//             </View>
-//             <View>
-//               <TouchableOpacity onPress={() => toggleFavorite(recipe)}>
-//                 <MaterialIcons
-//                   name="favorite"
-//                   size={34}
-//                   color="#f00"
-//                   style={{ opacity: favorites.has(recipe.recipe_id) ? 1 : 0.6 }}
-//                 />;
-//               </TouchableOpacity>
-//             </View>
-//           </View>
-//           <View style={styles.sectionSpacing}>
-//             <Text style={styles.sectionTitle}>
-//               Ingredients
-//             </Text>
-//             <View>
-//               {
-//                 !fullRecipe
-//                   ? <ActivityIndicator style={styles.sectionSpacing} size="large" color="#000"/>
-//                   : (
-//                     <FlatList
-//                       style={{width: '100%'}}
-//                       data={getIngredients(fullRecipe)}
-//                       renderItem={this.renderItem}
-//                     />
-//                   )
-//               }
-//             </View>
-//           </View>
-//           <View style={styles.sectionSpacing}>
-//             <Text style={styles.sectionTitle}>Instructions</Text>
-//             <Button onPress={this.handleSeeInstructions} title="See Instructions"/>
-//           </View>
-//         </View>
-//       </ScrollView>
-//     );
-//   }
 }
 
 const styles = StyleSheet.create({

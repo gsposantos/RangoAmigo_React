@@ -21,7 +21,7 @@ export default class ListaContatos extends Component {
       <FlatList
         style={{width: '100%'}}
         data={contatos}
-        //keyExtractor={recipe => recipe.recipe_id}
+        keyExtractor={contato => contato.recordID}
         renderItem={this.renderContato}
       />
     );
