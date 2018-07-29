@@ -6,7 +6,7 @@ import {
   StyleSheet,   
   Alert,
   AsyncStorage,
-  KeyboardAvoidingView,
+  ActivityIndicator
 } from 'react-native';
 
 import { 
@@ -28,6 +28,7 @@ export default class AcessoFone extends React.Component {
   };
 
   state = {
+    carregando: false,
     area: '',
     fone: '',    
   };
@@ -57,14 +58,18 @@ export default class AcessoFone extends React.Component {
 
   verificaPerfilApi(area, fone) {
 
+    this.setState({ carregando: true });
+
     //verifica campos preenchidos.
     var isNumeric = /^[-+]?(\d+|\d+\.\d*|\d*\.\d+)$/;
     if(!isNumeric.test(area) || !isNumeric.test(fone)){
       Alert.alert('Campos Inválidos!', 'Informe valores numéricos para os campos DDD e Telefone');
-      return;
+      this.setState({ carregando: false });
+      return;      
     }
     if(area.length === 0 || fone.length === 0){
       Alert.alert('Campos Obrigatórios!', 'Preencha os campos DDD e Telefone adequadamente.');
+      this.setState({ carregando: false });
       return;
     }
     
@@ -87,14 +92,12 @@ export default class AcessoFone extends React.Component {
         }
         else{
           Alert.alert("Informação", "Perfil não cadastrado.");
-        }        
+        }                
       }  
       else
       {
         Alert.alert("Informação", response.data.Mensagem);
-      }
-      
-
+      }      
     })
     .catch((err) => {
       console.log(err);
@@ -104,41 +107,43 @@ export default class AcessoFone extends React.Component {
 
 
   render() {
-    return (
-      // <KeyboardAvoidingView keyboardVerticalOffset={-200}>  
-      // </KeyboardAvoidingView>       
-        <View style={styles.container}>
-          <View style={styles.topo}>
-            <Text style={styles.textoTopo}>
-              Para acessar, por favor, informe seu número de telefone com código de área.
-            </Text>
-          </View>
-          <View style={styles.formulario}>
-            <View  style={styles.campos}>
-              <View style={styles.campoArea}> 
-                <Item floatingLabel style={{ borderColor: '#34515e' }}>
-                  <Label style={{ color: "#ff950e", }} >DDD</Label>
-                  <Input style={{ color: "#ff950e" }} maxLength={2} keyboardType='numeric' onChangeText={this.configuraParamArea} />
-                </Item>
-              </View>
-              <View  style={styles.campoFone}>
-                <Item floatingLabel style={{ borderColor: '#34515e' }}>
-                  <Label style={{ color: "#ff950e", }} >Telefone</Label>
-                  <Input style={{ color: "#ff950e" }} maxLength={9} keyboardType='numeric' onChangeText={this.configuraParamFone} />
-                </Item>
-              </View>
-            </View>
-            <View>
-              <Button block style={styles.btn} onPress={_ => this.verificaPerfilApi(this.state.area, this.state.fone)} >
-                <Text style={styles.btnTxt}> Avançar </Text>
-              </Button>             
-              <Button block style={styles.btn} onPress={this.desviaCadastro} >
-                <Text style={styles.btnTxt}> Novo Acesso </Text>
-              </Button>    
-            </View>
-          </View>
-        </View>
-      
+    return (          
+                 
+            this.state.carregando            
+              ? <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}> 
+                  <ActivityIndicator size="large" color="#000"/> 
+                </View>
+              : <View style={styles.container}>
+                  <View style={styles.topo}>
+                    <Text style={styles.textoTopo}>
+                      Para acessar, por favor, informe seu número de telefone com código de área.
+                    </Text>
+                  </View>
+                  <View style={styles.formulario}>
+                    <View  style={styles.campos}>
+                      <View style={styles.campoArea}> 
+                        <Item floatingLabel style={{ borderColor: '#34515e' }}>
+                          <Label style={{ color: "#ff950e", }} >DDD</Label>
+                          <Input style={{ color: "#ff950e" }} maxLength={2} keyboardType='numeric' onChangeText={this.configuraParamArea} />
+                        </Item>
+                      </View>
+                      <View  style={styles.campoFone}>
+                        <Item floatingLabel style={{ borderColor: '#34515e' }}>
+                          <Label style={{ color: "#ff950e", }} >Telefone</Label>
+                          <Input style={{ color: "#ff950e" }} maxLength={9} keyboardType='numeric' onChangeText={this.configuraParamFone} />
+                        </Item>
+                      </View>
+                    </View>
+                    <View>
+                      <Button block style={styles.btn} onPress={_ => this.verificaPerfilApi(this.state.area, this.state.fone)} >
+                        <Text style={styles.btnTxt}> Avançar </Text>
+                      </Button>             
+                      <Button block style={styles.btn} onPress={this.desviaCadastro} >
+                        <Text style={styles.btnTxt}> Novo Acesso </Text>
+                      </Button>    
+                    </View>
+                  </View>
+                </View>
 
       // <View style={styles.container}>
       //  <View style={styles.topo}>
@@ -246,7 +251,7 @@ const styles = StyleSheet.create({
   btnTxt : {
     fontSize: 18,
     fontWeight: 'bold',     
-    color: '#FFF'
+    color: '#ebeeef'
   },
 
   textoTopo: {

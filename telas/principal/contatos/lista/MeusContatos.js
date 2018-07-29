@@ -27,6 +27,18 @@ export default class MeusContatos extends React.Component {
       contatos: [],
     }
     
+    async salvarSessao(contatos) {    
+
+      try {
+        await AsyncStorage.setItem("Contatos", JSON.stringify(contatos));
+      }
+      catch (err) {
+        console.error(err);
+        Alert.alert("Inesperado", "Não foi possivel carregar os dados.");
+      }   
+
+    }
+
     async componentDidMount() {    
       
       //Verifica contatos em sessao
@@ -59,7 +71,7 @@ export default class MeusContatos extends React.Component {
 
             //considera que numero de celular deve ter 11 digitos
             if (foneAux.length > 11){
-              foneAux = foneAux.substring(foneAux.length() - 11);
+              foneAux = foneAux.substring(foneAux.length - 11);
             }
 
             lstPerfis.push({ "CelArea": 0, "CelNumero": foneAux });
@@ -80,41 +92,44 @@ export default class MeusContatos extends React.Component {
 
           // aqui a magia acontece...
 
-          contatos.forEach(function(contato){
-            contato.phoneNumbers.forEach(function(phone){
-              response.data.Dados.forEach(function(perfil){
-                    if(phone.celNumero === perfil.CelNumero){                      
+          for(const contato of contatos){
+            for(const phone of contato.phoneNumbers){
+              for(const perfil of response.data.Dados){
+                
+                if(phone.celNumero === perfil.CelNumero){                      
                      
-                      // - limpa os telefones (dispositivo) e adiciona o telefone encontrado (API).
-                      contato.phoneNumbers = [{
-                                                label:phone.label, 
-                                                number:phone.number, 
-                                                celNumero: phone.celNumero
-                                              }];
+                  // - limpa os telefones (dispositivo) e adiciona o telefone encontrado (API).
+                  contato.phoneNumbers = [{
+                                            label:phone.label, 
+                                            number:phone.number, 
+                                            celNumero: phone.celNumero
+                                          }];
 
-                      // - pega o email cadastrado na API se nao tiver email no contato do dispositivo.
-                      if(contato.emailAddresses.length === 0){
-                        contato.emailAddresses = [{
-                                                    label: '',
-                                                    email: perfil.Email,
-                                                  }]
-                      }
+                  // - pega o email cadastrado na API se nao tiver email no contato do dispositivo.
+                  if(contato.emailAddresses.length === 0){
+                    contato.emailAddresses = [{
+                                                label: '',
+                                                email: perfil.Email,
+                                              }]
+                  }
 
-                      // - pega o foto cadastrada na API  se nao tiver imagem no contato do dispositivo.
-                      if(!contato.hasThumbnail){
-                        contato.foto64 = perfil.Foto;
-                      }
+                  // - pega o foto cadastrada na API  se nao tiver imagem no contato do dispositivo.
+                  if(!contato.hasThumbnail){
+                    contato.foto64 = perfil.Foto;
+                  }
 
-                      // - marca contato (dispositivo) como cadastrado.
-                      contato.cadastrado = true;
-                      return;
+                  // - marca contato (dispositivo) como cadastrado.
+                  contato.cadastrado = true;
+                  return;
 
-                    }
-              });
-            });
-          });
+                }
 
-          console.log(contatos);
+              }
+            }
+          }         
+          
+          //console.log(contatos);
+          this.salvarSessao(contatos);
           this.setState({carregando: false, contatos: contatos});
   
         })
@@ -136,7 +151,6 @@ export default class MeusContatos extends React.Component {
       });
     };
 
-
     sincronizaContatos = () => {
 
       this.setState({carregando: true});
@@ -153,9 +167,7 @@ export default class MeusContatos extends React.Component {
     };
   
     render(){
-  
-     //this.carregarContatosDipositivo();
-  
+ 
       return (
 
         <View style={styles.container}>        
@@ -176,10 +188,6 @@ export default class MeusContatos extends React.Component {
             </Fab>  
           </View>
         </View>
-
-        // <View style={{ flex: 1, backgroundColor: '#ebeeef', justifyContent: 'center', alignItems: 'center' }}>
-        //   {this.renderListaContatos()}
-        // </View>
       )
     };
   }

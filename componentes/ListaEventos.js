@@ -7,8 +7,7 @@ export default class ListaEventos extends Component {
   static defaultProps = {
     textoEventos: 'Não há eventos cadastrados.',
   };
-
-  //renderEvento = ({ item }) => <Text> Dados do Evento aqui ...</Text>; 
+  
   renderEvento = ({ item }) => <Evento evento={item} onSelect={this.props.onSelect}/>; 
 
   render() {

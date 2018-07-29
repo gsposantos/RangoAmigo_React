@@ -6,17 +6,21 @@ import {
   Image,
   StyleSheet,
 } from 'react-native';
+import { Icon } from 'native-base';
 
 export default function Evento({evento, onSelect}) {
   return (    
     <TouchableOpacity onPress={() => onSelect(evento)}>    
       <View style={styles.itemEvento}>
         <View style={styles.imagemEvento}>                       
+          
           <Image 
-            style={styles.logo} 
-            source={{uri: 'data:image/png;base64,' + evento.Imagem}} 
+            style={styles.logo}             
+            source={{uri: 'data:image/(png|tiff|jpg|gif);base64,' + evento.Imagem}} 
             //data:image/png;base64 + evento.Imagem
             />          
+
+          
 
         </View>
         <View style={styles.dadosEvento}>  

@@ -7,7 +7,11 @@
 	<key>NSCameraUsageDescription</key>
 	<string>Usar a camera do seu dispositivo para adicionar imagens</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Seleionar uma imagme do seu dispositivo</string>
+	<string>Selecionar uma imagem do seu dispositivo</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Salvar imagens na sua galeria</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Usar seu microfone (para os vidoes)</string>
 	<key>LSApplicationCategoryType</key>
 	<string/>
 	<key>CFBundleGetInfoString</key>

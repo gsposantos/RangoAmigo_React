@@ -6665,9 +6665,30 @@
                     "startLine": 1220,
                     "startColumn": 4,
                     "startOffset": 93997,
-                    "endLine": 1223,
+                    "endLine": 1227,
+                    "endColumn": 12,
+                    "endOffset": 94403
+                },
+                "from": {
+                    "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\RangoAmigo\\react-native-image-picker\\unspecified\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endLine": 9,
+                        "endColumn": 12,
+                        "endOffset": 461
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 1228,
+                    "startColumn": 4,
+                    "startOffset": 94408,
+                    "endLine": 1231,
                     "endColumn": 10,
-                    "endOffset": 94194
+                    "endOffset": 94605
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.facebook.react\\react-native\\0.55.4\\res\\values\\values.xml",
@@ -6683,12 +6704,12 @@
             },
             {
                 "to": {
-                    "startLine": 1224,
+                    "startLine": 1232,
                     "startColumn": 4,
-                    "startOffset": 94199,
-                    "endLine": 1227,
+                    "startOffset": 94610,
+                    "endLine": 1235,
                     "endColumn": 10,
-                    "endOffset": 94400
+                    "endOffset": 94811
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.facebook.react\\react-native\\0.55.4\\res\\values\\values.xml",
@@ -6704,12 +6725,12 @@
             },
             {
                 "to": {
-                    "startLine": 1228,
+                    "startLine": 1236,
                     "startColumn": 4,
-                    "startOffset": 94405,
-                    "endLine": 1265,
+                    "startOffset": 94816,
+                    "endLine": 1273,
                     "endColumn": 12,
-                    "endOffset": 97262
+                    "endOffset": 97673
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6725,12 +6746,12 @@
             },
             {
                 "to": {
-                    "startLine": 1266,
+                    "startLine": 1274,
                     "startColumn": 4,
-                    "startOffset": 97267,
-                    "endLine": 1304,
+                    "startOffset": 97678,
+                    "endLine": 1312,
                     "endColumn": 12,
-                    "endOffset": 100264
+                    "endOffset": 100675
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6746,11 +6767,11 @@
             },
             {
                 "to": {
-                    "startLine": 1305,
+                    "startLine": 1313,
                     "startColumn": 4,
-                    "startOffset": 100269,
+                    "startOffset": 100680,
                     "endColumn": 61,
-                    "endOffset": 100326
+                    "endOffset": 100737
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6765,12 +6786,12 @@
             },
             {
                 "to": {
-                    "startLine": 1306,
+                    "startLine": 1314,
                     "startColumn": 4,
-                    "startOffset": 100331,
-                    "endLine": 1315,
+                    "startOffset": 100742,
+                    "endLine": 1323,
                     "endColumn": 12,
-                    "endOffset": 100956
+                    "endOffset": 101367
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6786,12 +6807,12 @@
             },
             {
                 "to": {
-                    "startLine": 1316,
+                    "startLine": 1324,
                     "startColumn": 4,
-                    "startOffset": 100961,
-                    "endLine": 1324,
+                    "startOffset": 101372,
+                    "endLine": 1332,
                     "endColumn": 12,
-                    "endOffset": 101570
+                    "endOffset": 101981
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6807,11 +6828,11 @@
             },
             {
                 "to": {
-                    "startLine": 1325,
+                    "startLine": 1333,
                     "startColumn": 4,
-                    "startOffset": 101575,
+                    "startOffset": 101986,
                     "endColumn": 85,
-                    "endOffset": 101656
+                    "endOffset": 102067
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6826,12 +6847,12 @@
             },
             {
                 "to": {
-                    "startLine": 1326,
+                    "startLine": 1334,
                     "startColumn": 4,
-                    "startOffset": 101661,
-                    "endLine": 1327,
+                    "startOffset": 102072,
+                    "endLine": 1335,
                     "endColumn": 12,
-                    "endOffset": 101769
+                    "endOffset": 102180
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6847,12 +6868,12 @@
             },
             {
                 "to": {
-                    "startLine": 1328,
+                    "startLine": 1336,
                     "startColumn": 4,
-                    "startOffset": 101774,
-                    "endLine": 1331,
+                    "startOffset": 102185,
+                    "endLine": 1339,
                     "endColumn": 12,
-                    "endOffset": 101998
+                    "endOffset": 102409
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6868,12 +6889,12 @@
             },
             {
                 "to": {
-                    "startLine": 1332,
+                    "startLine": 1340,
                     "startColumn": 4,
-                    "startOffset": 102003,
-                    "endLine": 1335,
+                    "startOffset": 102414,
+                    "endLine": 1343,
                     "endColumn": 12,
-                    "endOffset": 102336
+                    "endOffset": 102747
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6889,12 +6910,12 @@
             },
             {
                 "to": {
-                    "startLine": 1336,
+                    "startLine": 1344,
                     "startColumn": 4,
-                    "startOffset": 102341,
-                    "endLine": 1338,
+                    "startOffset": 102752,
+                    "endLine": 1346,
                     "endColumn": 12,
-                    "endOffset": 102496
+                    "endOffset": 102907
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6910,12 +6931,12 @@
             },
             {
                 "to": {
-                    "startLine": 1339,
+                    "startLine": 1347,
                     "startColumn": 4,
-                    "startOffset": 102501,
-                    "endLine": 1341,
+                    "startOffset": 102912,
+                    "endLine": 1349,
                     "endColumn": 12,
-                    "endOffset": 102648
+                    "endOffset": 103059
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6931,12 +6952,12 @@
             },
             {
                 "to": {
-                    "startLine": 1342,
+                    "startLine": 1350,
                     "startColumn": 4,
-                    "startOffset": 102653,
-                    "endLine": 1344,
+                    "startOffset": 103064,
+                    "endLine": 1352,
                     "endColumn": 12,
-                    "endOffset": 102819
+                    "endOffset": 103230
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6952,12 +6973,12 @@
             },
             {
                 "to": {
-                    "startLine": 1345,
+                    "startLine": 1353,
                     "startColumn": 4,
-                    "startOffset": 102824,
-                    "endLine": 1347,
+                    "startOffset": 103235,
+                    "endLine": 1355,
                     "endColumn": 12,
-                    "endOffset": 102986
+                    "endOffset": 103397
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6973,12 +6994,12 @@
             },
             {
                 "to": {
-                    "startLine": 1348,
+                    "startLine": 1356,
                     "startColumn": 4,
-                    "startOffset": 102991,
-                    "endLine": 1351,
+                    "startOffset": 103402,
+                    "endLine": 1359,
                     "endColumn": 12,
-                    "endOffset": 103229
+                    "endOffset": 103640
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -6994,12 +7015,12 @@
             },
             {
                 "to": {
-                    "startLine": 1352,
+                    "startLine": 1360,
                     "startColumn": 4,
-                    "startOffset": 103234,
-                    "endLine": 1354,
+                    "startOffset": 103645,
+                    "endLine": 1362,
                     "endColumn": 12,
-                    "endOffset": 103399
+                    "endOffset": 103810
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7015,12 +7036,12 @@
             },
             {
                 "to": {
-                    "startLine": 1355,
+                    "startLine": 1363,
                     "startColumn": 4,
-                    "startOffset": 103404,
-                    "endLine": 1357,
+                    "startOffset": 103815,
+                    "endLine": 1365,
                     "endColumn": 12,
-                    "endOffset": 103572
+                    "endOffset": 103983
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7036,12 +7057,12 @@
             },
             {
                 "to": {
-                    "startLine": 1358,
+                    "startLine": 1366,
                     "startColumn": 4,
-                    "startOffset": 103577,
-                    "endLine": 1360,
+                    "startOffset": 103988,
+                    "endLine": 1368,
                     "endColumn": 12,
-                    "endOffset": 103743
+                    "endOffset": 104154
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7057,12 +7078,12 @@
             },
             {
                 "to": {
-                    "startLine": 1361,
+                    "startLine": 1369,
                     "startColumn": 4,
-                    "startOffset": 103748,
-                    "endLine": 1364,
+                    "startOffset": 104159,
+                    "endLine": 1372,
                     "endColumn": 12,
-                    "endOffset": 104017
+                    "endOffset": 104428
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7078,12 +7099,12 @@
             },
             {
                 "to": {
-                    "startLine": 1365,
+                    "startLine": 1373,
                     "startColumn": 4,
-                    "startOffset": 104022,
-                    "endLine": 1367,
+                    "startOffset": 104433,
+                    "endLine": 1375,
                     "endColumn": 12,
-                    "endOffset": 104216
+                    "endOffset": 104627
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7099,12 +7120,12 @@
             },
             {
                 "to": {
-                    "startLine": 1368,
+                    "startLine": 1376,
                     "startColumn": 4,
-                    "startOffset": 104221,
-                    "endLine": 1370,
+                    "startOffset": 104632,
+                    "endLine": 1378,
                     "endColumn": 12,
-                    "endOffset": 104417
+                    "endOffset": 104828
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.facebook.react\\react-native\\0.55.4\\res\\values\\values.xml",
@@ -7120,12 +7141,12 @@
             },
             {
                 "to": {
-                    "startLine": 1371,
+                    "startLine": 1379,
                     "startColumn": 4,
-                    "startOffset": 104422,
-                    "endLine": 1373,
+                    "startOffset": 104833,
+                    "endLine": 1381,
                     "endColumn": 12,
-                    "endOffset": 104606
+                    "endOffset": 105017
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.facebook.react\\react-native\\0.55.4\\res\\values\\values.xml",
@@ -7141,12 +7162,12 @@
             },
             {
                 "to": {
-                    "startLine": 1374,
+                    "startLine": 1382,
                     "startColumn": 4,
-                    "startOffset": 104611,
-                    "endLine": 1376,
+                    "startOffset": 105022,
+                    "endLine": 1384,
                     "endColumn": 12,
-                    "endOffset": 104805
+                    "endOffset": 105216
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.facebook.react\\react-native\\0.55.4\\res\\values\\values.xml",
@@ -7162,12 +7183,12 @@
             },
             {
                 "to": {
-                    "startLine": 1377,
+                    "startLine": 1385,
                     "startColumn": 4,
-                    "startOffset": 104810,
-                    "endLine": 1379,
+                    "startOffset": 105221,
+                    "endLine": 1387,
                     "endColumn": 12,
-                    "endOffset": 104992
+                    "endOffset": 105403
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.facebook.react\\react-native\\0.55.4\\res\\values\\values.xml",
@@ -7183,11 +7204,11 @@
             },
             {
                 "to": {
-                    "startLine": 1380,
+                    "startLine": 1388,
                     "startColumn": 4,
-                    "startOffset": 104997,
+                    "startOffset": 105408,
                     "endColumn": 83,
-                    "endOffset": 105076
+                    "endOffset": 105487
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7202,11 +7223,11 @@
             },
             {
                 "to": {
-                    "startLine": 1381,
+                    "startLine": 1389,
                     "startColumn": 4,
-                    "startOffset": 105081,
+                    "startOffset": 105492,
                     "endColumn": 95,
-                    "endOffset": 105172
+                    "endOffset": 105583
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7221,11 +7242,11 @@
             },
             {
                 "to": {
-                    "startLine": 1382,
+                    "startLine": 1390,
                     "startColumn": 4,
-                    "startOffset": 105177,
+                    "startOffset": 105588,
                     "endColumn": 95,
-                    "endOffset": 105268
+                    "endOffset": 105679
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7240,11 +7261,11 @@
             },
             {
                 "to": {
-                    "startLine": 1383,
+                    "startLine": 1391,
                     "startColumn": 4,
-                    "startOffset": 105273,
+                    "startOffset": 105684,
                     "endColumn": 97,
-                    "endOffset": 105366
+                    "endOffset": 105777
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7259,11 +7280,11 @@
             },
             {
                 "to": {
-                    "startLine": 1384,
+                    "startLine": 1392,
                     "startColumn": 4,
-                    "startOffset": 105371,
+                    "startOffset": 105782,
                     "endColumn": 99,
-                    "endOffset": 105466
+                    "endOffset": 105877
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7278,11 +7299,11 @@
             },
             {
                 "to": {
-                    "startLine": 1385,
+                    "startLine": 1393,
                     "startColumn": 4,
-                    "startOffset": 105471,
+                    "startOffset": 105882,
                     "endColumn": 101,
-                    "endOffset": 105568
+                    "endOffset": 105979
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7297,11 +7318,11 @@
             },
             {
                 "to": {
-                    "startLine": 1386,
+                    "startLine": 1394,
                     "startColumn": 4,
-                    "startOffset": 105573,
+                    "startOffset": 105984,
                     "endColumn": 101,
-                    "endOffset": 105670
+                    "endOffset": 106081
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7316,11 +7337,11 @@
             },
             {
                 "to": {
-                    "startLine": 1387,
+                    "startLine": 1395,
                     "startColumn": 4,
-                    "startOffset": 105675,
+                    "startOffset": 106086,
                     "endColumn": 101,
-                    "endOffset": 105772
+                    "endOffset": 106183
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7335,11 +7356,11 @@
             },
             {
                 "to": {
-                    "startLine": 1388,
+                    "startLine": 1396,
                     "startColumn": 4,
-                    "startOffset": 105777,
+                    "startOffset": 106188,
                     "endColumn": 101,
-                    "endOffset": 105874
+                    "endOffset": 106285
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7354,11 +7375,11 @@
             },
             {
                 "to": {
-                    "startLine": 1389,
+                    "startLine": 1397,
                     "startColumn": 4,
-                    "startOffset": 105879,
+                    "startOffset": 106290,
                     "endColumn": 101,
-                    "endOffset": 105976
+                    "endOffset": 106387
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7373,11 +7394,11 @@
             },
             {
                 "to": {
-                    "startLine": 1390,
+                    "startLine": 1398,
                     "startColumn": 4,
-                    "startOffset": 105981,
+                    "startOffset": 106392,
                     "endColumn": 99,
-                    "endOffset": 106076
+                    "endOffset": 106487
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7392,11 +7413,11 @@
             },
             {
                 "to": {
-                    "startLine": 1391,
+                    "startLine": 1399,
                     "startColumn": 4,
-                    "startOffset": 106081,
+                    "startOffset": 106492,
                     "endColumn": 95,
-                    "endOffset": 106172
+                    "endOffset": 106583
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7411,11 +7432,11 @@
             },
             {
                 "to": {
-                    "startLine": 1392,
+                    "startLine": 1400,
                     "startColumn": 4,
-                    "startOffset": 106177,
+                    "startOffset": 106588,
                     "endColumn": 111,
-                    "endOffset": 106284
+                    "endOffset": 106695
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7430,11 +7451,11 @@
             },
             {
                 "to": {
-                    "startLine": 1393,
+                    "startLine": 1401,
                     "startColumn": 4,
-                    "startOffset": 106289,
+                    "startOffset": 106700,
                     "endColumn": 128,
-                    "endOffset": 106413
+                    "endOffset": 106824
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7449,11 +7470,11 @@
             },
             {
                 "to": {
-                    "startLine": 1394,
+                    "startLine": 1402,
                     "startColumn": 4,
-                    "startOffset": 106418,
+                    "startOffset": 106829,
                     "endColumn": 122,
-                    "endOffset": 106536
+                    "endOffset": 106947
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7468,12 +7489,12 @@
             },
             {
                 "to": {
-                    "startLine": 1395,
+                    "startLine": 1403,
                     "startColumn": 4,
-                    "startOffset": 106541,
-                    "endLine": 1396,
+                    "startOffset": 106952,
+                    "endLine": 1404,
                     "endColumn": 12,
-                    "endOffset": 106690
+                    "endOffset": 107101
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7489,12 +7510,12 @@
             },
             {
                 "to": {
-                    "startLine": 1397,
+                    "startLine": 1405,
                     "startColumn": 4,
-                    "startOffset": 106695,
-                    "endLine": 1398,
+                    "startOffset": 107106,
+                    "endLine": 1406,
                     "endColumn": 12,
-                    "endOffset": 106844
+                    "endOffset": 107255
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7510,11 +7531,11 @@
             },
             {
                 "to": {
-                    "startLine": 1399,
+                    "startLine": 1407,
                     "startColumn": 4,
-                    "startOffset": 106849,
+                    "startOffset": 107260,
                     "endColumn": 97,
-                    "endOffset": 106942
+                    "endOffset": 107353
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7529,11 +7550,11 @@
             },
             {
                 "to": {
-                    "startLine": 1400,
+                    "startLine": 1408,
                     "startColumn": 4,
-                    "startOffset": 106947,
+                    "startOffset": 107358,
                     "endColumn": 113,
-                    "endOffset": 107056
+                    "endOffset": 107467
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7548,11 +7569,11 @@
             },
             {
                 "to": {
-                    "startLine": 1401,
+                    "startLine": 1409,
                     "startColumn": 4,
-                    "startOffset": 107061,
+                    "startOffset": 107472,
                     "endColumn": 93,
-                    "endOffset": 107150
+                    "endOffset": 107561
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7567,12 +7588,12 @@
             },
             {
                 "to": {
-                    "startLine": 1402,
+                    "startLine": 1410,
                     "startColumn": 4,
-                    "startOffset": 107155,
-                    "endLine": 1403,
+                    "startOffset": 107566,
+                    "endLine": 1411,
                     "endColumn": 12,
-                    "endOffset": 107290
+                    "endOffset": 107701
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7588,12 +7609,12 @@
             },
             {
                 "to": {
-                    "startLine": 1404,
+                    "startLine": 1412,
                     "startColumn": 4,
-                    "startOffset": 107295,
-                    "endLine": 1405,
+                    "startOffset": 107706,
+                    "endLine": 1413,
                     "endColumn": 12,
-                    "endOffset": 107424
+                    "endOffset": 107835
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7609,11 +7630,11 @@
             },
             {
                 "to": {
-                    "startLine": 1406,
+                    "startLine": 1414,
                     "startColumn": 4,
-                    "startOffset": 107429,
+                    "startOffset": 107840,
                     "endColumn": 95,
-                    "endOffset": 107520
+                    "endOffset": 107931
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7628,11 +7649,11 @@
             },
             {
                 "to": {
-                    "startLine": 1407,
+                    "startLine": 1415,
                     "startColumn": 4,
-                    "startOffset": 107525,
+                    "startOffset": 107936,
                     "endColumn": 111,
-                    "endOffset": 107632
+                    "endOffset": 108043
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7647,11 +7668,11 @@
             },
             {
                 "to": {
-                    "startLine": 1408,
+                    "startLine": 1416,
                     "startColumn": 4,
-                    "startOffset": 107637,
+                    "startOffset": 108048,
                     "endColumn": 99,
-                    "endOffset": 107732
+                    "endOffset": 108143
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7666,11 +7687,11 @@
             },
             {
                 "to": {
-                    "startLine": 1409,
+                    "startLine": 1417,
                     "startColumn": 4,
-                    "startOffset": 107737,
+                    "startOffset": 108148,
                     "endColumn": 115,
-                    "endOffset": 107848
+                    "endOffset": 108259
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7685,11 +7706,11 @@
             },
             {
                 "to": {
-                    "startLine": 1410,
+                    "startLine": 1418,
                     "startColumn": 4,
-                    "startOffset": 107853,
+                    "startOffset": 108264,
                     "endColumn": 95,
-                    "endOffset": 107944
+                    "endOffset": 108355
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7704,11 +7725,11 @@
             },
             {
                 "to": {
-                    "startLine": 1411,
+                    "startLine": 1419,
                     "startColumn": 4,
-                    "startOffset": 107949,
+                    "startOffset": 108360,
                     "endColumn": 111,
-                    "endOffset": 108056
+                    "endOffset": 108467
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7723,12 +7744,12 @@
             },
             {
                 "to": {
-                    "startLine": 1412,
+                    "startLine": 1420,
                     "startColumn": 4,
-                    "startOffset": 108061,
-                    "endLine": 1413,
+                    "startOffset": 108472,
+                    "endLine": 1421,
                     "endColumn": 12,
-                    "endOffset": 108196
+                    "endOffset": 108607
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7744,11 +7765,11 @@
             },
             {
                 "to": {
-                    "startLine": 1414,
+                    "startLine": 1422,
                     "startColumn": 4,
-                    "startOffset": 108201,
+                    "startOffset": 108612,
                     "endColumn": 135,
-                    "endOffset": 108332
+                    "endOffset": 108743
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7763,12 +7784,12 @@
             },
             {
                 "to": {
-                    "startLine": 1415,
+                    "startLine": 1423,
                     "startColumn": 4,
-                    "startOffset": 108337,
-                    "endLine": 1416,
+                    "startOffset": 108748,
+                    "endLine": 1424,
                     "endColumn": 12,
-                    "endOffset": 108496
+                    "endOffset": 108907
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7784,11 +7805,11 @@
             },
             {
                 "to": {
-                    "startLine": 1417,
+                    "startLine": 1425,
                     "startColumn": 4,
-                    "startOffset": 108501,
+                    "startOffset": 108912,
                     "endColumn": 129,
-                    "endOffset": 108626
+                    "endOffset": 109037
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7803,12 +7824,12 @@
             },
             {
                 "to": {
-                    "startLine": 1418,
+                    "startLine": 1426,
                     "startColumn": 4,
-                    "startOffset": 108631,
-                    "endLine": 1419,
+                    "startOffset": 109042,
+                    "endLine": 1427,
                     "endColumn": 12,
-                    "endOffset": 108784
+                    "endOffset": 109195
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7824,12 +7845,12 @@
             },
             {
                 "to": {
-                    "startLine": 1420,
+                    "startLine": 1428,
                     "startColumn": 4,
-                    "startOffset": 108789,
-                    "endLine": 1421,
+                    "startOffset": 109200,
+                    "endLine": 1429,
                     "endColumn": 12,
-                    "endOffset": 108934
+                    "endOffset": 109345
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7845,11 +7866,11 @@
             },
             {
                 "to": {
-                    "startLine": 1422,
+                    "startLine": 1430,
                     "startColumn": 4,
-                    "startOffset": 108939,
+                    "startOffset": 109350,
                     "endColumn": 140,
-                    "endOffset": 109075
+                    "endOffset": 109486
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7864,12 +7885,12 @@
             },
             {
                 "to": {
-                    "startLine": 1423,
+                    "startLine": 1431,
                     "startColumn": 4,
-                    "startOffset": 109080,
-                    "endLine": 1424,
+                    "startOffset": 109491,
+                    "endLine": 1432,
                     "endColumn": 12,
-                    "endOffset": 109219
+                    "endOffset": 109630
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7885,11 +7906,11 @@
             },
             {
                 "to": {
-                    "startLine": 1425,
+                    "startLine": 1433,
                     "startColumn": 4,
-                    "startOffset": 109224,
+                    "startOffset": 109635,
                     "endColumn": 134,
-                    "endOffset": 109354
+                    "endOffset": 109765
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7904,11 +7925,11 @@
             },
             {
                 "to": {
-                    "startLine": 1426,
+                    "startLine": 1434,
                     "startColumn": 4,
-                    "startOffset": 109359,
+                    "startOffset": 109770,
                     "endColumn": 111,
-                    "endOffset": 109466
+                    "endOffset": 109877
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7923,11 +7944,11 @@
             },
             {
                 "to": {
-                    "startLine": 1427,
+                    "startLine": 1435,
                     "startColumn": 4,
-                    "startOffset": 109471,
+                    "startOffset": 109882,
                     "endColumn": 127,
-                    "endOffset": 109594
+                    "endOffset": 110005
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7942,12 +7963,12 @@
             },
             {
                 "to": {
-                    "startLine": 1428,
+                    "startLine": 1436,
                     "startColumn": 4,
-                    "startOffset": 109599,
-                    "endLine": 1429,
+                    "startOffset": 110010,
+                    "endLine": 1437,
                     "endColumn": 12,
-                    "endOffset": 109730
+                    "endOffset": 110141
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7963,12 +7984,12 @@
             },
             {
                 "to": {
-                    "startLine": 1430,
+                    "startLine": 1438,
                     "startColumn": 4,
-                    "startOffset": 109735,
-                    "endLine": 1431,
+                    "startOffset": 110146,
+                    "endLine": 1439,
                     "endColumn": 12,
-                    "endOffset": 109872
+                    "endOffset": 110283
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -7984,12 +8005,12 @@
             },
             {
                 "to": {
-                    "startLine": 1432,
+                    "startLine": 1440,
                     "startColumn": 4,
-                    "startOffset": 109877,
-                    "endLine": 1433,
+                    "startOffset": 110288,
+                    "endLine": 1441,
                     "endColumn": 12,
-                    "endOffset": 110014
+                    "endOffset": 110425
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8005,11 +8026,11 @@
             },
             {
                 "to": {
-                    "startLine": 1434,
+                    "startLine": 1442,
                     "startColumn": 4,
-                    "startOffset": 110019,
+                    "startOffset": 110430,
                     "endColumn": 111,
-                    "endOffset": 110126
+                    "endOffset": 110537
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8024,11 +8045,11 @@
             },
             {
                 "to": {
-                    "startLine": 1435,
+                    "startLine": 1443,
                     "startColumn": 4,
-                    "startOffset": 110131,
+                    "startOffset": 110542,
                     "endColumn": 139,
-                    "endOffset": 110266
+                    "endOffset": 110677
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8043,11 +8064,11 @@
             },
             {
                 "to": {
-                    "startLine": 1436,
+                    "startLine": 1444,
                     "startColumn": 4,
-                    "startOffset": 110271,
+                    "startOffset": 110682,
                     "endColumn": 67,
-                    "endOffset": 110334
+                    "endOffset": 110745
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8062,11 +8083,11 @@
             },
             {
                 "to": {
-                    "startLine": 1437,
+                    "startLine": 1445,
                     "startColumn": 4,
-                    "startOffset": 110339,
+                    "startOffset": 110750,
                     "endColumn": 72,
-                    "endOffset": 110407
+                    "endOffset": 110818
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8081,11 +8102,11 @@
             },
             {
                 "to": {
-                    "startLine": 1438,
+                    "startLine": 1446,
                     "startColumn": 4,
-                    "startOffset": 110412,
+                    "startOffset": 110823,
                     "endColumn": 73,
-                    "endOffset": 110481
+                    "endOffset": 110892
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8100,11 +8121,11 @@
             },
             {
                 "to": {
-                    "startLine": 1439,
+                    "startLine": 1447,
                     "startColumn": 4,
-                    "startOffset": 110486,
+                    "startOffset": 110897,
                     "endColumn": 72,
-                    "endOffset": 110554
+                    "endOffset": 110965
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8119,11 +8140,11 @@
             },
             {
                 "to": {
-                    "startLine": 1440,
+                    "startLine": 1448,
                     "startColumn": 4,
-                    "startOffset": 110559,
+                    "startOffset": 110970,
                     "endColumn": 73,
-                    "endOffset": 110628
+                    "endOffset": 111039
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8138,12 +8159,12 @@
             },
             {
                 "to": {
-                    "startLine": 1441,
+                    "startLine": 1449,
                     "startColumn": 4,
-                    "startOffset": 110633,
-                    "endLine": 1442,
+                    "startOffset": 111044,
+                    "endLine": 1450,
                     "endColumn": 12,
-                    "endOffset": 110774
+                    "endOffset": 111185
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8159,12 +8180,12 @@
             },
             {
                 "to": {
-                    "startLine": 1443,
+                    "startLine": 1451,
                     "startColumn": 4,
-                    "startOffset": 110779,
-                    "endLine": 1444,
+                    "startOffset": 111190,
+                    "endLine": 1452,
                     "endColumn": 12,
-                    "endOffset": 110918
+                    "endOffset": 111329
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8180,12 +8201,12 @@
             },
             {
                 "to": {
-                    "startLine": 1445,
+                    "startLine": 1453,
                     "startColumn": 4,
-                    "startOffset": 110923,
-                    "endLine": 1446,
+                    "startOffset": 111334,
+                    "endLine": 1454,
                     "endColumn": 12,
-                    "endOffset": 111056
+                    "endOffset": 111467
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8201,11 +8222,11 @@
             },
             {
                 "to": {
-                    "startLine": 1447,
+                    "startLine": 1455,
                     "startColumn": 4,
-                    "startOffset": 111061,
+                    "startOffset": 111472,
                     "endColumn": 25,
-                    "endOffset": 111082
+                    "endOffset": 111493
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.facebook.react\\react-native\\0.55.4\\res\\values\\values.xml",
@@ -8220,11 +8241,11 @@
             },
             {
                 "to": {
-                    "startLine": 1448,
+                    "startLine": 1456,
                     "startColumn": 4,
-                    "startOffset": 111087,
+                    "startOffset": 111498,
                     "endColumn": 65,
-                    "endOffset": 111148
+                    "endOffset": 111559
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8239,11 +8260,11 @@
             },
             {
                 "to": {
-                    "startLine": 1449,
+                    "startLine": 1457,
                     "startColumn": 4,
-                    "startOffset": 111153,
+                    "startOffset": 111564,
                     "endColumn": 89,
-                    "endOffset": 111238
+                    "endOffset": 111649
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8258,11 +8279,11 @@
             },
             {
                 "to": {
-                    "startLine": 1450,
+                    "startLine": 1458,
                     "startColumn": 4,
-                    "startOffset": 111243,
+                    "startOffset": 111654,
                     "endColumn": 79,
-                    "endOffset": 111318
+                    "endOffset": 111729
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8277,11 +8298,11 @@
             },
             {
                 "to": {
-                    "startLine": 1451,
+                    "startLine": 1459,
                     "startColumn": 4,
-                    "startOffset": 111323,
+                    "startOffset": 111734,
                     "endColumn": 91,
-                    "endOffset": 111410
+                    "endOffset": 111821
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8296,11 +8317,11 @@
             },
             {
                 "to": {
-                    "startLine": 1452,
+                    "startLine": 1460,
                     "startColumn": 4,
-                    "startOffset": 111415,
+                    "startOffset": 111826,
                     "endColumn": 97,
-                    "endOffset": 111508
+                    "endOffset": 111919
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8315,12 +8336,12 @@
             },
             {
                 "to": {
-                    "startLine": 1453,
+                    "startLine": 1461,
                     "startColumn": 4,
-                    "startOffset": 111513,
-                    "endLine": 1454,
+                    "startOffset": 111924,
+                    "endLine": 1462,
                     "endColumn": 12,
-                    "endOffset": 111618
+                    "endOffset": 112029
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8336,11 +8357,11 @@
             },
             {
                 "to": {
-                    "startLine": 1455,
+                    "startLine": 1463,
                     "startColumn": 4,
-                    "startOffset": 111623,
+                    "startOffset": 112034,
                     "endColumn": 77,
-                    "endOffset": 111696
+                    "endOffset": 112107
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8355,11 +8376,11 @@
             },
             {
                 "to": {
-                    "startLine": 1456,
+                    "startLine": 1464,
                     "startColumn": 4,
-                    "startOffset": 111701,
+                    "startOffset": 112112,
                     "endColumn": 105,
-                    "endOffset": 111802
+                    "endOffset": 112213
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8374,11 +8395,11 @@
             },
             {
                 "to": {
-                    "startLine": 1457,
+                    "startLine": 1465,
                     "startColumn": 4,
-                    "startOffset": 111807,
+                    "startOffset": 112218,
                     "endColumn": 91,
-                    "endOffset": 111894
+                    "endOffset": 112305
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8393,11 +8414,11 @@
             },
             {
                 "to": {
-                    "startLine": 1458,
+                    "startLine": 1466,
                     "startColumn": 4,
-                    "startOffset": 111899,
+                    "startOffset": 112310,
                     "endColumn": 103,
-                    "endOffset": 111998
+                    "endOffset": 112409
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8412,11 +8433,11 @@
             },
             {
                 "to": {
-                    "startLine": 1459,
+                    "startLine": 1467,
                     "startColumn": 4,
-                    "startOffset": 112003,
+                    "startOffset": 112414,
                     "endColumn": 109,
-                    "endOffset": 112108
+                    "endOffset": 112519
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8431,12 +8452,12 @@
             },
             {
                 "to": {
-                    "startLine": 1460,
+                    "startLine": 1468,
                     "startColumn": 4,
-                    "startOffset": 112113,
-                    "endLine": 1461,
+                    "startOffset": 112524,
+                    "endLine": 1469,
                     "endColumn": 12,
-                    "endOffset": 112230
+                    "endOffset": 112641
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8452,12 +8473,12 @@
             },
             {
                 "to": {
-                    "startLine": 1462,
+                    "startLine": 1470,
                     "startColumn": 4,
-                    "startOffset": 112235,
-                    "endLine": 1465,
+                    "startOffset": 112646,
+                    "endLine": 1473,
                     "endColumn": 12,
-                    "endOffset": 112393
+                    "endOffset": 112804
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8473,12 +8494,12 @@
             },
             {
                 "to": {
-                    "startLine": 1466,
+                    "startLine": 1474,
                     "startColumn": 4,
-                    "startOffset": 112398,
-                    "endLine": 1469,
+                    "startOffset": 112809,
+                    "endLine": 1477,
                     "endColumn": 12,
-                    "endOffset": 112550
+                    "endOffset": 112961
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8494,11 +8515,11 @@
             },
             {
                 "to": {
-                    "startLine": 1470,
+                    "startLine": 1478,
                     "startColumn": 4,
-                    "startOffset": 112555,
+                    "startOffset": 112966,
                     "endColumn": 34,
-                    "endOffset": 112585
+                    "endOffset": 112996
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.facebook.react\\react-native\\0.55.4\\res\\values\\values.xml",
@@ -8513,12 +8534,12 @@
             },
             {
                 "to": {
-                    "startLine": 1471,
+                    "startLine": 1479,
                     "startColumn": 4,
-                    "startOffset": 112590,
-                    "endLine": 1477,
+                    "startOffset": 113001,
+                    "endLine": 1485,
                     "endColumn": 10,
-                    "endOffset": 113003
+                    "endOffset": 113414
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.facebook.react\\react-native\\0.55.4\\res\\values\\values.xml",
@@ -8534,12 +8555,12 @@
             },
             {
                 "to": {
-                    "startLine": 1478,
+                    "startLine": 1486,
                     "startColumn": 4,
-                    "startOffset": 113008,
-                    "endLine": 1484,
+                    "startOffset": 113419,
+                    "endLine": 1492,
                     "endColumn": 10,
-                    "endOffset": 113381
+                    "endOffset": 113792
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.facebook.react\\react-native\\0.55.4\\res\\values\\values.xml",
@@ -8555,12 +8576,12 @@
             },
             {
                 "to": {
-                    "startLine": 1485,
+                    "startLine": 1493,
                     "startColumn": 4,
-                    "startOffset": 113386,
-                    "endLine": 1487,
+                    "startOffset": 113797,
+                    "endLine": 1495,
                     "endColumn": 10,
-                    "endOffset": 113558
+                    "endOffset": 113969
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.facebook.react\\react-native\\0.55.4\\res\\values\\values.xml",
@@ -8576,12 +8597,12 @@
             },
             {
                 "to": {
-                    "startLine": 1488,
+                    "startLine": 1496,
                     "startColumn": 4,
-                    "startOffset": 113563,
-                    "endLine": 1490,
+                    "startOffset": 113974,
+                    "endLine": 1498,
                     "endColumn": 10,
-                    "endOffset": 113737
+                    "endOffset": 114148
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.facebook.react\\react-native\\0.55.4\\res\\values\\values.xml",
@@ -8597,12 +8618,12 @@
             },
             {
                 "to": {
-                    "startLine": 1491,
+                    "startLine": 1499,
                     "startColumn": 4,
-                    "startOffset": 113742,
-                    "endLine": 1493,
+                    "startOffset": 114153,
+                    "endLine": 1501,
                     "endColumn": 12,
-                    "endOffset": 113920
+                    "endOffset": 114331
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.facebook.react\\react-native\\0.55.4\\res\\values\\values.xml",
@@ -8618,12 +8639,12 @@
             },
             {
                 "to": {
-                    "startLine": 1494,
+                    "startLine": 1502,
                     "startColumn": 4,
-                    "startOffset": 113925,
-                    "endLine": 1499,
+                    "startOffset": 114336,
+                    "endLine": 1507,
                     "endColumn": 12,
-                    "endOffset": 114285
+                    "endOffset": 114696
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.facebook.react\\react-native\\0.55.4\\res\\values\\values.xml",
@@ -8639,11 +8660,11 @@
             },
             {
                 "to": {
-                    "startLine": 1500,
+                    "startLine": 1508,
                     "startColumn": 4,
-                    "startOffset": 114290,
+                    "startOffset": 114701,
                     "endColumn": 79,
-                    "endOffset": 114365
+                    "endOffset": 114776
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8658,11 +8679,11 @@
             },
             {
                 "to": {
-                    "startLine": 1501,
+                    "startLine": 1509,
                     "startColumn": 4,
-                    "startOffset": 114370,
+                    "startOffset": 114781,
                     "endColumn": 99,
-                    "endOffset": 114465
+                    "endOffset": 114876
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8677,11 +8698,11 @@
             },
             {
                 "to": {
-                    "startLine": 1502,
+                    "startLine": 1510,
                     "startColumn": 4,
-                    "startOffset": 114470,
+                    "startOffset": 114881,
                     "endColumn": 89,
-                    "endOffset": 114555
+                    "endOffset": 114966
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8696,11 +8717,11 @@
             },
             {
                 "to": {
-                    "startLine": 1503,
+                    "startLine": 1511,
                     "startColumn": 4,
-                    "startOffset": 114560,
+                    "startOffset": 114971,
                     "endColumn": 109,
-                    "endOffset": 114665
+                    "endOffset": 115076
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8715,11 +8736,11 @@
             },
             {
                 "to": {
-                    "startLine": 1504,
+                    "startLine": 1512,
                     "startColumn": 4,
-                    "startOffset": 114670,
+                    "startOffset": 115081,
                     "endColumn": 91,
-                    "endOffset": 114757
+                    "endOffset": 115168
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8734,12 +8755,12 @@
             },
             {
                 "to": {
-                    "startLine": 1505,
+                    "startLine": 1513,
                     "startColumn": 4,
-                    "startOffset": 114762,
-                    "endLine": 1506,
+                    "startOffset": 115173,
+                    "endLine": 1514,
                     "endColumn": 12,
-                    "endOffset": 114857
+                    "endOffset": 115268
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8755,12 +8776,12 @@
             },
             {
                 "to": {
-                    "startLine": 1507,
+                    "startLine": 1515,
                     "startColumn": 4,
-                    "startOffset": 114862,
-                    "endLine": 1508,
+                    "startOffset": 115273,
+                    "endLine": 1516,
                     "endColumn": 12,
-                    "endOffset": 114969
+                    "endOffset": 115380
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8776,12 +8797,12 @@
             },
             {
                 "to": {
-                    "startLine": 1509,
+                    "startLine": 1517,
                     "startColumn": 4,
-                    "startOffset": 114974,
-                    "endLine": 1510,
+                    "startOffset": 115385,
+                    "endLine": 1518,
                     "endColumn": 12,
-                    "endOffset": 115083
+                    "endOffset": 115494
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8797,12 +8818,12 @@
             },
             {
                 "to": {
-                    "startLine": 1511,
+                    "startLine": 1519,
                     "startColumn": 4,
-                    "startOffset": 115088,
-                    "endLine": 1512,
+                    "startOffset": 115499,
+                    "endLine": 1520,
                     "endColumn": 12,
-                    "endOffset": 115199
+                    "endOffset": 115610
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8818,12 +8839,12 @@
             },
             {
                 "to": {
-                    "startLine": 1513,
+                    "startLine": 1521,
                     "startColumn": 4,
-                    "startOffset": 115204,
-                    "endLine": 1514,
+                    "startOffset": 115615,
+                    "endLine": 1522,
                     "endColumn": 12,
-                    "endOffset": 115315
+                    "endOffset": 115726
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8839,11 +8860,11 @@
             },
             {
                 "to": {
-                    "startLine": 1515,
+                    "startLine": 1523,
                     "startColumn": 4,
-                    "startOffset": 115320,
+                    "startOffset": 115731,
                     "endColumn": 93,
-                    "endOffset": 115409
+                    "endOffset": 115820
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8858,11 +8879,11 @@
             },
             {
                 "to": {
-                    "startLine": 1516,
+                    "startLine": 1524,
                     "startColumn": 4,
-                    "startOffset": 115414,
+                    "startOffset": 115825,
                     "endColumn": 113,
-                    "endOffset": 115523
+                    "endOffset": 115934
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8877,11 +8898,11 @@
             },
             {
                 "to": {
-                    "startLine": 1517,
+                    "startLine": 1525,
                     "startColumn": 4,
-                    "startOffset": 115528,
+                    "startOffset": 115939,
                     "endColumn": 117,
-                    "endOffset": 115641
+                    "endOffset": 116052
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8896,12 +8917,12 @@
             },
             {
                 "to": {
-                    "startLine": 1518,
+                    "startLine": 1526,
                     "startColumn": 4,
-                    "startOffset": 115646,
-                    "endLine": 1519,
+                    "startOffset": 116057,
+                    "endLine": 1527,
                     "endColumn": 12,
-                    "endOffset": 115743
+                    "endOffset": 116154
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8917,12 +8938,12 @@
             },
             {
                 "to": {
-                    "startLine": 1520,
+                    "startLine": 1528,
                     "startColumn": 4,
-                    "startOffset": 115748,
-                    "endLine": 1521,
+                    "startOffset": 116159,
+                    "endLine": 1529,
                     "endColumn": 12,
-                    "endOffset": 115863
+                    "endOffset": 116274
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8938,12 +8959,12 @@
             },
             {
                 "to": {
-                    "startLine": 1522,
+                    "startLine": 1530,
                     "startColumn": 4,
-                    "startOffset": 115868,
-                    "endLine": 1523,
+                    "startOffset": 116279,
+                    "endLine": 1531,
                     "endColumn": 12,
-                    "endOffset": 115985
+                    "endOffset": 116396
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8959,11 +8980,11 @@
             },
             {
                 "to": {
-                    "startLine": 1524,
+                    "startLine": 1532,
                     "startColumn": 4,
-                    "startOffset": 115990,
+                    "startOffset": 116401,
                     "endColumn": 81,
-                    "endOffset": 116067
+                    "endOffset": 116478
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8978,11 +8999,11 @@
             },
             {
                 "to": {
-                    "startLine": 1525,
+                    "startLine": 1533,
                     "startColumn": 4,
-                    "startOffset": 116072,
+                    "startOffset": 116483,
                     "endColumn": 103,
-                    "endOffset": 116171
+                    "endOffset": 116582
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -8997,11 +9018,11 @@
             },
             {
                 "to": {
-                    "startLine": 1526,
+                    "startLine": 1534,
                     "startColumn": 4,
-                    "startOffset": 116176,
+                    "startOffset": 116587,
                     "endColumn": 119,
-                    "endOffset": 116291
+                    "endOffset": 116702
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9016,11 +9037,11 @@
             },
             {
                 "to": {
-                    "startLine": 1527,
+                    "startLine": 1535,
                     "startColumn": 4,
-                    "startOffset": 116296,
+                    "startOffset": 116707,
                     "endColumn": 125,
-                    "endOffset": 116417
+                    "endOffset": 116828
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9035,11 +9056,11 @@
             },
             {
                 "to": {
-                    "startLine": 1528,
+                    "startLine": 1536,
                     "startColumn": 4,
-                    "startOffset": 116422,
+                    "startOffset": 116833,
                     "endColumn": 97,
-                    "endOffset": 116515
+                    "endOffset": 116926
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9054,11 +9075,11 @@
             },
             {
                 "to": {
-                    "startLine": 1529,
+                    "startLine": 1537,
                     "startColumn": 4,
-                    "startOffset": 116520,
+                    "startOffset": 116931,
                     "endColumn": 93,
-                    "endOffset": 116609
+                    "endOffset": 117020
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9073,11 +9094,11 @@
             },
             {
                 "to": {
-                    "startLine": 1530,
+                    "startLine": 1538,
                     "startColumn": 4,
-                    "startOffset": 116614,
+                    "startOffset": 117025,
                     "endColumn": 87,
-                    "endOffset": 116697
+                    "endOffset": 117108
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9092,11 +9113,11 @@
             },
             {
                 "to": {
-                    "startLine": 1531,
+                    "startLine": 1539,
                     "startColumn": 4,
-                    "startOffset": 116702,
+                    "startOffset": 117113,
                     "endColumn": 111,
-                    "endOffset": 116809
+                    "endOffset": 117220
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9111,11 +9132,11 @@
             },
             {
                 "to": {
-                    "startLine": 1532,
+                    "startLine": 1540,
                     "startColumn": 4,
-                    "startOffset": 116814,
+                    "startOffset": 117225,
                     "endColumn": 115,
-                    "endOffset": 116925
+                    "endOffset": 117336
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9130,11 +9151,11 @@
             },
             {
                 "to": {
-                    "startLine": 1533,
+                    "startLine": 1541,
                     "startColumn": 4,
-                    "startOffset": 116930,
+                    "startOffset": 117341,
                     "endColumn": 121,
-                    "endOffset": 117047
+                    "endOffset": 117458
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9149,11 +9170,11 @@
             },
             {
                 "to": {
-                    "startLine": 1534,
+                    "startLine": 1542,
                     "startColumn": 4,
-                    "startOffset": 117052,
+                    "startOffset": 117463,
                     "endColumn": 111,
-                    "endOffset": 117159
+                    "endOffset": 117570
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9168,12 +9189,12 @@
             },
             {
                 "to": {
-                    "startLine": 1535,
+                    "startLine": 1543,
                     "startColumn": 4,
-                    "startOffset": 117164,
-                    "endLine": 1537,
+                    "startOffset": 117575,
+                    "endLine": 1545,
                     "endColumn": 12,
-                    "endOffset": 117334
+                    "endOffset": 117745
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9189,11 +9210,11 @@
             },
             {
                 "to": {
-                    "startLine": 1538,
+                    "startLine": 1546,
                     "startColumn": 4,
-                    "startOffset": 117339,
+                    "startOffset": 117750,
                     "endColumn": 115,
-                    "endOffset": 117450
+                    "endOffset": 117861
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9208,11 +9229,11 @@
             },
             {
                 "to": {
-                    "startLine": 1539,
+                    "startLine": 1547,
                     "startColumn": 4,
-                    "startOffset": 117455,
+                    "startOffset": 117866,
                     "endColumn": 85,
-                    "endOffset": 117536
+                    "endOffset": 117947
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9227,12 +9248,12 @@
             },
             {
                 "to": {
-                    "startLine": 1540,
+                    "startLine": 1548,
                     "startColumn": 4,
-                    "startOffset": 117541,
-                    "endLine": 1541,
+                    "startOffset": 117952,
+                    "endLine": 1549,
                     "endColumn": 12,
-                    "endOffset": 117648
+                    "endOffset": 118059
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9248,12 +9269,12 @@
             },
             {
                 "to": {
-                    "startLine": 1542,
+                    "startLine": 1550,
                     "startColumn": 4,
-                    "startOffset": 117653,
-                    "endLine": 1543,
+                    "startOffset": 118064,
+                    "endLine": 1551,
                     "endColumn": 12,
-                    "endOffset": 117772
+                    "endOffset": 118183
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9269,11 +9290,11 @@
             },
             {
                 "to": {
-                    "startLine": 1544,
+                    "startLine": 1552,
                     "startColumn": 4,
-                    "startOffset": 117777,
+                    "startOffset": 118188,
                     "endColumn": 66,
-                    "endOffset": 117839
+                    "endOffset": 118250
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9288,12 +9309,12 @@
             },
             {
                 "to": {
-                    "startLine": 1545,
+                    "startLine": 1553,
                     "startColumn": 4,
-                    "startOffset": 117844,
-                    "endLine": 1546,
+                    "startOffset": 118255,
+                    "endLine": 1554,
                     "endColumn": 12,
-                    "endOffset": 117965
+                    "endOffset": 118376
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9309,11 +9330,11 @@
             },
             {
                 "to": {
-                    "startLine": 1547,
+                    "startLine": 1555,
                     "startColumn": 4,
-                    "startOffset": 117970,
+                    "startOffset": 118381,
                     "endColumn": 67,
-                    "endOffset": 118033
+                    "endOffset": 118444
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9328,12 +9349,12 @@
             },
             {
                 "to": {
-                    "startLine": 1548,
+                    "startLine": 1556,
                     "startColumn": 4,
-                    "startOffset": 118038,
-                    "endLine": 1549,
+                    "startOffset": 118449,
+                    "endLine": 1557,
                     "endColumn": 12,
-                    "endOffset": 118161
+                    "endOffset": 118572
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9349,12 +9370,12 @@
             },
             {
                 "to": {
-                    "startLine": 1550,
+                    "startLine": 1558,
                     "startColumn": 4,
-                    "startOffset": 118166,
-                    "endLine": 1551,
+                    "startOffset": 118577,
+                    "endLine": 1559,
                     "endColumn": 12,
-                    "endOffset": 118305
+                    "endOffset": 118716
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9370,12 +9391,12 @@
             },
             {
                 "to": {
-                    "startLine": 1552,
+                    "startLine": 1560,
                     "startColumn": 4,
-                    "startOffset": 118310,
-                    "endLine": 1553,
+                    "startOffset": 118721,
+                    "endLine": 1561,
                     "endColumn": 12,
-                    "endOffset": 118433
+                    "endOffset": 118844
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9391,11 +9412,11 @@
             },
             {
                 "to": {
-                    "startLine": 1554,
+                    "startLine": 1562,
                     "startColumn": 4,
-                    "startOffset": 118438,
+                    "startOffset": 118849,
                     "endColumn": 68,
-                    "endOffset": 118502
+                    "endOffset": 118913
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9410,11 +9431,11 @@
             },
             {
                 "to": {
-                    "startLine": 1555,
+                    "startLine": 1563,
                     "startColumn": 4,
-                    "startOffset": 118507,
+                    "startOffset": 118918,
                     "endColumn": 94,
-                    "endOffset": 118597
+                    "endOffset": 119008
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9429,11 +9450,11 @@
             },
             {
                 "to": {
-                    "startLine": 1556,
+                    "startLine": 1564,
                     "startColumn": 4,
-                    "startOffset": 118602,
+                    "startOffset": 119013,
                     "endColumn": 114,
-                    "endOffset": 118712
+                    "endOffset": 119123
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9448,11 +9469,11 @@
             },
             {
                 "to": {
-                    "startLine": 1557,
+                    "startLine": 1565,
                     "startColumn": 4,
-                    "startOffset": 118717,
+                    "startOffset": 119128,
                     "endColumn": 112,
-                    "endOffset": 118825
+                    "endOffset": 119236
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9467,11 +9488,11 @@
             },
             {
                 "to": {
-                    "startLine": 1558,
+                    "startLine": 1566,
                     "startColumn": 4,
-                    "startOffset": 118830,
+                    "startOffset": 119241,
                     "endColumn": 98,
-                    "endOffset": 118924
+                    "endOffset": 119335
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9486,11 +9507,11 @@
             },
             {
                 "to": {
-                    "startLine": 1559,
+                    "startLine": 1567,
                     "startColumn": 4,
-                    "startOffset": 118929,
+                    "startOffset": 119340,
                     "endColumn": 108,
-                    "endOffset": 119033
+                    "endOffset": 119444
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9505,11 +9526,11 @@
             },
             {
                 "to": {
-                    "startLine": 1560,
+                    "startLine": 1568,
                     "startColumn": 4,
-                    "startOffset": 119038,
+                    "startOffset": 119449,
                     "endColumn": 110,
-                    "endOffset": 119144
+                    "endOffset": 119555
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9524,11 +9545,11 @@
             },
             {
                 "to": {
-                    "startLine": 1561,
+                    "startLine": 1569,
                     "startColumn": 4,
-                    "startOffset": 119149,
+                    "startOffset": 119560,
                     "endColumn": 110,
-                    "endOffset": 119255
+                    "endOffset": 119666
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9543,11 +9564,11 @@
             },
             {
                 "to": {
-                    "startLine": 1562,
+                    "startLine": 1570,
                     "startColumn": 4,
-                    "startOffset": 119260,
+                    "startOffset": 119671,
                     "endColumn": 100,
-                    "endOffset": 119356
+                    "endOffset": 119767
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9562,11 +9583,11 @@
             },
             {
                 "to": {
-                    "startLine": 1563,
+                    "startLine": 1571,
                     "startColumn": 4,
-                    "startOffset": 119361,
+                    "startOffset": 119772,
                     "endColumn": 104,
-                    "endOffset": 119461
+                    "endOffset": 119872
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9581,12 +9602,12 @@
             },
             {
                 "to": {
-                    "startLine": 1564,
+                    "startLine": 1572,
                     "startColumn": 4,
-                    "startOffset": 119466,
-                    "endLine": 1565,
+                    "startOffset": 119877,
+                    "endLine": 1573,
                     "endColumn": 12,
-                    "endOffset": 119573
+                    "endOffset": 119984
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9602,12 +9623,12 @@
             },
             {
                 "to": {
-                    "startLine": 1566,
+                    "startLine": 1574,
                     "startColumn": 4,
-                    "startOffset": 119578,
-                    "endLine": 1567,
+                    "startOffset": 119989,
+                    "endLine": 1575,
                     "endColumn": 12,
-                    "endOffset": 119703
+                    "endOffset": 120114
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9623,11 +9644,11 @@
             },
             {
                 "to": {
-                    "startLine": 1568,
+                    "startLine": 1576,
                     "startColumn": 4,
-                    "startOffset": 119708,
+                    "startOffset": 120119,
                     "endColumn": 90,
-                    "endOffset": 119794
+                    "endOffset": 120205
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9642,11 +9663,11 @@
             },
             {
                 "to": {
-                    "startLine": 1569,
+                    "startLine": 1577,
                     "startColumn": 4,
-                    "startOffset": 119799,
+                    "startOffset": 120210,
                     "endColumn": 122,
-                    "endOffset": 119917
+                    "endOffset": 120328
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9661,12 +9682,12 @@
             },
             {
                 "to": {
-                    "startLine": 1570,
+                    "startLine": 1578,
                     "startColumn": 4,
-                    "startOffset": 119922,
-                    "endLine": 1571,
+                    "startOffset": 120333,
+                    "endLine": 1579,
                     "endColumn": 12,
-                    "endOffset": 120029
+                    "endOffset": 120440
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9682,11 +9703,11 @@
             },
             {
                 "to": {
-                    "startLine": 1572,
+                    "startLine": 1580,
                     "startColumn": 4,
-                    "startOffset": 120034,
+                    "startOffset": 120445,
                     "endColumn": 85,
-                    "endOffset": 120115
+                    "endOffset": 120526
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9701,11 +9722,11 @@
             },
             {
                 "to": {
-                    "startLine": 1573,
+                    "startLine": 1581,
                     "startColumn": 4,
-                    "startOffset": 120120,
+                    "startOffset": 120531,
                     "endColumn": 103,
-                    "endOffset": 120219
+                    "endOffset": 120630
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9720,12 +9741,12 @@
             },
             {
                 "to": {
-                    "startLine": 1574,
+                    "startLine": 1582,
                     "startColumn": 4,
-                    "startOffset": 120224,
-                    "endLine": 1575,
+                    "startOffset": 120635,
+                    "endLine": 1583,
                     "endColumn": 12,
-                    "endOffset": 120327
+                    "endOffset": 120738
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9741,12 +9762,12 @@
             },
             {
                 "to": {
-                    "startLine": 1576,
+                    "startLine": 1584,
                     "startColumn": 4,
-                    "startOffset": 120332,
-                    "endLine": 1577,
+                    "startOffset": 120743,
+                    "endLine": 1585,
                     "endColumn": 12,
-                    "endOffset": 120427
+                    "endOffset": 120838
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9762,12 +9783,12 @@
             },
             {
                 "to": {
-                    "startLine": 1578,
+                    "startLine": 1586,
                     "startColumn": 4,
-                    "startOffset": 120432,
-                    "endLine": 1579,
+                    "startOffset": 120843,
+                    "endLine": 1587,
                     "endColumn": 12,
-                    "endOffset": 120545
+                    "endOffset": 120956
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9783,12 +9804,12 @@
             },
             {
                 "to": {
-                    "startLine": 1580,
+                    "startLine": 1588,
                     "startColumn": 4,
-                    "startOffset": 120550,
-                    "endLine": 1581,
+                    "startOffset": 120961,
+                    "endLine": 1589,
                     "endColumn": 12,
-                    "endOffset": 120649
+                    "endOffset": 121060
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9804,12 +9825,12 @@
             },
             {
                 "to": {
-                    "startLine": 1582,
+                    "startLine": 1590,
                     "startColumn": 4,
-                    "startOffset": 120654,
-                    "endLine": 1583,
+                    "startOffset": 121065,
+                    "endLine": 1591,
                     "endColumn": 12,
-                    "endOffset": 120753
+                    "endOffset": 121164
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9825,12 +9846,12 @@
             },
             {
                 "to": {
-                    "startLine": 1584,
+                    "startLine": 1592,
                     "startColumn": 4,
-                    "startOffset": 120758,
-                    "endLine": 1585,
+                    "startOffset": 121169,
+                    "endLine": 1593,
                     "endColumn": 12,
-                    "endOffset": 120879
+                    "endOffset": 121290
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9846,11 +9867,11 @@
             },
             {
                 "to": {
-                    "startLine": 1586,
+                    "startLine": 1594,
                     "startColumn": 4,
-                    "startOffset": 120884,
+                    "startOffset": 121295,
                     "endColumn": 87,
-                    "endOffset": 120967
+                    "endOffset": 121378
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9865,11 +9886,11 @@
             },
             {
                 "to": {
-                    "startLine": 1587,
+                    "startLine": 1595,
                     "startColumn": 4,
-                    "startOffset": 120972,
+                    "startOffset": 121383,
                     "endColumn": 89,
-                    "endOffset": 121057
+                    "endOffset": 121468
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9884,11 +9905,11 @@
             },
             {
                 "to": {
-                    "startLine": 1588,
+                    "startLine": 1596,
                     "startColumn": 4,
-                    "startOffset": 121062,
+                    "startOffset": 121473,
                     "endColumn": 109,
-                    "endOffset": 121167
+                    "endOffset": 121578
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9903,11 +9924,11 @@
             },
             {
                 "to": {
-                    "startLine": 1589,
+                    "startLine": 1597,
                     "startColumn": 4,
-                    "startOffset": 121172,
+                    "startOffset": 121583,
                     "endColumn": 83,
-                    "endOffset": 121251
+                    "endOffset": 121662
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9922,11 +9943,11 @@
             },
             {
                 "to": {
-                    "startLine": 1590,
+                    "startLine": 1598,
                     "startColumn": 4,
-                    "startOffset": 121256,
+                    "startOffset": 121667,
                     "endColumn": 53,
-                    "endOffset": 121305
+                    "endOffset": 121716
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9941,11 +9962,11 @@
             },
             {
                 "to": {
-                    "startLine": 1591,
+                    "startLine": 1599,
                     "startColumn": 4,
-                    "startOffset": 121310,
+                    "startOffset": 121721,
                     "endColumn": 63,
-                    "endOffset": 121369
+                    "endOffset": 121780
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9960,11 +9981,11 @@
             },
             {
                 "to": {
-                    "startLine": 1592,
+                    "startLine": 1600,
                     "startColumn": 4,
-                    "startOffset": 121374,
+                    "startOffset": 121785,
                     "endColumn": 105,
-                    "endOffset": 121475
+                    "endOffset": 121886
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9979,11 +10000,11 @@
             },
             {
                 "to": {
-                    "startLine": 1593,
+                    "startLine": 1601,
                     "startColumn": 4,
-                    "startOffset": 121480,
+                    "startOffset": 121891,
                     "endColumn": 109,
-                    "endOffset": 121585
+                    "endOffset": 121996
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -9998,11 +10019,11 @@
             },
             {
                 "to": {
-                    "startLine": 1594,
+                    "startLine": 1602,
                     "startColumn": 4,
-                    "startOffset": 121590,
+                    "startOffset": 122001,
                     "endColumn": 83,
-                    "endOffset": 121669
+                    "endOffset": 122080
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -10017,11 +10038,11 @@
             },
             {
                 "to": {
-                    "startLine": 1595,
+                    "startLine": 1603,
                     "startColumn": 4,
-                    "startOffset": 121674,
+                    "startOffset": 122085,
                     "endColumn": 119,
-                    "endOffset": 121789
+                    "endOffset": 122200
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\values\\values.xml",
@@ -10036,12 +10057,12 @@
             },
             {
                 "to": {
-                    "startLine": 1596,
+                    "startLine": 1604,
                     "startColumn": 4,
-                    "startOffset": 121794,
-                    "endLine": 1605,
+                    "startOffset": 122205,
+                    "endLine": 1613,
                     "endColumn": 10,
-                    "endOffset": 122230
+                    "endOffset": 122641
                 },
                 "from": {
                     "file": "D:\\Guilherme\\Bloco_Multiplataforma\\RangoAmigo_React\\android\\app\\build\\intermediates\\exploded-aar\\com.facebook.react\\react-native\\0.55.4\\res\\values\\values.xml",

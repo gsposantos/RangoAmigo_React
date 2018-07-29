@@ -1,17 +1,16 @@
 import React from 'react';
 import {
-  View,  
-  Image,
-  ScrollView,  
-  StyleSheet,
-  TouchableOpacity,
+  View,
+  Text,
+  ActivityIndicator,  
+  StyleSheet,  
 } from 'react-native';
 
-const buscaDetalheConvite = async eventoId => {
-//   const res = await fetch(`https://food2fork.com/api/get?key=${food2ForkKey}&rId=${recipeId}`);
-//   const {recipe} = await res.json();
-//   return recipe;
-};
+import { Container, Fab, Icon, Button } from 'native-base';
+
+import axios from 'axios';
+
+import DadosEvento from '../../../../componentes/DadosEvento';
 
 
 export default class DetalheConvite extends React.Component {
@@ -20,129 +19,107 @@ export default class DetalheConvite extends React.Component {
         title: 'Detalhe do Convite',
     };
 
-  state = {
-    fullRecipe: null,
-  };
+    state = {
+      carregando: true,
+      fabAtivo: false, 
+      convite: null,
+    };
 
-//   async componentDidMount() {
-//     const {recipe_id} = this.props.navigation.state.params;
+  async componentDidMount() {
 
-//     const fullRecipe = await fetchFullRecipe(recipe_id);
+    console.log(this.props.navigation.state.params);
+    
+    const {CodEvento} = this.props.navigation.state.params;
+    // const fullRecipe = await fetchFullRecipe(recipe_id);
+    // this.setState({fullRecipe});
 
-//     this.setState({fullRecipe});
-//   }
+    this.carregaDetalheEventoApi(CodEvento);
 
-//   renderItem = ({item}) => <RecipeIngredient ingredient={item}/>;
+  }
 
-render() {
-    return(
-      <ScrollView style={styles.container}>
-      <Image
-        style={styles.headerImage}
-        source={'https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg'}
-      />
-      <View style={styles.content}>
+  carregaDetalheEventoApi = (codEvento) => {
+
+    //console.log(this.state.perfil);
+
+    this.setState({carregando: true});
+
+    axios({
+      method: 'get',        
+      url: 'http://www.anjodaguardaeventos.com.br/rangoamigo/api/eventos/DetalharEvento?codEvento=' + codEvento,
+      //headers: { 'content-type': 'application/json;charset=utf-8' },                       
+      //data: { "CelNumero": 51999999093 } //perfil da sessao que ja ta no state?
+    }).then(response => {  
+
+      console.log(response);      
+      
+      // validar resposta
+      if(response.data.Ok){
+        if(response.data.Dados != null){
+          
+          this.setState({convite: response.data.Dados, carregando: false});
+
+        }
+        else{
+            Alert.alert('Informação', response.Mensagem);            
+          }
+        }
+      else{
+        Alert.alert('Informação', response.data.Mensagem);
+      }
+
+    })
+    .catch((err) => {
+      console.log(err);
+      Alert.alert('Erro', 'Erro ao consultar Convite');
+    });  
+  }
+
+  carregaDetalheEvento = () => {
+    return (
+      <Container style={styles.conteudo}>
+          <DadosEvento evento={this.state.convite} />
+          <Fab
+              active={this.state.fabAtivo}
+              direction="up"
+              containerStyle={{ }}
+              style={{ backgroundColor: '#34515e' }}
+              position="bottomRight"
+              onPress={() => this.setState({ fabAtivo: !this.state.fabAtivo })}>
+              
+              <Icon type="FontAwesome" name="ellipsis-v" />
+              
+              <Button style={{ backgroundColor: '#34515e' }}>
+                <Icon type="FontAwesome" ios="users" android="users" />
+              </Button>
+
+              <Button style={{ backgroundColor: '#34515e' }}>
+                <Icon type="FontAwesome" ios="calendar" android="calendar" />
+              </Button>            
         
-      </View>
-      </ScrollView>
+            </Fab>
+          </Container>
     );
   }
 
-//   render() {
-//     const {params: recipe} = this.props.navigation.state;
-//     const {fullRecipe} = this.state;
-//     const { state: { favorites }, toggleFavorite } = this.props.screenProps;
+render() {
+  
+    return(
 
-//     return (
-//       <ScrollView style={styles.container}>
-//         <Image
-//           style={styles.headerImage}
-//           source={getImageSrc(recipe)}
-//         />
-//         <View style={styles.content}>
-//           <View style={styles.contentHeader}>
-//             <View>
-//               <Text>
-//                 Score:
-//                 <Text style={styles.strongText}>
-//                   {' '}{Math.round(recipe.social_rank)}%
-//                 </Text>
-//               </Text>
-//               <Text style={{ marginTop: 5 }}>
-//                 Publisher:
-//                 <Text style={styles.strongText}>
-//                   {' '}{recipe.publisher}
-//                 </Text>
-//               </Text>
-//             </View>
-//             <View>
-//               <TouchableOpacity onPress={() => toggleFavorite(recipe)}>
-//                 <MaterialIcons
-//                   name="favorite"
-//                   size={34}
-//                   color="#f00"
-//                   style={{ opacity: favorites.has(recipe.recipe_id) ? 1 : 0.6 }}
-//                 />;
-//               </TouchableOpacity>
-//             </View>
-//           </View>
-//           <View style={styles.sectionSpacing}>
-//             <Text style={styles.sectionTitle}>
-//               Ingredients
-//             </Text>
-//             <View>
-//               {
-//                 !fullRecipe
-//                   ? <ActivityIndicator style={styles.sectionSpacing} size="large" color="#000"/>
-//                   : (
-//                     <FlatList
-//                       style={{width: '100%'}}
-//                       data={getIngredients(fullRecipe)}
-//                       renderItem={this.renderItem}
-//                     />
-//                   )
-//               }
-//             </View>
-//           </View>
-//           <View style={styles.sectionSpacing}>
-//             <Text style={styles.sectionTitle}>Instructions</Text>
-//             <Button onPress={this.handleSeeInstructions} title="See Instructions"/>
-//           </View>
-//         </View>
-//       </ScrollView>
-//     );
-//   }
+      this.state.carregando            
+      ? <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}> 
+          <ActivityIndicator size="large" color="#000"/> 
+        </View>
+      :
+        this.carregaDetalheEvento()        
+    );
+  }
 }
 
 const styles = StyleSheet.create({
-  container: {
+  conteudo: {
     flex: 1,
-    backgroundColor: '#fff',
-  },
-  headerImage: {
-    width: '100%',
-    height: 280,
-  },
-  content: {
-    paddingTop: 20,
-    paddingBottom: 20,
-    paddingStart: 10,
-    paddingEnd: 10,
-  },
-  contentHeader: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-  strongText: {
-    fontWeight: 'bold',
-  },
-  sectionSpacing: {
-    marginTop: 20,
-  },
-  sectionTitle: {
-    textAlign: 'center',
-    fontWeight: 'bold',
-    fontSize: 16,
-  },
+    //alignItems: 'center',       
+    //paddingTop: Constants.statusBarHeight,
+    backgroundColor: '#ecf0f1',
+  },  
 });

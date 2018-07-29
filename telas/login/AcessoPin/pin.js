@@ -3,6 +3,8 @@ import {
   Text,
   View,
   StyleSheet,
+  Alert,
+  ActivityIndicator,
   AsyncStorage, 
 } from 'react-native';
 
@@ -23,6 +25,7 @@ export default class AcessoPin extends React.Component {
   };
 
   state = {
+    carregando: false,
     pin: '',
   };
 
@@ -50,6 +53,7 @@ export default class AcessoPin extends React.Component {
   confirmaAcessoEventos = async (pin) => {
     
     console.log(pin);
+    this.setState({ carregando: true });
 
     //carrega dados para depois salvar em sessao
     var perfil = this.props.navigation.state.params;    
@@ -69,6 +73,7 @@ export default class AcessoPin extends React.Component {
         this.props.navigation.popToTop();
 
         //desvia tela principal
+        this.setState({ carregando: false });
         const navigateAction = NavigationActions.navigate({
           routeName: 'Principal'
         });    
@@ -78,6 +83,10 @@ export default class AcessoPin extends React.Component {
         console.error(err);
         Alert.alert("Inesperado", "Não foi possivel carregar os dados.");
       }   
+    }
+    else{
+      this.setState({ carregando: false });
+      Alert.alert("Informação", "O PIN informado está incorreto.");
     }  
   };
 
@@ -85,38 +94,42 @@ export default class AcessoPin extends React.Component {
 
     //console.log(this.props.navigation.state.params);    
     return (
-      <View style={styles.container} >        
-        <View style={styles.topo}>
-          <View style={styles.estiloFone}>        
-            <Text style={styles.textoFone}>
-            {'(' + this.props.navigation.state.params.CelNumero.toString().substring(0,2) + ') ' + this.props.navigation.state.params.CelNumero.toString().substring(2)}
-            </Text>
-          </View>
-          <View style={styles.estiloTopo}>        
-            <Text style={styles.textoTopo}>
-              Enviamos um código por SMS para o telefone informado.
-            </Text>
-            <Text style={styles.textoTopo}>
-              Por favor, informe esse código para prosseguir.
-            </Text>
-        </View>  
-        </View>
-        <View style={styles.formulario}>
-          <View  style={styles.campos}>            
-            <View  style={styles.campoPIN}>
-              <Item floatingLabel style={{ borderColor: '#34515e' }}>
-                <Label style={{ color: "#ff950e" }} >PIN</Label>
-                <Input style={{ color: "#ff950e" }} maxLength={4} keyboardType='numeric' onChangeText={this.configuraParamPin} />
-              </Item>
-            </View>
-          </View>
-          <View style={styles.botoes}>
-            <Button block style={styles.btn} onPress={_ => this.confirmaAcessoEventos(this.state.pin) } >
-              <Text style={styles.btnTxt}> Acessar </Text>
-            </Button>                            
-          </View>
-        </View>
-      </View>       
+      this.state.carregando            
+              ? <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}> 
+                  <ActivityIndicator size="large" color="#000"/> 
+                </View>
+              : <View style={styles.container} >        
+                  <View style={styles.topo}>
+                    <View style={styles.estiloFone}>        
+                      <Text style={styles.textoFone}>
+                      {'(' + this.props.navigation.state.params.CelNumero.toString().substring(0,2) + ') ' + this.props.navigation.state.params.CelNumero.toString().substring(2)}
+                      </Text>
+                    </View>
+                    <View style={styles.estiloTopo}>        
+                      <Text style={styles.textoTopo}>
+                        Enviamos um código por SMS para o telefone informado.
+                      </Text>
+                      <Text style={styles.textoTopo}>
+                        Por favor, informe esse código para prosseguir.
+                      </Text>
+                  </View>  
+                  </View>
+                  <View style={styles.formulario}>
+                    <View  style={styles.campos}>            
+                      <View  style={styles.campoPIN}>
+                        <Item floatingLabel style={{ borderColor: '#34515e' }}>
+                          <Label style={{ color: "#ff950e" }} >PIN</Label>
+                          <Input style={{ color: "#ff950e" }} maxLength={4} keyboardType='numeric' onChangeText={this.configuraParamPin} />
+                        </Item>
+                      </View>
+                    </View>
+                    <View style={styles.botoes}>
+                      <Button block style={styles.btn} onPress={_ => this.confirmaAcessoEventos(this.state.pin) } >
+                        <Text style={styles.btnTxt}> Acessar </Text>
+                      </Button>                            
+                    </View>
+                  </View>
+                </View>       
     );
   }
 }
@@ -216,7 +229,7 @@ const styles = StyleSheet.create({
     btnTxt : {
       fontSize: 18,
       fontWeight: 'bold',     
-      color: '#FFF'
+      color: '#ebeeef'
     },
 
 });

@@ -7,17 +7,25 @@ import {
   StyleSheet,
 } from 'react-native';
 
+import {   
+  Icon,  
+} from 'native-base';
+
 function apresentaImagem(contato){     
 
   if(!contato.hasThumbnail){
-    return <Image  resizeMode="contain" style={styles.foto} source={{uri: 'data:image/png;base64,' + contato.foto()}} />
+    if(contato.foto64 != null && contato.foto64 != 'undefined'){
+      return <Image  resizeMode="contain" style={styles.foto} source={{uri: 'data:image/png;base64,' + contato.foto64}} />
+    }
+    else{      
+      return <Icon type='FontAwesome' ios='user' android='user' style={{fontSize: 40, color: '#8eacbb'}}/>
+    }
   }
-  else{
-    //return <Image  resizeMode="contain" style={styles.foto} source={{uri: contato.thumbnailPath}} />
+  else{    
     return <Image 
       resizeMode="contain"
       style={styles.foto}
-      source={{uri: 'https://facebook.github.io/react-native/docs/assets/favicon.png'}}
+      source={{uri: contato.thumbnailPath}}
     />        
   }
 
@@ -26,8 +34,8 @@ function apresentaImagem(contato){
 
 export default function Contato({contato, onSelect}) {
 
-  let nomeContato = (contato.givenName.length>0) ? contato.givenName : '' + ' ';
-    nomeContato += (contato.middleName.length) ? contato.middleName :'' + ' ';
+  let nomeContato = (contato.givenName.length) ? contato.givenName : '' + ' ';
+    //nomeContato += (contato.middleName.length) ? contato.middleName :'' + ' ';
     nomeContato += (contato.familyName.length) ? contato.familyName : '' + ' ';
 
   return (    
@@ -104,18 +112,18 @@ const styles = StyleSheet.create({
   txtNome: {    
     fontSize: 18,
     fontWeight: 'bold',    
-    color: 'blue',
+    color:'#21284f'
   },
 
   txtFone: {   
     fontSize: 18,
     fontWeight: 'bold',    
-    color: 'blue',
+    color:'#21284f'
   },
 
   txtEmail: {   
     fontSize: 14,
-    color: 'blue',
+    color:'#21284f'
   },
 
    foto: {     

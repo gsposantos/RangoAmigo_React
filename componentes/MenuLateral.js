@@ -123,7 +123,7 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     fontSize: 20,
     fontWeight: 'bold',    
-    color: '#fff', //ffc64b    
+    color: '#ebeeef', //ffc64b    
   },
 
   estiloCabecalho: {

@@ -3,12 +3,12 @@
 
     <item
         is-multidex="false"
-        jar="D:\Guilherme\Bloco_Multiplataforma\RangoAmigo_React\android\app\build\intermediates\exploded-aar\com.facebook.fresco\imagepipeline-base\1.3.0\jars\classes.jar"
+        jar="D:\Guilherme\Bloco_Multiplataforma\RangoAmigo_React\android\app\build\intermediates\exploded-aar\com.facebook.fbui.textlayoutbuilder\textlayoutbuilder\1.0.0\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
-        sha1="72128af126ddd7d6252da9357fe560d3abcdfb0c">
-        <dex dex="D:\Guilherme\Bloco_Multiplataforma\RangoAmigo_React\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-imagepipeline-base-1.3.0_42513f6ec9dffdb453ffcdc3440d5a0486a723ca.jar" />
+        sha1="f90b593491e4044903f0bbf68dc3fa2790b151b9">
+        <dex dex="D:\Guilherme\Bloco_Multiplataforma\RangoAmigo_React\android\app\build\intermediates\pre-dexed\debug\com.facebook.fbui.textlayoutbuilder-textlayoutbuilder-1.0.0_2f76cb739ec7defdd9c492333b00b04f67ef281d.jar" />
     </item>
     <item
         is-multidex="false"
@@ -21,21 +21,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="D:\Guilherme\Bloco_Multiplataforma\RangoAmigo_React\android\app\build\intermediates\exploded-aar\com.facebook.fbui.textlayoutbuilder\textlayoutbuilder\1.0.0\jars\classes.jar"
+        jar="D:\Guilherme\Bloco_Multiplataforma\RangoAmigo_React\android\app\build\intermediates\exploded-aar\RangoAmigo\react-native-image-picker\unspecified\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
-        sha1="f90b593491e4044903f0bbf68dc3fa2790b151b9">
-        <dex dex="D:\Guilherme\Bloco_Multiplataforma\RangoAmigo_React\android\app\build\intermediates\pre-dexed\debug\com.facebook.fbui.textlayoutbuilder-textlayoutbuilder-1.0.0_2f76cb739ec7defdd9c492333b00b04f67ef281d.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Guilherme\Bloco_Multiplataforma\RangoAmigo_React\android\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
-        <dex dex="D:\Guilherme\Bloco_Multiplataforma\RangoAmigo_React\android\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-23.0.1_a42c515b5dc4ec71ed3c2f58a01b54fd2859e3ac.jar" />
+        sha1="5e6570156a5a06abc6990fe34cd577d9fb0172c6">
+        <dex dex="D:\Guilherme\Bloco_Multiplataforma\RangoAmigo_React\android\app\build\intermediates\pre-dexed\debug\RangoAmigo-react-native-image-picker-unspecified_3a4d71ecb8b8971d15989c2ef8d0c84a2be61fe3.jar" />
     </item>
     <item
         is-multidex="false"
@@ -45,6 +36,87 @@
         revision="23.0.1"
         sha1="a9283170b7305c8d92d25aff02a6ab7e45d06cbe">
         <dex dex="D:\Guilherme\Bloco_Multiplataforma\RangoAmigo_React\android\app\build\intermediates\pre-dexed\debug\okio-1.13.0_74ba9f6abca7b0e46154c90fc8a0f040206ca3f9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Guilherme\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp-urlconnection\3.6.0\3f9b16b774f2c36cfd86dd2053d0b3059531dacc\okhttp-urlconnection-3.6.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="3f9b16b774f2c36cfd86dd2053d0b3059531dacc">
+        <dex dex="D:\Guilherme\Bloco_Multiplataforma\RangoAmigo_React\android\app\build\intermediates\pre-dexed\debug\okhttp-urlconnection-3.6.0_d6a98805b85b200e7c346ddc4be27e10e6df8c8c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Guilherme\Bloco_Multiplataforma\RangoAmigo_React\android\app\build\intermediates\exploded-aar\com.facebook.fresco\drawee\1.3.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="c65a2e39d54023bac3aef64a2f0cff89289c7ff6">
+        <dex dex="D:\Guilherme\Bloco_Multiplataforma\RangoAmigo_React\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-drawee-1.3.0_5064a16d470059a7149ffeabecf0b0dcece95f40.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Guilherme\Bloco_Multiplataforma\RangoAmigo_React\android\app\build\intermediates\exploded-aar\com.facebook.fresco\fbcore\1.3.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="37345de2ed2772f385eaeec37a9c2ff0fea99ad7">
+        <dex dex="D:\Guilherme\Bloco_Multiplataforma\RangoAmigo_React\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-fbcore-1.3.0_669a1b01f938b4b09e79e62f1633323dde5b1909.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Guilherme\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-tasks\1.4.0\d85884acf6810a3bbbecb587f239005cbc846dc4\bolts-tasks-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="D:\Guilherme\Bloco_Multiplataforma\RangoAmigo_React\android\app\build\intermediates\pre-dexed\debug\bolts-tasks-1.4.0_ebb02c1d64017cc3978140a96a5e9b9695fa5197.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Guilherme\Bloco_Multiplataforma\RangoAmigo_React\android\app\build\intermediates\exploded-aar\com.facebook.soloader\soloader\0.1.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="8f615bca00639150c9eb6175d4b5471193f70794">
+        <dex dex="D:\Guilherme\Bloco_Multiplataforma\RangoAmigo_React\android\app\build\intermediates\pre-dexed\debug\com.facebook.soloader-soloader-0.1.0_d13403b732aaf6446e9b80780e3ba5453d803ed5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Guilherme\Bloco_Multiplataforma\RangoAmigo_React\android\app\build\intermediates\exploded-aar\com.facebook.react\react-native\0.55.4\jars\libs\infer-annotations-4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="9809e90be788acdb479b2b44e2112f3295a03068">
+        <dex dex="D:\Guilherme\Bloco_Multiplataforma\RangoAmigo_React\android\app\build\intermediates\pre-dexed\debug\infer-annotations-4.0_62b9f93eb83889d346a86f6edfcc401b51abf19e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Guilherme\Bloco_Multiplataforma\RangoAmigo_React\android\app\build\intermediates\exploded-aar\com.facebook.react\react-native\0.55.4\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="e31331bdf6b5952badadbfc171f04b95c55d3b16">
+        <dex dex="D:\Guilherme\Bloco_Multiplataforma\RangoAmigo_React\android\app\build\intermediates\pre-dexed\debug\com.facebook.react-react-native-0.55.4_95a614f8d62333f2c947eae2d0ef58af8896769f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Guilherme\Bloco_Multiplataforma\RangoAmigo_React\android\app\build\intermediates\exploded-aar\com.facebook.fresco\imagepipeline-base\1.3.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="72128af126ddd7d6252da9357fe560d3abcdfb0c">
+        <dex dex="D:\Guilherme\Bloco_Multiplataforma\RangoAmigo_React\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-imagepipeline-base-1.3.0_42513f6ec9dffdb453ffcdc3440d5a0486a723ca.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Guilherme\Bloco_Multiplataforma\RangoAmigo_React\android\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="D:\Guilherme\Bloco_Multiplataforma\RangoAmigo_React\android\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-23.0.1_a42c515b5dc4ec71ed3c2f58a01b54fd2859e3ac.jar" />
     </item>
     <item
         is-multidex="false"
@@ -75,30 +147,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\Guilherme\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp-urlconnection\3.6.0\3f9b16b774f2c36cfd86dd2053d0b3059531dacc\okhttp-urlconnection-3.6.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="3f9b16b774f2c36cfd86dd2053d0b3059531dacc">
-        <dex dex="D:\Guilherme\Bloco_Multiplataforma\RangoAmigo_React\android\app\build\intermediates\pre-dexed\debug\okhttp-urlconnection-3.6.0_d6a98805b85b200e7c346ddc4be27e10e6df8c8c.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="D:\Guilherme\Bloco_Multiplataforma\RangoAmigo_React\android\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\libs\internal_impl-23.0.1.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
         sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
         <dex dex="D:\Guilherme\Bloco_Multiplataforma\RangoAmigo_React\android\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.1_096c0caf4157d0bf739e8d18ae84068ae5cd2429.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Guilherme\Bloco_Multiplataforma\RangoAmigo_React\android\app\build\intermediates\exploded-aar\com.facebook.fresco\drawee\1.3.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="c65a2e39d54023bac3aef64a2f0cff89289c7ff6">
-        <dex dex="D:\Guilherme\Bloco_Multiplataforma\RangoAmigo_React\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-drawee-1.3.0_5064a16d470059a7149ffeabecf0b0dcece95f40.jar" />
     </item>
     <item
         is-multidex="false"
@@ -111,33 +165,6 @@
     </item>
     <item
         is-multidex="false"
-        jar="D:\Guilherme\Bloco_Multiplataforma\RangoAmigo_React\android\app\build\intermediates\exploded-aar\com.facebook.fresco\fbcore\1.3.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="37345de2ed2772f385eaeec37a9c2ff0fea99ad7">
-        <dex dex="D:\Guilherme\Bloco_Multiplataforma\RangoAmigo_React\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-fbcore-1.3.0_669a1b01f938b4b09e79e62f1633323dde5b1909.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Guilherme\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-tasks\1.4.0\d85884acf6810a3bbbecb587f239005cbc846dc4\bolts-tasks-1.4.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
-        <dex dex="D:\Guilherme\Bloco_Multiplataforma\RangoAmigo_React\android\app\build\intermediates\pre-dexed\debug\bolts-tasks-1.4.0_ebb02c1d64017cc3978140a96a5e9b9695fa5197.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Guilherme\.gradle\caches\modules-2\files-2.1\com.facebook.fbui.textlayoutbuilder\staticlayout-proxy\1.0\f162442a19fff13995fbd51ba414d9ee05579080\staticlayout-proxy-1.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="f162442a19fff13995fbd51ba414d9ee05579080">
-        <dex dex="D:\Guilherme\Bloco_Multiplataforma\RangoAmigo_React\android\app\build\intermediates\pre-dexed\debug\staticlayout-proxy-1.0_3e64536e2c6d4b08826c39046aa26fc4ab5b8303.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="C:\Users\Guilherme\.gradle\caches\modules-2\files-2.1\javax.inject\javax.inject\1\6975da39a7040257bd51d21a231b76c915872d38\javax.inject-1.jar"
         jumboMode="false"
         optimize="true"
@@ -147,12 +174,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="D:\Guilherme\Bloco_Multiplataforma\RangoAmigo_React\android\app\build\intermediates\exploded-aar\com.facebook.soloader\soloader\0.1.0\jars\classes.jar"
+        jar="C:\Users\Guilherme\.gradle\caches\modules-2\files-2.1\com.facebook.fbui.textlayoutbuilder\staticlayout-proxy\1.0\f162442a19fff13995fbd51ba414d9ee05579080\staticlayout-proxy-1.0.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
-        sha1="8f615bca00639150c9eb6175d4b5471193f70794">
-        <dex dex="D:\Guilherme\Bloco_Multiplataforma\RangoAmigo_React\android\app\build\intermediates\pre-dexed\debug\com.facebook.soloader-soloader-0.1.0_d13403b732aaf6446e9b80780e3ba5453d803ed5.jar" />
+        sha1="f162442a19fff13995fbd51ba414d9ee05579080">
+        <dex dex="D:\Guilherme\Bloco_Multiplataforma\RangoAmigo_React\android\app\build\intermediates\pre-dexed\debug\staticlayout-proxy-1.0_3e64536e2c6d4b08826c39046aa26fc4ab5b8303.jar" />
     </item>
     <item
         is-multidex="false"
@@ -178,26 +205,8 @@
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
-        sha1="5ef28e0d52181651108165903f0a55757f8b957d">
+        sha1="0fca34a9ef24aebbad9b3a579fa45a1a8aa3e85a">
         <dex dex="D:\Guilherme\Bloco_Multiplataforma\RangoAmigo_React\android\app\build\intermediates\pre-dexed\debug\RangoAmigo-react-native-contacts-unspecified_f20df0d412b9f803e4848c8ac96baa89db507137.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Guilherme\Bloco_Multiplataforma\RangoAmigo_React\android\app\build\intermediates\exploded-aar\com.facebook.react\react-native\0.55.4\jars\libs\infer-annotations-4.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="9809e90be788acdb479b2b44e2112f3295a03068">
-        <dex dex="D:\Guilherme\Bloco_Multiplataforma\RangoAmigo_React\android\app\build\intermediates\pre-dexed\debug\infer-annotations-4.0_62b9f93eb83889d346a86f6edfcc401b51abf19e.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Guilherme\Bloco_Multiplataforma\RangoAmigo_React\android\app\build\intermediates\exploded-aar\com.facebook.react\react-native\0.55.4\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="e31331bdf6b5952badadbfc171f04b95c55d3b16">
-        <dex dex="D:\Guilherme\Bloco_Multiplataforma\RangoAmigo_React\android\app\build\intermediates\pre-dexed\debug\com.facebook.react-react-native-0.55.4_95a614f8d62333f2c947eae2d0ef58af8896769f.jar" />
     </item>
 
 </items>

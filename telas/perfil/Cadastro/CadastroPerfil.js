@@ -6,7 +6,9 @@ import {
   StyleSheet, 
   TouchableOpacity ,
   Image,
-  AsyncStorage
+  Alert,
+  AsyncStorage,
+  ActivityIndicator,
 } from 'react-native';
 
 import { 
@@ -15,12 +17,16 @@ import {
   Input,
   Label,   
   Button,
-  Icon,  
+  Icon, 
 } from 'native-base';
+
+import {NavigationActions} from 'react-navigation';
+
+import ImagePicker from 'react-native-image-picker';
 
 import axios from 'axios';
 
-import BotaoMenu from '../../../componentes/BotaoMenu';
+//import BotaoMenu from '../../../componentes/BotaoMenu';
 
 export default class CadastroPerfil extends React.Component {
 
@@ -34,7 +40,9 @@ export default class CadastroPerfil extends React.Component {
       };    
     };
 
-    state={      
+    state={            
+      carregando:true,
+      editar: false,
       perfil: null,
       foto: '',
       area: '',
@@ -60,143 +68,256 @@ export default class CadastroPerfil extends React.Component {
       this.setState({area});
     }  
 
-    executaVoltar = area => {
+    configuraParamFoto = () => {
+     
+      ImagePicker.showImagePicker((response) => {
+      
+        console.log('Response :: ', response);
+      
+        if (response.didCancel) {
+          console.log('Usuário cancelou');
+        }
+        else if (response.error) {
+          console.log('ImagePicker Error: ', response.error);
+        }
+        else {
+  
+          //let source = { uri: response.uri };  
+          let source = { uri: 'data:image/(png|tiff|jpg|gif);base64,' + response.data };
+  
+          // You can also display the image using data:
+          // let source = { uri: 'data:image/jpeg;base64,' + response.data };      
+          
+          this.setState({foto: response.data});
 
-      console.log(this.props.navigation.goBack);
+        }
+      });
+    }  
 
-      if(this.props.navigation){
+    emailValido = (email) =>{
+      
+      var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(String(email).toLowerCase());      
+      
+    }
+
+    executaSalvar = () => {      
+      
+      let perfil = this.state.perfil;      
+      let servico = this.state.editar ? 'AlterarPerfil' : 'CriarPerfil';
+
+      /* VALIDACOES */
+
+      //Numero do Celular
+      if(this.state.area.length == 0 || this.state.fone.length == 0){        
+        Alert.alert("Campos Obrigatórios!", "Preencha os campos DDD e Telefone adequadamente.");
+        return false;
+      }
+
+      //Nome
+      if(this.state.nome.length == 0){
+        Alert.alert("Campos Obrigatórios!", "Preencha o campo Nome adequadamente.");
+        return false;
+      }
+
+      //Email
+      if(this.state.email.length == 0){
+        Alert.alert("Campos Obrigatórios!", "Preencha o campo Email adequadamente.");
+        return false;
+      }
+      else if(!this.emailValido(this.state.email)){
+        Alert.alert("Formato Incorreto!", "Preencha o campo Email adequadamente.");
+          return false;
+      }
+
+      perfil.Foto = this.state.foto;
+      perfil.CelNumero = this.state.area + this.state.fone;
+      perfil.Nome = this.state.nome;
+      perfil.Email = this.state.email;
+
+      console.log(perfil);
+
+      this.setState({ carregando: true });
+
+      axios({
+        method: 'post',        
+        url: 'http://www.anjodaguardaeventos.com.br/rangoamigo/api/perfis/' + servico,    
+        headers: { 'content-type': 'application/json;charset=utf-8' },                       
+        data: JSON.stringify(perfil)
+      }).then(response => { 
+
+        if(response.data.Ok){
+          if(response.data.Dados == 1){
+
+            this.salvarSessao(perfil);                 
+
+          }
+          else{
+            Alert.alert('Informação', response.Mensagem);
+          }
+        }
+        else{
+          Alert.alert('Informação', response.data.Mensagem);
+        }
+
+        this.setState({ carregando: false }); 
+
+      })
+      .catch((err) => {console.log(err);
+        Alert.alert('Erro!', 'Erro.');
+        this.setState({ carregando: false }); 
+      });   
+      
+    }
+
+    executaVoltar = () => {
+
+      //console.log(this.props.navigation.goBack);
+
+      if(!this.state.editar){
         this.props.navigation.goBack();
       }
-      else{
-        //desvia tela principal
+      else{       
+        //tenta desviar tela principal
         const navigateAction = NavigationActions.navigate({
           routeName: 'Principal'
         });    
         this.props.navigation.dispatch(navigateAction);
       }
+
     }    
+
+    async salvarSessao(perfil) {    
+
+      try {
+        await AsyncStorage.setItem("Perfil", JSON.stringify(perfil));
+      }
+      catch (err) {
+        console.error(err);
+        Alert.alert("Inesperado", "Não foi possivel carregar os dados.");
+      }   
+
+    }
 
     async componentDidMount() {    
 
       //Verifica perfil logado
       var jsonPerfil = await AsyncStorage.getItem("Perfil");
+      console.log(this.state.carregando);
       
       if(jsonPerfil !== null && jsonPerfil !== 'undefined'){
-        this.setState({perfil: JSON.parse(jsonPerfil)});
-      }    
+        
+        let perfil = JSON.parse(jsonPerfil)
+
+        this.setState({
+          carregando: false,
+          editar: true,
+          perfil: perfil,
+          foto: perfil.Foto.toString(),
+          area: perfil.CelNumero.toString().substring(0,2),
+          fone: perfil.CelNumero.toString().substring(2),
+          nome: perfil.Nome.toString(),
+          email: perfil.Email.toString(),
+        });     
+
+      }
+      else{
+        this.setState({ carregando: false, editar: false, });
+      }
     }
 
-    apresentaImagem(carregaDados){      
-      if(carregaDados){
-        return <Image  resizeMode="contain" style={styles.foto} source={{uri: 'data:image/png;base64,' + this.state.perfil.Foto.toString()}} />
+    apresentaImagem(){      
+      if(this.state.editar){
+        return <Image  resizeMode="contain" style={styles.foto} source={{uri: 'data:image/(png|tiff|jpg|gif);base64,' + this.state.foto.toString()}} />
       }
       else {
          return <Icon type='FontAwesome' ios='user' android='user' style={{fontSize: 80, color: '#8eacbb'}} />          
       }
-
     }    
-
-    // apresentaCampoTexto(carregado, label, valor)
-    // {
-    //   return 
-    //   <Item floatingLabel style={{ borderColor: '#34515e' }}>
-    //     <Label style={{ color: "#ff950e" }} >label</Label>
-    //     <Input  style={{ color: "#ff950e" }} 
-    //           maxLength={4} 
-    //           keyboardType='numeric' 
-    //           editable={!carregado} 
-    //           onChangeText={this.configuraParamArea} 
-    //           value={carregado ? valor : ''} />
-    //   </Item>
-    // }
     
     render(){
-  
-     //this.carregarContatosDipositivo();
-     var area = '';
-     var telefone = '';
-     var carregaDados = false;
-     if(this.state.perfil !== null){
-        carregaDados = true;
-        area = this.state.perfil.CelNumero.toString().substring(0,2); 
-        telefone = this.state.perfil.CelNumero.toString().substring(2);
-     }
-  
+     
       return (
-        <ScrollView style={{ backgroundColor: '#fff',  }}>
-          <Container style={{ flex: 1, marginTop: 20, marginStart: 10, marginEnd: 10, }}>
-            <View style={{flexDirection:'row', flex:2}}>             
+        <ScrollView style={{ backgroundColor: '#fff', }}>
+        {
+          this.state.carregando
+            ? <ActivityIndicator size="large" color="#000"/>
+            : <Container style={{ flex: 1, marginTop: 20, marginStart: 10, marginEnd: 10, }}>
+                <View style={{flexDirection:'row', flex:2}}>             
 
-                <View style={{flex:4, position: 'relative', justifyContent: 'center', alignItems: 'center', borderWidth:1, }}>   
-                  <TouchableOpacity onPress={() => alert('procurar a foto...')}>     
-                    {
-                      this.apresentaImagem(carregaDados)                  
-                    }                
-                  </TouchableOpacity>
-                </View>      
-                
+                    <View style={{flex:4, position: 'relative', justifyContent: 'center', alignItems: 'center', borderWidth:1, }}>   
+                      <TouchableOpacity onPress={this.configuraParamFoto}>     
+                        {
+                          this.apresentaImagem()                  
+                        }                
+                      </TouchableOpacity>
+                    </View>      
 
-              <View style={{flex:6, marginStart: 20, }}>
-                <View style={{ marginEnd: 130, marginTop: 10,}}>
+                  <View style={{flex:6, marginStart: 20, }}>
 
-                  <Item floatingLabel style={{ borderColor: '#34515e' }}>
-                    <Label style={{ color: "#ff950e" }} >DDD</Label>
-                    <Input  style={{ color: "#ff950e" }} 
-                            maxLength={4} 
-                            keyboardType='numeric' 
-                            editable={!carregaDados} 
-                            onChangeText={this.configuraParamArea} 
-                            value={carregaDados ? area : ''} />
-                  </Item>
+                    <View style={{ marginEnd: 130, marginTop: 10,}}>
+                      <Item floatingLabel style={{ borderColor: '#34515e' }}>
+                        <Label style={{ color: "#ff950e" }} >DDD</Label>
+                        <Input  style={{ color: "#ff950e" }} 
+                                maxLength={4} 
+                                keyboardType='numeric' 
+                                editable={!this.state.editar} 
+                                onChangeText={this.configuraParamArea} 
+                                value={ this.state.area } />
+                      </Item>
+                    </View>    
 
-                </View>    
-                <View style={{ marginTop: 10,}}>
-                  <Item floatingLabel style={{ borderColor: '#34515e' }}>
-                    <Label style={{ color: "#ff950e" }} >Telefone</Label>
-                    <Input  style={{ color: "#ff950e" }} 
-                            maxLength={4} 
-                            keyboardType='numeric' 
-                            editable={!carregaDados} 
-                            onChangeText={this.configuraParamFone} 
-                            value={carregaDados ? telefone : ''} />
-                  </Item>
-                </View>        
-              </View>      
-            </View>
-            <View style={{flex:8,}}>   
-              <View style={{ marginTop: 10,}}>             
-                <Item floatingLabel style={{ borderColor: '#34515e' }}>
-                  <Label style={{ color: "#ff950e" }} >Nome</Label>
-                  <Input style={{ color: "#ff950e" }} 
-                         maxLength={100} 
-                         keyboardType='numeric' 
-                         onChangeText={this.configuraParamNome} 
-                         value={carregaDados ? this.state.perfil.Nome : ''} />
-                </Item>
-              </View>        
-              <View style={{ marginTop: 10,}}>
-                <Item floatingLabel style={{ borderColor: '#34515e' }}>
-                  <Label style={{ color: "#ff950e" }} >Email</Label>
-                  <Input style={{ color: "#ff950e" }} 
-                         maxLength={40} 
-                         keyboardType='numeric'
-                         onChangeText={this.configuraParamEmail}
-                         value={carregaDados ? this.state.perfil.Email : ''} />
-                </Item>
-              </View>  
-              <View style={{marginTop: 10,}}>
-                <Button block style={styles.btn}  >
-                  <Text style={styles.btnTxt}> Gravar </Text>
-                </Button>   
-              </View>    
-              <View style={{marginTop: 10,}}>
-                <Button block style={styles.btn} onPress={this.executaVoltar} >
-                  <Text style={styles.btnTxt}> Voltar </Text>
-                </Button>   
-              </View>  
-          </View>                              
-          </Container> 
-        </ScrollView>      
+                    <View style={{ marginTop: 10,}}>
+                      <Item floatingLabel style={{ borderColor: '#34515e' }}>
+                        <Label style={{ color: "#ff950e" }} >Telefone</Label>
+                        <Input  style={{ color: "#ff950e" }} 
+                                maxLength={4} 
+                                keyboardType='numeric' 
+                                editable={!this.state.editar} 
+                                onChangeText={this.configuraParamFone} 
+                                value={ this.state.telefone } />
+                      </Item>
+                    </View>        
+
+                  </View>      
+                </View>
+
+                <View style={{flex:8,}}>   
+                  <View style={{ marginTop: 10,}}>             
+                    <Item floatingLabel style={{ borderColor: '#34515e' }}>
+                      <Label style={{ color: "#ff950e" }} >Nome</Label>
+                      <Input style={{ color: "#ff950e" }} 
+                            maxLength={100}                             
+                            onChangeText={this.configuraParamNome} 
+                            value={this.state.nome} />
+                    </Item>
+                  </View>
+
+                  <View style={{ marginTop: 10,}}>
+                    <Item floatingLabel style={{ borderColor: '#34515e' }}>
+                      <Label style={{ color: "#ff950e" }} >Email</Label>
+                      <Input style={{ color: "#ff950e" }} 
+                            maxLength={40}                             
+                            onChangeText={this.configuraParamEmail}
+                            value={ this.state.email } />
+                    </Item>
+                  </View>  
+
+                  <View style={{marginTop: 10,}}>
+                    <Button block style={styles.btn} onPress={this.executaSalvar} >
+                      <Text style={styles.btnTxt}> Gravar </Text>
+                    </Button>   
+                  </View>   
+
+                  <View style={{marginTop: 10,}}>
+                    <Button block style={styles.btn} onPress={this.executaVoltar} >
+                      <Text style={styles.btnTxt}> Voltar </Text>
+                    </Button>   
+                  </View>  
+              </View>                              
+              </Container>               
+         }
+         </ScrollView>          
       )
     }
   }
@@ -218,11 +339,11 @@ export default class CadastroPerfil extends React.Component {
     btnTxt : {
       fontSize: 18,
       fontWeight: 'bold',     
-      color: '#FFF'
+      color: '#ebeeef'
     }, 
 
     foto: {
-      backgroundColor: "#056ecf",
+      //backgroundColor: "#056ecf",
       //flex: 1,
       height: 130, width: 130,
       //width: undefined, height: undefined

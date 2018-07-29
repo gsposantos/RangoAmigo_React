@@ -7,7 +7,8 @@ export default class ListaContatos extends Component {
     textoSemContatos: 'Não há contatos cadastrados.',
   };
 
-  renderContato = ({ item }) => <Contato contato={item} onSelect={this.props.onSelectContato}/>;
+  renderContato = ({ item }) => 
+    <Contato contato={item} onSelect={this.props.onSelectContato}/>;
 
   render() {
     
@@ -21,7 +22,7 @@ export default class ListaContatos extends Component {
       <FlatList
         style={{width: '100%'}}
         data={contatos}
-        keyExtractor={contato => contato.recordID}
+        keyExtractor={contato => contato.recordID.toString()}
         renderItem={this.renderContato}
       />
     );

@@ -78,8 +78,8 @@ export default class MeusConvites extends React.Component {
   }
 
   selecionaConvite = evento => {
-    //this.props.navigation.navigate('Evento', evento);
-    Alert.alert('Evento', evento.NomeEvento);
+    this.props.navigation.navigate('DetalheConvite', evento);
+    //Alert.alert('Evento', evento.NomeEvento);
   };
 
   mostraResultados = () => {
