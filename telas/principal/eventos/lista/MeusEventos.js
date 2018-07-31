@@ -91,6 +91,10 @@ export default class MeusEventos extends React.Component {
     //Alert.alert('Evento', evento.NomeEvento);
   };
 
+  direcionaNovoEvento = () => {
+    this.props.navigation.navigate('CadastroEvento');    
+  };
+
   mostraResultados = () => {
     //const { eventos } = this.state;
     return <ListaEventos eventos={this.state.eventos} onSelect={this.selecionaEvento} />;
