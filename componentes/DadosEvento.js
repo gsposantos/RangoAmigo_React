@@ -5,11 +5,44 @@ import {
   Image,
   StyleSheet,
   Dimensions,
+  FlatList
 } from 'react-native';
 
-import { Icon } from 'native-base';
+import { Icon, Card } from 'native-base';
+//npm install react-native-progress --save
+import * as Progress from 'react-native-progress';
 
 export default class DadosEvento extends React.Component {
+
+    renderDataEvento = ({ item }) => {
+
+        let confirmados = 0;
+        let adesao = 0;
+
+        for(const participante of item.Participacao){
+            if(participante.Voto){
+                confirmados++;
+            }
+        }
+
+        adesao = confirmados/item.Participacao.length;
+
+        return (
+            <View style={{ flexDirection:'row', alignItems: 'center', paddingTop:10 }} >                        
+                <View style={{paddingStart:5, paddingEnd:5, }}>
+                    <Text style={{fontSize: 16, fontWeight: 'bold', color: '#3B5998',}}>
+                        {item.DiaEventoFormatado}
+                    </Text>     
+                </View>
+                <View style={{paddingStart:5, paddingEnd:5, }}>
+                    <Progress.Bar progress={adesao} />
+                </View>
+                <View style={{paddingStart:5, paddingEnd:5, }}>              
+                    <Text style={{fontSize: 16, fontWeight: 'bold', color: '#3B5998',}}> {confirmados} / {item.Participacao.length} </Text>
+                </View>
+            </View>
+        )
+    } 
 
     render() {
 
@@ -25,7 +58,7 @@ export default class DadosEvento extends React.Component {
                         </Text>
                     </View>  
                 </View>
-                <View style={styles.local}> 
+                <View style={[styles.local, styles.cardStyle]}> 
                     <View style={styles.estiloMapa}>
                         <Icon type="FontAwesome" name="map" style={styles.iconeMapa} />
                     </View>
@@ -38,27 +71,45 @@ export default class DadosEvento extends React.Component {
                     </Text>                 
                     </View>              
                 </View>
-                <View style={{ flex:4,}}>          
-                    <View>
-                    <Text >
-                        Participação              
-                    </Text>     
-                    </View>
-                    <View style={{ flexDirection:'row', alignItems: 'center', }} >
-                    <View>
-                        {/* <Progress.Bar progress={0.3} />  */}
-                    </View>
-                    <View>              
-                        <Text> 3/7 </Text>
-                    </View>
-                    </View>
-                </View>          
+                <View style={{flex:4, marginBottom:10}} >       
+                    <View style={styles.cardStyle}>       
+                        <View style={{paddingStart:10, paddingTop:5, paddingBottom:5, backgroundColor:'#34515e'}}>
+                            <Text style={{fontSize: 20, fontWeight: 'bold', color: '#ebeeef',}}>
+                                Participação              
+                            </Text>     
+                        </View>
+
+                        <FlatList
+                            style={{width: '100%'}}
+                            data={evento.Datas}
+                            keyExtractor={data => data.DiaEvento.toString()}
+                            renderItem={this.renderDataEvento}
+                        />
+
+                    </View>          
+                </View> 
             </View>
         );
     }
 };
 
 const styles = StyleSheet.create({
+
+    cardStyle: {
+        flex:1,
+        borderWidth: 1,
+        borderRadius: 2,
+        borderColor: '#ddd',
+        borderBottomWidth: 0,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.8,
+        shadowRadius: 2,
+        elevation: 1,
+        marginLeft: 5,
+        marginRight: 5,
+        marginTop: 10,
+    },
 
     conteudo:{
         flex:1, 

@@ -127,7 +127,7 @@ const styles = StyleSheet.create({
   },
 
    foto: {     
-      backgroundColor: 'red',
+      //backgroundColor: 'red',
       height: 55, 
       width: 55,
     },

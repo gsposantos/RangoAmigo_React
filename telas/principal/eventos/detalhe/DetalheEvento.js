@@ -5,22 +5,28 @@ import {
   ActivityIndicator,  
   StyleSheet,  
   AsyncStorage,
+  Dimensions,
 } from 'react-native';
 
 import { Container, Fab, Icon, Button } from 'native-base';
 
 import axios from 'axios';
 
+import Modal from 'react-native-modal'; 
+
 import DadosEvento from '../../../../componentes/DadosEvento';
+import ListaContatos from '../../../../componentes/ListaContatos';
+
+var {height, width} = Dimensions.get('window');
 
 export default class DetalheEvento extends React.Component {
-
 
   static navigationOptions = {
       title: 'Detalhe do Evento',
   };
 
   state = {
+    visibleModal: null,
     carregando: true,
     fabAtivo: false, 
     evento: null,
@@ -36,7 +42,7 @@ export default class DetalheEvento extends React.Component {
     
     //carrega contatos ja sincronizados
     const contatos = await AsyncStorage.getItem("Contatos");
-    this.setState({contatos});
+    this.setState({contatos: JSON.parse(contatos)});
 
     this.carregaDetalheEventoApi(CodEvento);
 
@@ -86,7 +92,7 @@ export default class DetalheEvento extends React.Component {
     //Atualiza lista de convidados para atualizar no popup
 
     let contatoDisp = false;
-
+    
     if(this.state.convidados.length == 0){
 
       for(const convidado of this.state.evento.Convidados){
@@ -128,9 +134,27 @@ export default class DetalheEvento extends React.Component {
     }
 
     console.log(this.state.convidados);
+    this.setState({ visibleModal: 1 })
 
   }     
+
+  selecionaContato = item => {    
+    alert('Contato selecionado!');
+  };
   
+  carregaModalConvidados = () => (
+    <View style={styles.modalContent}>      
+      <View>
+         <Text style={{fontSize: 24, fontWeight: 'bold', color: '#34515e', paddingBottom: 20}}> Convidados </Text>
+      </View>
+      <ListaContatos contatos={this.state.convidados} onSelectContato={this.selecionaContato} />
+      <View>
+        <Button block style={styles.btn} onPress={() => this.setState({ visibleModal: null }) } >
+          <Text style={styles.btnTxt}> Fechar </Text>
+        </Button>    
+      </View>
+    </View>
+  );
 
   carregaDetalheEvento = () => {
     return (
@@ -146,15 +170,18 @@ export default class DetalheEvento extends React.Component {
               
               <Icon type="FontAwesome" name="ellipsis-v" />
               
-              <Button style={{ backgroundColor: '#34515e' }} onPress={this.preservaDadosConvidados}>
+              <Button style={{ backgroundColor: '#c66600' }} onPress={this.preservaDadosConvidados}>
                 <Icon type="FontAwesome" ios="users" android="users" />
               </Button>
 
-              <Button style={{ backgroundColor: '#34515e' }}>
+              <Button style={{ backgroundColor: '#c66600' }}>
                 <Icon type="FontAwesome" ios="edit" android="edit" />
               </Button>            
         
             </Fab>
+            <Modal isVisible={this.state.visibleModal === 1}>
+              {this.carregaModalConvidados()}
+            </Modal>
           </Container>
     );
   }
@@ -181,7 +208,31 @@ const styles = StyleSheet.create({
     backgroundColor: '#ecf0f1',
   },  
 
+  modalContent: {
+    backgroundColor: 'white',
+    padding: 10,
+    height:height/1.5,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 4,
+    borderColor: 'rgba(0, 0, 0, 0.1)',
+  },
 
+  btn:{
+    marginStart: 80,
+    marginEnd: 80,
+    marginTop: 30,
+    backgroundColor: '#607d8b',
+    //headerTintColor: '#ff950e',
+  },
+
+  btnTxt : {
+    paddingStart:20,
+    paddingEnd:20,
+    fontSize: 18,
+    fontWeight: 'bold',     
+    color: '#ebeeef'
+  },
   
 });
 

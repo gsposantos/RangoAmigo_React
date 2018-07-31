@@ -51,7 +51,7 @@ export default class MeusContatos extends React.Component {
 
       }    
       else{
-        this.setState({carregando: false, contatos: contatosCache});
+        this.setState({carregando: false, contatos: JSON.parse(contatosCache)});
       }
     }
   

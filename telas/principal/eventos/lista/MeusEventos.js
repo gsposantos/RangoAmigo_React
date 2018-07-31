@@ -114,12 +114,12 @@ export default class MeusEventos extends React.Component {
             onPress={() => this.setState({ fabAtivo: !this.state.fabAtivo })}>
             <Icon type='FontAwesome' ios='ellipsis-v' android='ellipsis-v' />           
             <Button 
-              style={{ backgroundColor: '#34515e' }}
+              style={{ backgroundColor: '#c66600' }}
               onPress={this.direcionaNovoEvento}>
               <Icon type='FontAwesome' ios='plus' android='plus' />
             </Button>
             <Button 
-              style={{ backgroundColor: '#34515e' }}
+              style={{ backgroundColor: '#c66600' }}
               onPress={this.carregaEventosApi}>
               <Icon type='FontAwesome' ios='refresh' android='refresh' />
             </Button>          
