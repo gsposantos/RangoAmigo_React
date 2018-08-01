@@ -43,7 +43,7 @@ export default class MeusConvites extends React.Component {
       this.props.navigation.dispatch(navigateAction);
     }    
     else{
-      this.setState({perfil})
+      this.setState({perfil: JSON.parse(perfil)});
       //carregar Convites antes do primeiro render    
       this.carregaConvitesApi();
     }

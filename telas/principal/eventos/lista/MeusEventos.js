@@ -55,7 +55,7 @@ export default class MeusEventos extends React.Component {
       this.props.navigation.dispatch(navigateAction);
     }    
     else{
-      this.setState({perfil})
+      this.setState({perfil: JSON.parse(perfil)});
       //carregar Eventos antes do primeiro render
       this.carregaEventosApi();
     }
