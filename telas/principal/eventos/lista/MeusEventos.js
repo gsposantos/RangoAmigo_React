@@ -73,13 +73,27 @@ export default class MeusEventos extends React.Component {
       method: 'post',        
       url: 'http://www.anjodaguardaeventos.com.br/rangoamigo/api/eventos/ListarEventos',    
       headers: { 'content-type': 'application/json;charset=utf-8' },                       
-      data: { "CelNumero": 51999999093 } //perfil da sessao que ja ta no state?
+      data: { "CelNumero": this.state.perfil.CelNumero } //perfil da sessao que ja ta no state?
+      //data: { "CelNumero": 51999999093 } //perfil da sessao que ja ta no state?
     }).then(response => {  
 
       console.log(response);      
       // validar resposta      
 
-      this.setState({eventos: response.data.Dados, carregando: false});
+      if(response.data.Ok){
+        if(response.data.Dados !== null){
+          this.setState({eventos: response.data.Dados, carregando: false});
+        }
+        else{
+          Alert.alert("Informação", 'Nenhum Evento encontrado.');
+          this.setState({carregando: false});
+        }                
+      }  
+      else
+      {
+        Alert.alert("Informação", response.data.Mensagem);
+        this.setState({carregando: false});
+      }      
 
     })
     .catch((err) => {console.log(err);

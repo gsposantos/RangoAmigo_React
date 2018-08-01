@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import {NavigationActions} from 'react-navigation';
-import {ScrollView, Text, View, StyleSheet, Alert, AsyncStorage, BackHandler} from 'react-native';
+import {ScrollView, Text, View, StyleSheet, Alert, Platform, BackHandler} from 'react-native';
 
 export default class MenuLateral extends React.Component {
   
@@ -19,14 +19,23 @@ export default class MenuLateral extends React.Component {
     // BackHandler funciona apenas no android... :-( 
     // Pesquisar alternativa para o iOS 
     // react-native-exit-app parece que fundiona para ambos
-    Alert.alert(
-      'Fechar do Aplicativo',
-      'Você deseja encerrar o applicativo?',
-      [
-        {text: 'Não', onPress: () => console.log('Escolheu não'), style: 'cancel'},
-        {text: 'Sim', onPress: () => BackHandler.exitApp()},
-      ],
-      { cancelable: false })
+
+
+    (Platform.OS === 'android')
+    ?    
+      Alert.alert(
+        'Fechar do Aplicativo',
+        'Você deseja encerrar o applicativo?',
+        [
+          {text: 'Não', onPress: () => console.log('Escolheu não'), style: 'cancel'},
+          {text: 'Sim', onPress: () => BackHandler.exitApp()},
+        ],
+        { cancelable: false })
+    : 
+      Alert.alert(
+        'Atenção!',
+        'Funcionaliade não implemetada nesse Sistema Operacional. Tente com Android.'
+      )
   }
 
   confirmaSair = () => {

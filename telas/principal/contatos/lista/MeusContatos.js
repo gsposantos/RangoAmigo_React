@@ -41,7 +41,10 @@ export default class MeusContatos extends React.Component {
 
     async componentDidMount() {    
       
-      //Verifica contatos em sessao
+      //para testes
+      //await AsyncStorage.removeItem("Contatos");
+
+      //Verifica contatos em sessao      
       var contatosCache = await AsyncStorage.getItem("Contatos");
       
       if(contatosCache === null || contatosCache === 'undefined'){
@@ -96,7 +99,7 @@ export default class MeusContatos extends React.Component {
             for(const phone of contato.phoneNumbers){
               for(const perfil of response.data.Dados){
                 
-                if(phone.celNumero === perfil.CelNumero){                      
+                if(phone.celNumero == perfil.CelNumero){                      
                      
                   // - limpa os telefones (dispositivo) e adiciona o telefone encontrado (API).
                   contato.phoneNumbers = [{
@@ -120,10 +123,12 @@ export default class MeusContatos extends React.Component {
 
                   // - marca contato (dispositivo) como cadastrado.
                   contato.cadastrado = true;
-                  return;
-
+                  break;
                 }
-
+                else{
+                  contato.cadastrado = false;
+                }
+                contato.selecionado = false;
               }
             }
           }         
@@ -163,7 +168,7 @@ export default class MeusContatos extends React.Component {
     };
   
     renderListaContatos = () => {
-      return <ListaContatos contatos={this.state.contatos} onSelectContato={this.selecionaContato} />;  
+      return <ListaContatos contatos={this.state.contatos} onSelectContato={this.selecionaContato} />     
     };
   
     render(){

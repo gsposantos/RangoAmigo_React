@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { 
-  ScrollView, 
+  Dimensions, 
   View, 
   Text, 
   StyleSheet, 
@@ -25,8 +25,12 @@ import {
   Right,
 } from 'native-base';
 
+import axios from 'axios';
+
 import DateTimePicker from 'react-native-modal-datetime-picker';
 import ImagePicker from 'react-native-image-picker';
+
+import ListaContatos from '../../../../componentes/ListaContatos';
 
 export default class CadastroEvento extends Component {
 
@@ -36,21 +40,23 @@ static navigationOptions = {
 
   state={                
         etapa:1,
-
+        perfil:null,
+        contatos:[],
         carregando:false,
         isDateTimePickerVisible: false,
         inputDataEvento:'dd/mm/yyyy hh:mm',        
         dataEvento:'',
-        nomeEvento:'',
-        nomeLocal:'',
-        endereco:'',
+        nomeEvento:'Evento Teste',
+        nomeLocal:'Local Teste',
+        endereco:'Av Teste, 123',
         imagemEvento:'',
+        eventoTemp:null,
   }
 
   apresentaImagem(){      
 
         if(this.state.imagemEvento != ''){
-            return <Image  resizeMode="contain" style={styles.foto} source={{uri: 'data:image/(png|tiff|jpg|gif);base64,' + this.state.imagemEvento.toString()}} />
+            return <Image  style={styles.foto} source={{uri: 'data:image/(png|tiff|jpg|gif);base64,' + this.state.imagemEvento.toString()}} />
         }
         else {
             return <Icon type='FontAwesome' ios='image' android='image' style={{fontSize: 80, color: '#8eacbb'}} />
@@ -64,22 +70,140 @@ static navigationOptions = {
   selecionaDateTime = (date) => {
     
     //salvar estado com formato certo
-    this.setState({ inputDataEvento: date.toString(), dataEvento: date.toISOString(), });
+    this.setState({ inputDataEvento: date.toLocaleDateString() + ' ' + date.toLocaleTimeString(), 
+                    dataEvento: date.toISOString(), 
+                  });
     this.esconteDateTimePicker();
   };
+
+  salvarEventoApi= () => {
+
+    //this.setState({ carregando: true });
+    
+    //convert contatos para convidados
+    let selecionados = this.state.contatos.filter(contato => contato.selecionado);
+    
+    if(selecionados.length > 0){
+      for(const contato of selecionados){
+        this.state.eventoTemp.Convidados.push({
+                                Organizador: false,
+                                CelNumero: contato.phoneNumbers[0].celNumero,
+        });
+      }
+    }
+    else{
+      Alert.alert('Campos Obrigatórios!', 'Selecione pelo menos um convidado da sua lista de contatos.');
+      this.setState({ carregando: false });
+    }
+
+    console.log(this.state.eventoTemp);
+    //chamada API
+
+    this.setState({ carregando: true });
+    axios({
+      method: 'post',        
+      url: 'http://www.anjodaguardaeventos.com.br/rangoamigo/api/eventos/Incluir',
+      headers: { 'content-type': 'application/json;charset=utf-8' },                       
+      data: JSON.stringify(this.state.eventoTemp)
+    }).then(response => { 
+
+      console.log(response);      
+      
+      // validar resposta
+      if(response.data.Ok){
+        if(response.data.Dados != null){
+          
+          Alert.alert('Sucesso!', 'Evento cadastrado com sucesso.');  
+          this.setState({eventoTemp: null, carregando: false});
+          
+          this.props.navigation.goBack();
+        }
+        else{
+            Alert.alert('Informação', response.Mensagem);            
+            this.setState({ carregando: false });
+          }
+        }
+      else{
+        Alert.alert('Informação', response.data.Mensagem);
+        this.setState({ carregando: false });
+      }
+    });
+  }
 
   configuraEtapa = () => {
     
     let etapa = 0;
+
+    
     if(this.state.etapa == 1){
 
-        //inicia criação do evento...
+        //this.setState({ carregando: true });
 
+        //validaçoes
+        if(this.state.nomeEvento.length === 0){
+          Alert.alert('Campos Obrigatórios!', 'Preencha o nome do evento adequadamente.');
+          this.setState({ carregando: false });
+          return;
+        }
+        
+        if(this.state.nomeLocal.length === 0){
+          Alert.alert('Campos Obrigatórios!', 'Preencha o local do evento adequadamente.');
+          this.setState({ carregando: false });
+          return;
+        }
+
+        if(this.state.endereco.length === 0){
+          Alert.alert('Campos Obrigatórios!', 'Preencha o endereço adequadamente.');
+          this.setState({ carregando: false });
+          return;
+        }
+
+        if(this.state.dataEvento.length === 0){
+          Alert.alert('Campos Obrigatórios!', 'Escolha uma data para o evento.');
+          this.setState({ carregando: false });
+          return;
+        }
+
+        if(this.state.imagemEvento.length === 0){
+          Alert.alert('Campos Obrigatórios!', 'Escolha uma imagem  para o evento.');
+          this.setState({ carregando: false });
+          return;
+        }
+
+        //inicia criação do evento...
+        let eventoTemp =  {
+                            NomeEvento: this.state.nomeEvento,
+                            NomeLocal: this.state.nomeLocal,
+                            Endereco: this.state.endereco,
+                            Latitude: 0,
+                            Longitude: 0,
+                            Imagem: this.state.imagemEvento,                            
+                            Datas:[
+                              {
+                                DiaEvento: this.state.dataEvento, //"2018-05-23T20:40:00.000+0000"
+                                Original: false,                          
+                                Participacao:[
+                                  {
+                                    CelNumero: this.state.perfil.CelNumero.toString(),
+                                    Voto: true
+                                  }
+                                ],            
+                              }
+                            ],
+                            Convidados: [
+                              {                                                                
+                                Organizador: true,
+                                CelNumero: this.state.perfil.CelNumero.toString(),
+                              }
+                            ],
+                          };
+
+        this.setState({eventoTemp: eventoTemp,});
         etapa = 2;
     }
     else {
         //reinicia criação do evento...
-
+        this.setState({eventoTemp: null});        
         etapa = 1;
     }
 
@@ -97,14 +221,8 @@ static navigationOptions = {
       else if (response.error) {
         console.log('ImagePicker Error: ', response.error);
       }
-      else {
-
-        //let source = { uri: response.uri };  
-        let source = { uri: 'data:image/(png|tiff|jpg|gif);base64,' + response.data };
-
-        
+      else {    
         this.setState({imagemEvento: response.data});
-
       }
     });
   } 
@@ -117,18 +235,60 @@ static navigationOptions = {
       this.setState({nomeLocal});
   }
 
+  selecionaContato = item => {    
+    item.selecionado = !item.selecionado;
+    this.setState({contatos: this.state.contatos});
+  }
+
   configuraParamEndereco = endereco => {
       this.setState({endereco});
+  }
+
+  renderListaContatos = () => {
+    return <ListaContatos contatos={this.state.contatos} onSelectContato={this.selecionaContato} />;  
+  };
+
+  async componentDidMount() {   
+    
+        //Verifica perfil logado
+    let jsonPerfil = await AsyncStorage.getItem("Perfil");    
+    let perfil = JSON.parse(jsonPerfil)
+
+     //Verifica contatos em sessao      
+     var contatosCache = await AsyncStorage.getItem("Contatos");
+      
+     if(contatosCache === null || contatosCache === 'undefined'){
+      Alert.alert(
+        'Convidados do Evento',
+        'Sincronize seus contatos antes de continuar com o cadastro do evento.'
+      );
+     }    
+     else{
+       contatoCache = JSON.parse(contatosCache).filter(contato => contato.cadastrado); 
+       if(contatoCache.length>0) {
+         this.setState({perfil: perfil, contatos: contatoCache});
+       }
+       else{
+        Alert.alert(
+          'Convidados do Evento',
+          'Não foram encontrados contatos na sua agenda que estejam cadastrados no sistema.'
+        );
+       }
+
+     }
   }
 
   render() {
     return (
       <Container>               
         <Content>          
-          <View style={{ backgroundColor: '#fff', }}>
+          <View style={{ backgroundColor: '#ebeeef', }}>
             {
-              this.state.carregando
-                ? <ActivityIndicator size="large" color="#000"/>
+              this.state.carregando              
+                ? 
+                  <Container style={{ flex: 1, marginTop: 20, marginStart: 10, marginEnd: 10, }}>
+                    <ActivityIndicator size="large" color="#000"/>
+                  </Container>
                 : 
                   (this.state.etapa == 1) 
                   ?               
@@ -171,7 +331,7 @@ static navigationOptions = {
                             <Label style={{ color: "#ff950e" }} >Endereço</Label>
                             <Input style={{ color: "#ff950e" }} 
                                   maxLength={120}                             
-                                  //onChangeText={this.configuraParamEmail}
+                                  onChangeText={this.configuraParamEndereco}
                                   value={ this.state.email } />
                           </Item>
                         </View>
@@ -191,8 +351,13 @@ static navigationOptions = {
                     </Container>  
                   : 
                     <Container>                            
-                      <Content> 
-                        <Text > Contatos... </Text>
+                      <Content>      
+                        <View style={{flex:2, backgroundColor:'#34515e', justifyContent: 'center', alignItems: 'center'}}>
+                          <Text style={{fontSize: 22, fontWeight: 'bold', color: '#ebeeef',}} >Contatos Cadastrados</Text>
+                        </View>                   
+                        <View style={{flex:8,}}>
+                          { this.renderListaContatos() }
+                        </View>                   
                       </Content> 
                     </Container>  
             }
@@ -257,7 +422,8 @@ const styles = StyleSheet.create({
     foto: {
       //backgroundColor: "#056ecf",
       //flex: 1,
-      height: 130, width: 130,
+      height: 190, 
+      width: Dimensions.get('window').width - 30,
       //width: undefined, height: undefined
 
     },

@@ -64,14 +64,26 @@ export default class MeusConvites extends React.Component {
       method: 'post',        
       url: 'http://www.anjodaguardaeventos.com.br/rangoamigo/api/eventos/ListarConvites',    
       headers: { 'content-type': 'application/json;charset=utf-8' },                       
-      data: { "CelNumero": 51999999093 } //perfil da sessao??
+      data: { "CelNumero": this.state.perfil.CelNumero }      
     }).then(response => {  
 
       console.log(response);
-      // validar resposta 
-
-      this.setState({convites: response.data.Dados, carregando: false});
-
+      // validar resposta
+      
+      if(response.data.Ok){
+        if(response.data.Dados !== null){          
+          this.setState({convites: response.data.Dados, carregando: false});
+        }
+        else{
+          Alert.alert("Informação", 'Nenhum Convite encontrado.');
+          this.setState({carregando: false});
+        }                
+      }  
+      else
+      {
+        Alert.alert("Informação", response.data.Mensagem);
+        this.setState({carregando: false});
+      }      
     })
     .catch((err) => {console.log(err);
     });          

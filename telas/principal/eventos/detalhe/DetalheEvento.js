@@ -147,7 +147,7 @@ export default class DetalheEvento extends React.Component {
       <View>
          <Text style={{fontSize: 24, fontWeight: 'bold', color: '#34515e', paddingBottom: 20}}> Convidados </Text>
       </View>
-      <ListaContatos contatos={this.state.convidados} onSelectContato={this.selecionaContato} />
+      <ListaContatos contatos={this.state.convidados} onSelectContato={this.selecionaContato} textoTitulo='Convidados'/>
       <View>
         <Button block style={styles.btn} onPress={() => this.setState({ visibleModal: null }) } >
           <Text style={styles.btnTxt}> Fechar </Text>

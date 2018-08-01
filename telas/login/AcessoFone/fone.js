@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 
 import { 
-  //Container,
+  Container,
   Item, 
   Input,
   Label, 
@@ -78,7 +78,8 @@ export default class AcessoFone extends React.Component {
       method: 'post',        
       url: 'http://www.anjodaguardaeventos.com.br/rangoamigo/api/perfis/ObterPerfil',    
       headers: { 'content-type': 'application/json;charset=utf-8' },                       
-      data: { "CelNumero": 51999999093 } //data: { "CelNumero": area+fone } //51999999093 - teste
+      //data: { "CelNumero": 51999999093 } 
+      data: { "CelNumero": area+fone }, //51999999093 - teste
     }).then(response => {  
 
       console.log(response);
@@ -108,7 +109,8 @@ export default class AcessoFone extends React.Component {
 
   render() {
     return (          
-                 
+            <Container>
+            {
             this.state.carregando            
               ? <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}> 
                   <ActivityIndicator size="large" color="#000"/> 
@@ -144,45 +146,11 @@ export default class AcessoFone extends React.Component {
                     </View>
                   </View>
                 </View>
-
-      // <View style={styles.container}>
-      //  <View style={styles.topo}>
-      //     <Text style={styles.textoTopo}>
-      //       Para acessar, por favor, informe seu número de telefone com código de área.
-      //     </Text>
-      //  </View>
-      //  <View style={styles.formulario}>
-      //     <View style={styles.campos}>
-      //       <View style={styles.campoArea}>
-      //         <Item floatingLabel style={{ borderColor: '#ED4A6A' }} >
-      //           <Label style={{ color: "#ED4A6A" }}>DDD</Label>
-      //           <Input style={{ color: "#ED4A6A" }} maxLength={2} keyboardType='numeric' onChangeText={this.configuraParamArea} />
-      //         </Item>
-      //       </View>
-      //       <View style={styles.campoFone}>
-      //         <Item floatingLabel style={{ borderColor: '#ED4A6A' }} >
-      //           <Label style={{ color: "#ED4A6A" }} >Telefone</Label>
-      //           <Input style={{ color: "#ED4A6A" }} maxLength={9} keyboardType='numeric' onChangeText={this.configuraParamFone} />
-      //         </Item>
-      //       </View>
-      //     </View>
-      //      <View style={styles.botoes}>
-      //       <Button block style={styles.btn} onPress={_ => this.verificaPerfilApi(this.state.area, this.state.fone)} >
-      //         <Text style={styles.btnTxt}> Acessar </Text>
-      //       </Button>             
-      //       <Button block style={styles.btn}  >
-      //         <Text style={styles.btnTxt}> Novo Acesso </Text>
-      //       </Button>             
-      //     </View>
-      //  </View>
-      // </View>
-
-
+            }
+            </Container>
     );
   }
 }
-
-
 
 const styles = StyleSheet.create({
 
@@ -241,6 +209,8 @@ const styles = StyleSheet.create({
   },
  
   btn:{
+    paddingStart: 20,
+    paddingEnd: 20,
     marginStart: 80,
     marginEnd: 80,
     marginTop: 30,

@@ -29,15 +29,14 @@ import axios from 'axios';
 //import BotaoMenu from '../../../componentes/BotaoMenu';
 
 export default class CadastroPerfil extends React.Component {
-
-    //aqui vai o botao?? EX: https://github.com/react-navigation/react-navigation/issues/1122
+    
    static navigationOptions = ({ navigation }) => {
       return {
-        title: 'Cadastro Perfil',
+        title: 'Cadastro Perfil',   
         headerLeft: (
           null
-        ),
-      };    
+        ),     
+      };          
     };
 
     state={            
@@ -81,15 +80,7 @@ export default class CadastroPerfil extends React.Component {
           console.log('ImagePicker Error: ', response.error);
         }
         else {
-  
-          //let source = { uri: response.uri };  
-          let source = { uri: 'data:image/(png|tiff|jpg|gif);base64,' + response.data };
-  
-          // You can also display the image using data:
-          // let source = { uri: 'data:image/jpeg;base64,' + response.data };      
-          
           this.setState({foto: response.data});
-
         }
       });
     }  
@@ -149,7 +140,13 @@ export default class CadastroPerfil extends React.Component {
         if(response.data.Ok){
           if(response.data.Dados == 1){
 
-            this.salvarSessao(perfil);                 
+            this.salvarSessao(perfil);        
+            
+            //redireciona para os eventos
+            const navigateAction = NavigationActions.navigate({
+              routeName: 'Principal'
+            });    
+            this.props.navigation.dispatch(navigateAction);
 
           }
           else{
@@ -172,8 +169,6 @@ export default class CadastroPerfil extends React.Component {
 
     executaVoltar = () => {
 
-      //console.log(this.props.navigation.goBack);
-
       if(!this.state.editar){
         this.props.navigation.goBack();
       }
@@ -188,7 +183,6 @@ export default class CadastroPerfil extends React.Component {
     }    
 
     async salvarSessao(perfil) {    
-
       try {
         await AsyncStorage.setItem("Perfil", JSON.stringify(perfil));
       }
@@ -196,18 +190,18 @@ export default class CadastroPerfil extends React.Component {
         console.error(err);
         Alert.alert("Inesperado", "Não foi possivel carregar os dados.");
       }   
-
     }
 
     async componentDidMount() {    
 
       //Verifica perfil logado
+      let perfil = null;
       var jsonPerfil = await AsyncStorage.getItem("Perfil");
       console.log(this.state.carregando);
       
       if(jsonPerfil !== null && jsonPerfil !== 'undefined'){
         
-        let perfil = JSON.parse(jsonPerfil)
+        perfil = JSON.parse(jsonPerfil)
 
         this.setState({
           carregando: false,
@@ -218,11 +212,14 @@ export default class CadastroPerfil extends React.Component {
           fone: perfil.CelNumero.toString().substring(2),
           nome: perfil.Nome.toString(),
           email: perfil.Email.toString(),
-        });     
+        });    
 
       }
       else{
-        this.setState({ carregando: false, editar: false, });
+
+        //perfil vazio para ser preenchido e enviado para API
+        perfil = {CelNumero: 0, Nome: '', Foto:'', Email:''}
+        this.setState({ carregando: false, editar: false, perfil: perfil, });
       }
     }
 
@@ -231,7 +228,12 @@ export default class CadastroPerfil extends React.Component {
         return <Image  resizeMode="contain" style={styles.foto} source={{uri: 'data:image/(png|tiff|jpg|gif);base64,' + this.state.foto.toString()}} />
       }
       else {
+        if(this.state.foto.toString() != ''){
+          return <Image  resizeMode="contain" style={styles.foto} source={{uri: 'data:image/(png|tiff|jpg|gif);base64,' + this.state.foto.toString()}} />
+        }
+        else{
          return <Icon type='FontAwesome' ios='user' android='user' style={{fontSize: 80, color: '#8eacbb'}} />          
+        }
       }
     }    
     
@@ -240,8 +242,10 @@ export default class CadastroPerfil extends React.Component {
       return (
         <ScrollView style={{ backgroundColor: '#fff', }}>
         {
-          this.state.carregando
-            ? <ActivityIndicator size="large" color="#000"/>
+          this.state.carregando          
+            ? <Container style={{ flex: 1, marginTop: 20, marginStart: 10, marginEnd: 10, }}>
+                <ActivityIndicator size="large" color="#000"/>
+              </Container>
             : <Container style={{ flex: 1, marginTop: 20, marginStart: 10, marginEnd: 10, }}>
                 <View style={{flexDirection:'row', flex:2}}>             
 
@@ -259,7 +263,7 @@ export default class CadastroPerfil extends React.Component {
                       <Item floatingLabel style={{ borderColor: '#34515e' }}>
                         <Label style={{ color: "#ff950e" }} >DDD</Label>
                         <Input  style={{ color: "#ff950e" }} 
-                                maxLength={4} 
+                                maxLength={2} 
                                 keyboardType='numeric' 
                                 editable={!this.state.editar} 
                                 onChangeText={this.configuraParamArea} 
@@ -271,11 +275,11 @@ export default class CadastroPerfil extends React.Component {
                       <Item floatingLabel style={{ borderColor: '#34515e' }}>
                         <Label style={{ color: "#ff950e" }} >Telefone</Label>
                         <Input  style={{ color: "#ff950e" }} 
-                                maxLength={4} 
+                                maxLength={9} 
                                 keyboardType='numeric' 
                                 editable={!this.state.editar} 
                                 onChangeText={this.configuraParamFone} 
-                                value={ this.state.telefone } />
+                                value={ this.state.fone } />
                       </Item>
                     </View>        
 
@@ -330,6 +334,8 @@ export default class CadastroPerfil extends React.Component {
     },
    
     btn:{
+      paddingStart: 20,
+      paddingEnd: 20,
       marginStart: 30,
       marginEnd: 30,
       marginTop: 30,

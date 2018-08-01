@@ -34,13 +34,39 @@ function apresentaImagem(contato){
 
 export default function Contato({contato, onSelect}) {
 
-  let nomeContato = (contato.givenName.length) ? contato.givenName : '' + ' ';
-    //nomeContato += (contato.middleName.length) ? contato.middleName :'' + ' ';
-    nomeContato += (contato.familyName.length) ? contato.familyName : '' + ' ';
+
+  let nomeContato = '';
+  let email = '';
+  if (contato.givenName !== null && contato.givenName !== undefined) {
+    nomeContato = contato.givenName.toString();
+  }
+
+  // if (contato.middleName !== null && contato.middleName !== undefined) {
+  //   nomeContato += (contato.middleName.length) ? contato.middleName :'' + ' ';
+  // }
+
+  if (contato.familyName !== null && contato.familyName !== undefined) {
+    nomeContato += ' ' + contato.familyName.toString();
+  }
+
+  if(contato.emailAddresses[0] !== undefined){
+    email = contato.emailAddresses[0].email;
+  }
+
+  let estiloContato = [];
+  estiloContato.push(styles.itemContato);
+
+  if(!contato.cadastrado){
+    estiloContato.push(styles.contatoSemCadastro);
+  }
+
+  if(contato.selecionado){
+    estiloContato.push(styles.contatoSelecionado);
+  }
 
   return (    
     <TouchableOpacity onPress={() => onSelect(contato)}>    
-      <View style={styles.itemContato}>
+      <View style={estiloContato}>
           <View style={styles.imagemContato}>  
             {
               apresentaImagem(contato)
@@ -58,7 +84,7 @@ export default function Contato({contato, onSelect}) {
             </View>
 
             <View style={styles.emailContato}> 
-                <Text style={styles.txtEmail}>{ contato.emailAddresses[0].email }</Text>          
+                <Text style={styles.txtEmail}>{ email }</Text>          
             </View>
             
           </View>
@@ -77,6 +103,15 @@ const styles = StyleSheet.create({
     //marginTop: 50,
     height: 60, /*ou define altura aqui, ou devine na imagem*/
   },
+
+  contatoSemCadastro : {
+    opacity:0.5,
+  },
+
+  contatoSelecionado: {
+    backgroundColor: '#ffc64b'
+  },
+
   imagemContato: {
     flex: 2,  
     alignItems: 'center',

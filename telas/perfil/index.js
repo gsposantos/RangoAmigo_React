@@ -12,7 +12,7 @@ const CadastroStack = createStackNavigator({
     headerStyle: {
       backgroundColor: '#607d8b',
     },
-    headerTintColor: '#ff950e',
+    headerTintColor: '#ebeeef',
     headerTitleStyle: {
       fontWeight: 'bold',
       fontSize: 20,

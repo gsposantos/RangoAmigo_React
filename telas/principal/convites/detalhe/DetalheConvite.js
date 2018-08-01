@@ -267,7 +267,7 @@ export default class DetalheConvite extends React.Component {
       <View>        
           <Text style={styles.tituloModal}> Lista de Convidados </Text>        
       </View>
-      <ListaContatos contatos={this.state.convidados} onSelectContato={this.selecionaContato} />
+      <ListaContatos contatos={this.state.convidados} onSelectContato={this.selecionaContato} textoTitulo='Convidados'/>
       <View>
         <Button block style={styles.btn} onPress={() => this.setState({ visibleModal: null }) } >
           <Text style={styles.btnTxt}> Fechar </Text>
